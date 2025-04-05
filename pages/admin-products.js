@@ -32,6 +32,7 @@ function AdminProducts(props) {
                             <th>S/N</th>
                             <th>Image</th>
                             <th>Title</th>
+                            <th>Category</th>
                             <th>Price</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -43,6 +44,7 @@ function AdminProducts(props) {
                                 <td>{i + 1}</td>
                                 <td><img src={product.image} alt={product.title} /></td>
                                 <td>{product.title}</td>
+                                <td>{product.category}</td>
                                 <td>{product.price}</td>
 
                                 <td className={classes.edit} onClick={async () => {
@@ -72,32 +74,50 @@ function AdminProducts(props) {
 
 
 
-export async function getStaticProps() {
-    const client = await MongoClient.connect(process.env.DB)
-
-    const db = client.db()
-
-    const productCollection = db.collection('products')
-
-    const products = await productCollection.find().toArray()
-
-    client.close()
-
+export async function getServerSideProps() {
+    const client = await MongoClient.connect(process.env.DB);
+    const db = client.db();
+    const productsCollection = db.collection("products");
+  
+    // Fetch all products
+    const products = await productsCollection
+      .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 } })
+      .toArray();
+  
+    // Fetch distinct categories
+    const categories = await productsCollection.distinct("category");
+  
+    client.close();
+  
     return {
-        props: {
-            products: products.map((product) => ({
-                title: product.title,
-                price: product.price,
-                image: product.image,
-                description: product.description,
-                id: product._id.toString(),
-            })),
-        },
-
-        revalidate: 1,
-    }
-}
-
+      props: {
+        products: products.map((product) => ({
+          id: product._id.toString(),
+          title: product.title,
+          price: product.price,
+          category: product.category,
+          image: product.image,
+          nutrition: product.nutrition,
+          description: product.description,
+          qty: Number(product.qty),
+        })),
+        basketProducts: products
+          .filter((product) => product.category === "basket") // Filter in-memory
+          .map((product) => ({
+            id: product._id.toString(),
+            title: product.title,
+            price: product.price,
+            category: product.category,
+            image: product.image,
+            nutrition: product.nutrition,
+            description: product.description,
+            qty: Number(product.qty),
+          })),
+        categories,  
+      },
+    };
+  }
+  
 
 
 export default AdminProducts

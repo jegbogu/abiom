@@ -102,7 +102,7 @@ setProductDisplay(foundOrder)
     )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
     const client =  await MongoClient.connect(process.env.DB)
 
     const db = client.db()
