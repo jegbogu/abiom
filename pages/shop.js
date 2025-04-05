@@ -11,7 +11,7 @@ const Shop = (props) => {
   return ( 
     <Fragment>
       <Head>
-      <title>..Household name in online supplies and services.</title>
+      <title>Household name in online supplies and services.</title>
       </Head>
      
       <h1 className={classes.prod}>Our Products</h1>
