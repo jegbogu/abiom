@@ -1,0 +1,30 @@
+{
+  "name": "abiom-supplies",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.4.0",
+    "@next/font": "13.1.4",
+    "bcrypt": "^5.1.0",
+    "chart.js": "^4.2.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "iconify": "^1.4.0",
+    "lucide-react": "^0.485.0",
+    "mongodb": "^5.0.1",
+    "next": "13.1.4",
+    "next-auth": "^4.20.1",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1"
+  }
+}

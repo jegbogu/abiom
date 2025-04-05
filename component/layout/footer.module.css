@@ -1,0 +1,168 @@
+.section{
+    background-color:black;
+    padding-bottom:50px;
+    margin-top: 0px;
+}
+.footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    background-color: black;
+}
+
+.footer .menu ul li{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+.footer .menu ul li:hover{
+    color: var(--s-col);
+    transition: 300ms;
+}
+.section .icons .rof{
+color: var(--s-col);
+margin: 0px 0px 10px 30px;
+padding-bottom: 10px;
+
+
+}
+.section  .copy{
+    color: var(--p-col);
+    font-size: 1.4em; 
+    font-weight: bold;
+    text-align: center;
+}
+.icons span{
+    margin-left: 20px;
+}
+.design{
+    color:white;
+    margin-top: 50px;
+    text-align: center;
+}
+ .hr{
+        height: 1px;
+        background-color: var(--p-col);
+        width: 90%;
+        margin: 50px auto;
+    }
+@media screen and (max-width:450px) {
+    .section{
+        background-color:black;
+        padding-bottom:50px;
+        margin-top: 0px;
+    }
+    .footer{
+        display: flex;
+       
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        padding-bottom: 100px;
+        padding-top: 50px;
+        background-color: black;
+    }
+    .footer>div{
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-left: -20px;
+    }
+    
+    .footer .menu ul li{
+        list-style: none;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+    
+    }
+    .footer .menu ul li:hover{
+        color: var(--s-col);
+        transition: 300ms;
+    }
+    .section .icons .rof{
+    color: var(--s-col);
+    margin: 0px 0px 10px 30px;
+    padding-bottom: 10px;
+    
+    
+    }
+    .section  .copy{
+        color: var(--p-col);
+        font-size: 1.4em; 
+        font-weight: bold;
+        text-align: center;
+    }
+    .icons span{
+        margin-left: 20px;
+    }
+    .design{
+        color:white;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 1em;
+    }
+}
+@media screen and (max-width:375px) {
+    .section{
+        background-color:black;
+        padding-bottom:50px;
+        margin-top: 0px;
+    }
+    .footer{
+        display: flex;
+       
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        padding-bottom: 100px;
+        padding-top: 50px;
+        background-color: black;
+    }
+    .footer>div{
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-left: -20px;
+    }
+    
+    .footer .menu ul li{
+        list-style: none;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+    
+    }
+    .footer .menu ul li:hover{
+        color: var(--s-col);
+        transition: 300ms;
+    }
+    .section .icons .rof{
+    color: var(--s-col);
+    margin: 0px 0px 10px 30px;
+    padding-bottom: 10px;
+    
+    
+    }
+    .section  .copy{
+        color: var(--p-col);
+        font-size: 1.4em; 
+        font-weight: bold;
+        text-align: center;
+    }
+    .icons span{
+        margin-left: 20px;
+    }
+    .design{
+        color:white;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 1em;
+        padding: 20px;
+    }
+}

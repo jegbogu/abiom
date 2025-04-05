@@ -1,0 +1,301 @@
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+
+.item{
+
+     width: 95%;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.figure{
+    width: 100%;
+    margin: 0px auto;
+}
+.figure img{
+    width: 100%;
+    
+}
+.itemBody{
+    margin-top: 20px;
+    padding: 20px;
+}
+.itemBody h3{
+    margin: 10px 0px 10px 0px;
+    color: white;
+}
+.itemBody p{
+    margin: 20px 0px 20px 0px;
+    color: white;
+}
+.itemBody button{
+    background-color: var(--s-col);
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    transition: ease-in-out 3000;
+}
+.itemBody button:hover{
+    background-color: var(--p-col);
+    
+     
+}
+.itemBody span{
+    margin-left: 12px;
+}
+.itemBody span button{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 5px  ;
+    border:solid  var(--s-col) 1px;
+    border-radius: 5px;
+    cursor:pointer;
+    color: white;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    transition: ease-in-out 3000;
+}
+.itemBody span button:hover{
+    background-color: rgba(255, 68, 0, 0);
+   
+    border:solid  var(--p-col) 1px;
+    border-radius: 5px;
+     
+}
+.cartBtn{
+    display: inline;
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
+    display: inline;
+  
+}
+.cartBtnOne button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+    
+    
+}
+.cartBtnTwo button{
+    background-color: rgb(76, 52, 0);
+    border-color: var(--p-col);
+    border-radius: 0%;
+   
+}
+.cartBtnThree button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+}
+.trash{
+    margin-top: 5%;
+    cursor: pointer;
+}
+.qty{
+    color: aliceblue;
+}
+.cart{
+    background-color:var(--p-col);
+    width: 10%;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 40px;
+   margin-top: 10px;
+    font-family: cursive;
+    color: black;
+    
+ 
+}
+@media screen and (max-width:780px)  {
+    .productItem{
+       display: block;
+         width: 100%;
+         margin-top: 20px;
+         background-color: black;
+         border-radius: 10px;
+       
+         
+        }
+        .item{
+ 
+    
+     width: 100%;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+        .figure{
+    width: 100%;
+  
+   margin-top: -19.5px;
+}
+        .figure img{
+            width: 100%;
+ border-radius: 10px 10px 0px 0px;
+        }
+        .itemBody{
+    margin-top: 20px;
+    padding: 20px;
+}
+.itemBody button{
+    background-color: var(--s-col);
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.itemBody button:hover{
+    background-color: var(--p-col);
+    padding: 10px 20px 10px 20px;
+    border: none;
+     
+}
+.itemBody span{
+    margin-left: 20px;
+}
+.itemBody span button{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 10px 20px 10px 20px;
+    border:solid  var(--s-col) 1px;
+    border-radius: 5px;
+    cursor:pointer;
+    color: white;
+}
+.itemBody span button:hover{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 10px 20px 10px 20px;
+    border:solid  var(--p-col) 1px;
+    border-radius: 5px;
+     
+}
+.cartBtn{
+    display: inline;
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
+    display: inline;
+  
+}
+.cartBtnOne button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+    
+}
+.cartBtnTwo button{
+    background-color: rgb(76, 52, 0);
+    border-color: var(--p-col);
+    border-radius: 0%;
+   
+}
+.cartBtnThree button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+}
+         
+}
+@media screen and (max-width:375px)  {
+    .productItem{
+       display: block;
+         width: 100%;
+         margin-top: 20px;
+         background-color: black;
+         border-radius: 10px;
+       
+         
+        }
+        .item{
+ 
+    
+     width: 100%;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+        .figure{
+    width: 100%;
+  
+   margin-top: -19.5px;
+}
+        .figure img{
+            width: 100%;
+ border-radius: 10px 10px 0px 0px;
+        }
+        .itemBody{
+    margin-top: 20px;
+    padding: 20px;
+}
+.itemBody button{
+    background-color: var(--s-col);
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.itemBody button:hover{
+    background-color: var(--p-col);
+    padding: 10px 20px 10px 20px;
+    border: none;
+     
+}
+.itemBody span{
+    margin-left: 20px;
+}
+.itemBody span button{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 10px 10px 10px 10px;
+    border:solid  var(--s-col) 1px;
+    border-radius: 5px;
+    cursor:pointer;
+    color: white;
+}
+.itemBody span button:hover{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 10px 20px 10px 20px;
+    border:solid  var(--p-col) 1px;
+    border-radius: 5px;
+     
+}
+.cartBtn{
+    display: inline;
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
+    display: inline;
+  
+}
+.cartBtnOne button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+    
+}
+.cartBtnTwo button{
+    background-color: rgb(76, 52, 0);
+    border-color: var(--p-col);
+    border-radius: 0%;
+   
+}
+.cartBtnThree button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+}
+         
+}
+
+ 
+  

@@ -1,0 +1,17 @@
+.bannerButton button{
+    padding: 20px 70px 20px 70px;
+    font-size: 1.2em;
+    border: solid var(--p-col) 1px;
+    border-radius: 10px;
+    color:var(--p-col);
+    background-color: rgba(240, 248, 255, 0);
+    cursor: pointer;
+}
+
+.bannerButton button:hover{
+    background-color: rgba(255, 68, 0, 0.037);
+    border: solid white 1px;
+    color: var(--p-col);
+    transition: 300ms;
+}
+ 

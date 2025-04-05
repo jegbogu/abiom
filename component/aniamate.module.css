@@ -1,0 +1,40 @@
+.animationContainer{
+    position: absolute;
+    top:620%;
+    padding: 30px;
+}
+
+.flexAnimation {
+    display: flex;
+    
+}
+ 
+.animationOne{
+    animation-name: animatioThree;
+    
+       animation-duration: 15s;
+      animation-timing-function: ease-in-out;
+       animation-iteration-count: infinite;
+   }
+   @keyframes animationThree {
+       0%{top:inherit; left:100px}
+       50%{top: inherit; left:200px ;}
+       70%{top: inherit; left:300px ;}
+       100%{top: inherit; left: 400px;}
+       
+   }
+    
+   .animationThree img{
+    animation-name: animationThree;
+    position: relative;
+       animation-duration: 15s;
+      animation-timing-function: ease-in-out;
+       animation-iteration-count: infinite;
+   }
+   @keyframes animationThree {
+       0%{top:inherit; left:300px}
+       50%{top: inherit; left:100px ;}
+       70%{top: inherit; left:300px ;}
+       100%{top: inherit; left: 400px;}
+       
+   }

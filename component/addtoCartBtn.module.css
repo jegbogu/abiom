@@ -1,0 +1,15 @@
+.itemBody button{
+    background-color: var(--s-col);
+    padding: 10px 30px 10px 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.itemBody button:hover{
+    background-color: var(--p-col);
+    padding: 10px 30px 10px 30px;
+    border: none;
+     
+}

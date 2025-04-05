@@ -1,0 +1,24 @@
+.cartBtn{
+    display: inline;
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
+    display: inline;
+  
+}
+.cartBtnOne button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+    
+}
+.cartBtnTwo button{
+    background-color: rgb(76, 52, 0);
+    border-color: var(--p-col);
+    border-radius: 0%;
+   
+}
+.cartBtnThree button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+}

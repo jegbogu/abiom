@@ -1,0 +1,129 @@
+ 
+.section{
+    margin: 50px auto;
+    width: 50%;
+    padding: 100px  200px 100px 200px;
+    border: solid var(--p-col) 1px;
+    border-radius: 10px;
+}
+.section button{
+    background-color: var(--p-col);
+    padding: 20px 40px 20px 40px;
+    font-weight: bolder;
+    font-size: 1.8em;
+    border: none;
+    border-radius: 10px;
+    margin-top: 50px;
+    color: black;
+ 
+}
+.section button:hover{
+    background-color: rgb(255, 255, 255);
+    border: solid 1px var(--p-col);
+    color: black;
+    
+}
+.section span{
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--p-col);
+    font-size: 1.4em;
+}
+ .figure{
+    margin:20px auto ;
+ }
+ @media screen and (max-width:1028px) {
+    .section{
+        margin: 50px auto;
+        width: 70%;
+        padding: 100px  200px 100px 200px;
+        border: solid var(--p-col) 1px;
+        border-radius: 10px;
+    }
+    .section button{
+        background-color: var(--p-col);
+        padding: 20px 40px 20px 40px;
+        font-weight: bolder;
+        font-size: 1.8em;
+        border: none;
+        border-radius: 10px;
+        margin-top: 50px;
+     
+    }
+    .section button:hover{
+        background-color: rgb(255, 255, 255);
+        border: solid 1px var(--p-col);
+        
+    }
+    .section span{
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--p-col);
+        font-size: 1.4em;
+    }
+     .figure{
+        margin:20px auto ;
+     }
+ }
+ @media screen and (max-width:780px) {
+    .section{
+        margin: 100px auto;
+        width: 90%;
+        padding: 100px  200px 100px 200px;
+        border: solid var(--p-col) 1px;
+        border-radius: 10px;
+    }
+    .section button{
+        background-color: var(--p-col);
+        padding: 20px 40px 20px 40px;
+        font-weight: bolder;
+        font-size: 1.8em;
+        border: none;
+        border-radius: 10px;
+        margin-top: 50px;
+     
+    }
+    .section button:hover{
+        background-color: rgb(255, 255, 255);
+        border: solid 1px var(--p-col);
+        
+    }
+    .section span{
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--p-col);
+        font-size: 1.4em;
+    }
+     .figure{
+        margin:20px auto ;
+     }
+ }
+ @media screen and (max-width:450px) {
+    .section{
+        margin: 100px auto;
+        width: 90%;
+        padding: 50px  50px 50px 50px;
+        border: solid var(--p-col) 1px;
+        border-radius: 10px;
+    }
+    .section button{
+        background-color: var(--p-col);
+        padding: 20px 40px 20px 40px;
+        font-weight: bolder;
+        font-size: 1.8em;
+        border: none;
+        border-radius: 10px;
+        margin-top: 50px;
+     
+    }
+    .section button:hover{
+        background-color: rgb(255, 255, 255);
+        border: solid 1px var(--p-col);
+        
+    }
+    .section span{
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--p-col);
+        font-size: 1.4em;
+    }
+     .figure{
+        margin:20px auto ;
+     }
+ }

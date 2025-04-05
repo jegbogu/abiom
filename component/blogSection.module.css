@@ -1,0 +1,99 @@
+.section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Carousel Wrapper */
+.carouselWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Carousel Container */
+.carouselContainer {
+    width: 90%;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Post Card */
+.postCard {
+    display: block; /* Ensure <a> behaves like a block element */
+    text-decoration: none;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    min-width: 450px;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin: 0 10px;
+}
+
+.postCard:hover {
+    transform: scale(1.01);
+}
+
+.postImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.postName {
+    font-size: 1em;
+     
+    margin-top: 10px;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Ensure text wraps */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* Navigation Buttons */
+.carouselBtns {
+    display: flex;
+    margin-left: 80%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.carouselBtns button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 2px 3px 10px gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carouselBtns button:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+}

@@ -1,0 +1,80 @@
+.mainSection{
+    background-color: black;
+}
+.section{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding-bottom: 100px;
+    margin-bottom: -50px;
+    border-bottom: solid 1px var(--s-col);
+    
+}
+.sectionTable{
+    width: 66%;
+    color: white;
+    margin-top: 70px;
+    
+}
+.sectionTable table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+   
+  }
+  
+.sectionTable table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    
+  }
+  .sectionTable table .edit{
+    cursor: pointer;
+    color: rgb(164, 164, 231);
+  }
+  .sectionTable table .edit:hover{
+     color: rgb(241, 164, 164);
+     text-decoration: underline;
+     transition: 300ms;
+  }
+  .sectionTable table .delete:hover{
+     color: rgb(241, 164, 164);
+     text-decoration: underline;
+     transition: 300ms;
+  }
+  .sectionTable table .delete{
+    cursor: pointer;
+    color: burlywood;
+  }
+.sectionTable table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: rgb(221, 245, 185);
+  }
+  
+  .sectionTable table tr:nth-child(even) {
+    background-color: #303030;
+  }
+.sectionTable img{
+    width: 10%;
+}
+.header h1{
+    color: white;
+    margin-left: 32%;
+}
+.sectionTable form{
+  margin-bottom: 50px;
+}
+.sectionTable form label{
+  font-size: 1.5em;
+  color: var(--p-col);
+}
+.sectionTable form input{
+  border: none;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+}

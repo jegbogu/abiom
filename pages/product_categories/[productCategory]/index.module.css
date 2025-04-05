@@ -1,0 +1,23 @@
+ .category h2{
+    letter-spacing: .46515px;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 31.01px;
+    font-weight: 300;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 30px;
+    color: black;
+    
+ }
+ .category p{
+    letter-spacing: .1299px;
+    font-family: Graphik Webfont, -apple-system, Helvetica Neue, Droid Sans, Arial, "sans-serif";
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    color: gray;
+    
+ }

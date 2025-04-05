@@ -1,0 +1,111 @@
+.bannerButton{
+    display: flex;
+    justify-content: space-between;
+    width: 46%;
+    margin: 0px auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.bannerButton button{
+    padding: 20px 70px 20px 70px;
+    font-size: 1.2em;
+    border: solid var(--p-col) 1px;
+    border-radius: 10px;
+    color:var(--p-col);
+    background-color: rgba(240, 248, 255, 0);
+    cursor: pointer;
+    
+}
+
+.bannerButton button:hover{
+    background-color: rgba(255, 68, 0, 0.037);
+    border: solid white 1px;
+    color: var(--p-col);
+    transition: 300ms;
+}
+ @media screen and (max-width:780px) {
+    .bannerButton{
+        display: flex;
+        justify-content: space-between;
+        width: 62%;
+        margin: 0px auto;
+      
+    }
+    .bannerButton button{
+        padding: 20px 70px 20px 70px;
+        font-size: 1.2em;
+        border: solid var(--p-col) 1px;
+        border-radius: 10px;
+        color:var(--p-col);
+        background-color: rgba(240, 248, 255, 0);
+        cursor: pointer;
+        
+    }
+    
+    .bannerButton button:hover{
+        background-color: rgba(255, 68, 0, 0.037);
+        border: solid white 1px;
+        color: var(--p-col);
+        transition: 300ms;
+    }
+ }
+ @media screen and (max-width:450px) {
+    .bannerButton{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0px auto;
+      
+    }
+    .bannerButton>div{
+        margin-left: 10px;
+    }
+    .bannerButton button{
+        padding: 10px 50px 10px 50px;
+        font-size: 1.2em;
+        border: solid var(--p-col) 1px;
+        border-radius: 10px;
+        color:var(--p-col);
+        background-color: rgba(240, 248, 255, 0);
+        cursor: pointer;
+        
+    }
+    
+    .bannerButton button:hover{
+        background-color: rgba(255, 68, 0, 0.037);
+        border: solid white 1px;
+        color: var(--p-col);
+        transition: 300ms;
+    }
+ }
+
+ @media screen and (max-width:320px) {
+    .bannerButton{
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0px auto;
+      
+    }
+    .bannerButton>div{
+        margin-left: 0px;
+    }
+    .bannerButton button{
+        padding: 10px 10px 10px 10px;
+        font-size: 1.2em;
+        border: solid var(--p-col) 1px;
+        border-radius: 10px;
+        color:var(--p-col);
+        background-color: rgba(240, 248, 255, 0);
+        cursor: pointer;
+        
+    }
+    
+    .bannerButton button:hover{
+        background-color: rgba(255, 68, 0, 0.037);
+        border: solid white 1px;
+        color: var(--p-col);
+        transition: 300ms;
+    }
+ }
+

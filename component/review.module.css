@@ -1,0 +1,19 @@
+.review{
+    margin: 50px auto;
+    border-bottom: solid var(--p-col) 4px;
+    padding-bottom: 20px;
+    width: 30%;
+}
+.review h1{
+   color: #e88b28; 
+}
+@media screen and (max-width:780px){
+    .review{
+        margin: 50px auto;
+        border-bottom: solid var(--p-col) 4px;
+        padding-bottom: 20px;
+        width: 70%;
+       
+        padding: 20px;
+    }
+}
