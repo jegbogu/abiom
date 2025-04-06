@@ -151,7 +151,7 @@ function ProductItem({ product }) {
 
         <div className={classes.itemBody}>
           <h3>{product.title}</h3>
-          <p>Price: ${product.price}</p>
+          <p style={{color:'orange',fontSize:'19.01px', margin:'10px 0px 10px 0px'}}>Price: ${product.price}</p>
           {show ?
             (<div className={classes.cartBtn}>
               <div className={classes.cartBtnOne}>

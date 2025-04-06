@@ -73,9 +73,12 @@
     justify-content: center;
     cursor: pointer;
     transition: ease-in-out 3000;
+    color: var(--s-col);
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 16px;
 }
 .carouselBtns button:hover{
-    background-color: rgba(128, 128, 128, 0.443);
+    background-color: rgba(128, 128, 128, 0.13);
 }
  
 
@@ -106,12 +109,13 @@
     
 }
 .itemBody{
-    margin-top: 20px;
-    padding: 0px 40px 20px 20px;
+    margin-top: 0px;
+    padding: 20px;
 }
 .itemBody h3{
-    margin: 10px 0px 10px 0px;
+    margin: -10px 0px 0px 0px;
     color: white;
+    font-size:  15px;
 }
 .itemBody p{
     margin: 20px 0px 20px 0px;
@@ -119,16 +123,18 @@
 }
 .itemBody button{
     background-color: var(--s-col);
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 5px;
     border: none;
     border-radius: 5px;
     color: white;
     font-weight: 900;
     cursor: pointer;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
 }
 .itemBody button:hover{
     background-color: var(--p-col);
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 5px;
     border: none;
      
 }
@@ -137,15 +143,17 @@
 }
 .itemBody span button{
     background-color: rgba(255, 68, 0, 0);
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 5px;
     border:solid  var(--s-col) 1px;
     border-radius: 5px;
     cursor:pointer;
     color: white;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
 }
 .itemBody span button:hover{
     background-color: rgba(255, 68, 0, 0);
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 5px;
     border:solid  var(--p-col) 1px;
     border-radius: 5px;
      
@@ -161,18 +169,24 @@
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
     
 }
 .cartBtnTwo button{
     background-color: rgb(76, 52, 0);
     border-color: var(--p-col);
     border-radius: 0%;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
    
 }
 .cartBtnThree button{
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
 }
 .trash{
     margin-top: 5%;
@@ -189,8 +203,9 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 40px;
    margin-top: 10px;
-    font-family: cursive;
-    color: black;
+   font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+   font-size: 15px;
+    color: rgb(246, 246, 246);
     
  
 }
