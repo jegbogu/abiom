@@ -14,7 +14,7 @@ import CartIcon from '@/icons/cartIcon';
 function ProductItem(props) {
   const [spinner, setSpinner] = useState(false)
   const [show, setShow] = useState(false)
-
+ 
 
 
   const [count, setCount] = useState(0)
@@ -113,8 +113,15 @@ function ProductItem(props) {
   }
 
 
-
-
+let fullTitle
+let shownFullTitle
+if(props.title.length>2){
+  fullTitle = `${props.title.slice(0,20)}..`
+  shownFullTitle = props.title
+}else{
+  fullTitle = props.title
+  shownFullTitle = ""
+}
 
 
   return (
@@ -123,11 +130,12 @@ function ProductItem(props) {
 
       <div className={classes.item}>
         <div className={classes.figure}>
-          <img src={props.image} alt={props.title}  width={300} />
+          <img src={props.image} alt={props.title}  width={220} height={220} />
         </div>
 
         <div className={classes.itemBody}>
-          <h3>{props.title}</h3>
+          <h3>{fullTitle}</h3>
+          <h5>{shownFullTitle}</h5>
           <p>Price: ${props.price}</p>
           {show ?
             (<div className={classes.cartBtn}>

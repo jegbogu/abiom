@@ -5,6 +5,8 @@
     align-items: center;
     overflow: hidden;
     padding: 0 1.5rem;
+    ;
+   
   }
   
    
@@ -27,7 +29,13 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: ease-in-out 300ms;
+  ;
   
+  }
+  .productCard p{
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    color: rgb(0, 0, 0);
+    font-size: 15px;
   }
   .productCard:hover {
     

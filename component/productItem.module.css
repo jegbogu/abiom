@@ -11,6 +11,7 @@
     background-color: black;
     margin-top: 20px;
     border-radius: 5px;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
 }
 .figure{
     width: 100%;
@@ -21,52 +22,78 @@
     
 }
 .itemBody{
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 20px;
 }
-.itemBody h3{
-    margin: 10px 0px 10px 0px;
+.itemBody h5 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: 1px solid gray;
+    z-index: 10;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+  }
+  
+  .itemBody h3 {
+    margin: -10px 0 0 0;
     color: white;
-}
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Show h5 when hovering over h3 */
+  .itemBody h3:hover + h5 {
+    display: block;
+  }
+  
+
 .itemBody p{
-    margin: 20px 0px 20px 0px;
-    color: white;
+    margin: 10px 0px 10px 0px;
+    color: rgb(234, 136, 24);
+    ;
+    font-size: 20px;
+     margin:'10px 0px 0px 0px';
+    
 }
+
 .itemBody button{
     background-color: var(--s-col);
-    padding: 5px 10px 5px 10px;
+    padding: 10px 5px 10px 5px;
     border: none;
     border-radius: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 900;
     cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    transition: ease-in-out 3000;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
 }
 .itemBody button:hover{
     background-color: var(--p-col);
-    
+    padding: 10px 5px 10px 5px;
+    border: none;
      
 }
 .itemBody span{
-    margin-left: 12px;
+    margin-left: 20px;
 }
 .itemBody span button{
     background-color: rgba(255, 68, 0, 0);
-    padding: 5px  ;
+    padding: 10px 5px 10px 5px;
     border:solid  var(--s-col) 1px;
     border-radius: 5px;
     cursor:pointer;
     color: white;
-    cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    transition: ease-in-out 3000;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    font-size: 15px;
 }
 .itemBody span button:hover{
     background-color: rgba(255, 68, 0, 0);
-   
+    padding: 10px 5px 10px 5px;
     border:solid  var(--p-col) 1px;
     border-radius: 5px;
      
