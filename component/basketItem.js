@@ -125,7 +125,7 @@ function BasketItem(props) {
 
       <div className={classes.item}>
         <div className={classes.figure}>
-          <img src={props.image} alt={props.title} width={230} height={280} />
+          <img src={props.image} alt={props.title} width={220} height={220} />
          
         </div>
         <div className={classes.discount}>
