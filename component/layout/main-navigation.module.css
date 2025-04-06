@@ -94,7 +94,8 @@
 
 .headerCategories {
     color: white;
-    font-family:  'Open Sans',  
+    font-family:   'Open Sans', sans-serif;
+    font-size: 1em;
 }
  
 .headerSearch {
