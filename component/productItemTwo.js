@@ -121,13 +121,13 @@ function ProductItemTwo(props) {
 
     <li className={classes.productItem}>
 
-      <div className={classes.item} onClick={showDetailsHandler}>
+      <div className={classes.item} >
         <div className={classes.figure}>
           <img src={props.image} alt={props.title} />
         </div>
 
         <div className={classes.itemBody}>
-          <h3>{props.title}</h3>
+          <h3 onClick={showDetailsHandler} >{props.title}</h3>
           <p>Price: ${props.price}</p>
           {show ?
             (<div className={classes.cartBtn}>

@@ -132,7 +132,7 @@ function BasketItem(props) {
           <h2 style={{color:'orange',marginLeft:'30px', fontSize:'13px'}}>-10%</h2>
         </div>
         <div className={classes.itemBody}>
-          <h3>{props.title}</h3>
+          <h3 onClick={showDetailsHandler}>{props.title}</h3>
           <p style={{color:'orange',fontSize:'19.01px', margin:'10px 0px 0px 0px'}}>Price: ${props.price}</p>
           <p style={{textDecoration:'line-through',fontSize:'12.99px',margin:'10px 0px 10px 0px'}}>Price: ${TruePrice}</p>
        
