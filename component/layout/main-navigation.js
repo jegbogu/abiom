@@ -19,8 +19,10 @@ const MainNavigation = ({ categories, products }) => {
     const [getCategory, setGetCategory] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const categoryDropdownRef = useRef(null);
-    const searchDropdownRef = useRef(null);
+    const categoryDropdownDesktopRef = useRef(null);
+    const categoryDropdownMobileRef = useRef(null)
+    const searchDropdownDesktopRef = useRef(null);
+    const searchDropdownMobileRef = useRef(null);
     const searchInputRef = useRef(null);
     const router = useRouter();
     const [userCarts, setUserCarts] = useState([]);
@@ -109,32 +111,38 @@ const MainNavigation = ({ categories, products }) => {
     // Close dropdowns when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (
-                categoryDropdownRef.current && !categoryDropdownRef.current.contains(event.target)
-            ) {
+            const isClickOutsideCategoryDropdown =
+                (!categoryDropdownDesktopRef.current || !categoryDropdownDesktopRef.current.contains(event.target)) &&
+                (!categoryDropdownMobileRef.current || !categoryDropdownMobileRef.current.contains(event.target));
+    
+            if (isClickOutsideCategoryDropdown) {
                 setShowCategory(false);
             }
-
-            if (
-                searchDropdownRef.current && 
-                !searchDropdownRef.current.contains(event.target) &&
-                searchInputRef.current &&
-                !searchInputRef.current.contains(event.target)
-            ) {
+    
+            const isClickOutsideSearchDropdown =
+                (!searchDropdownDesktopRef.current || !searchDropdownDesktopRef.current.contains(event.target)) &&
+                (!searchDropdownMobileRef.current || !searchDropdownMobileRef.current.contains(event.target));
+    
+            if (isClickOutsideSearchDropdown) {
                 setFilteredProducts([]);
             }
         };
-
+    
         document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
     }, []);
+    
 
     const handleGetCategory = (category) => {
+       
         setGetCategory(category);
         setShowCategory(false);
-        router.push("/product_categories/" + category);
+       
+        router.push("/product_categories/" + encodeURIComponent(category));
     };
-
+    
     // Search function
     const handleSearch = (e) => {
         const term = e.target.value.toLowerCase();
@@ -159,7 +167,7 @@ const MainNavigation = ({ categories, products }) => {
     };
  
 const prodFnc = (product) =>{
-    console.log(product)
+     
     router.push(`/shop/${product.id}`)
 }
 const categoryFnc = (product) =>{
@@ -189,7 +197,7 @@ const categoryFnc = (product) =>{
 
                     {/* Display search results */}
                     {filteredProducts.length > 0 && (
-                        <div className={classes.searchResults} ref={searchDropdownRef}>
+                        <div className={classes.searchResults} ref={searchDropdownDesktopRef}>
                             <ul>
                                 {filteredProducts.map((product, index) => (
                                     <li key={index} onClick={()=> (categories.includes(product)?categoryFnc(product):prodFnc(product))}>
@@ -230,7 +238,7 @@ const categoryFnc = (product) =>{
 
             {/* Category Dropdown */}
             {showCategory && (
-                <div className={classes.categoryDropdown} ref={categoryDropdownRef}>
+                <div className={classes.categoryDropdown} ref={categoryDropdownDesktopRef}>
                     <ul>
                         {categories && categories.length > 0 ? (
                             categories.map((category, index) => {
@@ -244,7 +252,7 @@ const categoryFnc = (product) =>{
                                 } else {
                                     transCategory = `${category[0].toUpperCase()}${category.slice(1)}`;
                                 }
-                                return <li key={index} onClick={() => handleGetCategory(category)}>{transCategory}</li>;
+                                return <li key={index} onMouseDown={() => handleGetCategory(category)}>{transCategory}</li>;
                             })
                         ) : (
                             <li>No Categories Available</li>
@@ -254,6 +262,9 @@ const categoryFnc = (product) =>{
             )}
         </div>
 
+
+
+{/* THIS IS FOR MOBILE VIEW */}
         <div className={classes.mobile}>
             <div className={classes.mobileHeader}>
         <div className={classes.headerHamCategories} onClick={toggleCategoryDropdown}>
@@ -274,7 +285,7 @@ const categoryFnc = (product) =>{
 
                     {/* Display search results */}
                     {filteredProducts.length > 0 && (
-                        <div className={classes.searchResults} ref={searchDropdownRef}>
+                        <div className={classes.searchResults} ref={searchDropdownMobileRef}>
                             <ul>
                                 {filteredProducts.map((product, index) => (
                                     <li key={index} onClick={()=> (categories.includes(product)?categoryFnc(product):prodFnc(product))}>
@@ -304,7 +315,7 @@ const categoryFnc = (product) =>{
                     </div>
                      {/* Category Dropdown */}
             {showCategory && (
-                <div className={classes.categoryDropdown} ref={categoryDropdownRef}>
+                <div className={classes.categoryDropdown} ref={categoryDropdownMobileRef}>
                     <ul>
                         {categories && categories.length > 0 ? (
                             categories.map((category, index) => {
