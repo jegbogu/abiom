@@ -53,7 +53,7 @@ function ProductItem({ product }) {
 
   function showDetailsHandler() {
     setSpinner(<Spinner />)
-    router.push('/shop/' + props.id);
+    router.push('/shop/' + product.id);
 
   }
 

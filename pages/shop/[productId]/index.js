@@ -1,10 +1,10 @@
- import ProductList from "@/component/productList";
+import ProductListAllProd from "@/component/productListAllProd";
 import { Fragment } from "react";
 import Head from "next/head";
 import ProductDetail from "@/component/productDetail";
 import { MongoClient, ObjectId } from "mongodb";
 import classes from "./index.module.css";
-import Layout from '@/component/layout/layout'; 
+import Layout from "@/component/layout/layout";
 
 function ProductDetails(props) {
   return (
@@ -13,7 +13,7 @@ function ProductDetails(props) {
         <Head>
           <title>{props.productData.title}</title>
           <meta name="description" content={props.productData.description} />
-          <link rel="shortcut icon" href="/logo.png" type="image/x-icon"></link>
+          <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
         </Head>
         <ProductDetail
           title={props.productData.title}
@@ -25,7 +25,7 @@ function ProductDetails(props) {
           id={props.productData.id}
         />
         <h1 className={classes.otherProd}>Products You May be Interested in</h1>
-        <ProductList products={props.products} />
+        <ProductListAllProd products={props.products} />
       </Fragment>
     </Layout>
   );
@@ -37,7 +37,10 @@ export async function getStaticPaths() {
     const db = client.db();
     const productsCollection = db.collection("products");
 
-    const products = await productsCollection.find({}, { projection: { _id: 1 } }).toArray();
+    const products = await productsCollection
+      .find({}, { projection: { _id: 1 } })
+      .toArray();
+
     client.close();
 
     return {
@@ -62,8 +65,19 @@ export async function getStaticProps(context) {
     const db = client.db();
     const productsCollection = db.collection("products");
 
-    const products = await productsCollection
-      .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 } })
+    const allProducts = await productsCollection
+      .find({}, {
+        projection: {
+          _id: 1,
+          title: 1,
+          price: 1,
+          category: 1,
+          image: 1,
+          nutrition: 1,
+          description: 1,
+          qty: 1
+        }
+      })
       .toArray();
 
     const selectedProduct = await productsCollection.findOne({ _id: new ObjectId(productId) });
@@ -71,6 +85,11 @@ export async function getStaticProps(context) {
     if (!selectedProduct) {
       return { notFound: true };
     }
+
+    // Get related products (same category)
+    const relatedProducts = allProducts.filter(
+      (el) => el.category === selectedProduct.category && el._id.toString() !== productId
+    );
 
     const categories = await productsCollection.distinct("category");
 
@@ -88,7 +107,7 @@ export async function getStaticProps(context) {
           description: selectedProduct.description,
           qty: Number(selectedProduct.qty),
         },
-        products: products.map((product) => ({
+        products: relatedProducts.map((product) => ({
           id: product._id.toString(),
           title: product.title,
           price: product.price,

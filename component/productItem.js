@@ -128,8 +128,8 @@ if(props.title.length>2){
 
     <li className={classes.productItem}>
 
-      <div className={classes.item}>
-        <div className={classes.figure}>
+      <div className={classes.item} onClick={showDetailsHandler}>
+        <div className={classes.figure} >
           <img src={props.image} alt={props.title}  width={220} height={220} />
         </div>
 

@@ -117,36 +117,49 @@ function ProductItemCategories(props) {
 
 
 
-  return (
-
-    <li className={classes.productItem}>
-
-      <div className={classes.item}>
-        <div className={classes.figure}>
-          <img src={props.image} alt={props.title}  width={250} height={270}/>
+  let fullTitle
+  let shownFullTitle
+  if(props.title.length>2){
+    fullTitle = `${props.title.slice(0,20)}..`
+    shownFullTitle = props.title
+  }else{
+    fullTitle = props.title
+    shownFullTitle = ""
+  }
+  
+  
+    return (
+  
+      <li className={classes.productItem}>
+  
+        <div className={classes.item} onClick={showDetailsHandler}>
+          <div className={classes.figure} >
+            <img src={props.image} alt={props.title}  width={220} height={220} />
+          </div>
+  
+          <div className={classes.itemBody}>
+            <h3>{fullTitle}</h3>
+            <h5>{shownFullTitle}</h5>
+            <p>Price: ${props.price}</p>
+            {show ?
+              (<div className={classes.cartBtn}>
+                <div className={classes.cartBtnOne}>
+                  <button onClick={addHandler}>+</button></div>
+                <div className={classes.cartBtnTwo}>
+                  <button>{count}</button>
+                </div>
+                <div className={classes.cartBtnThree}>
+                  <button onClick={subtractHandler}>-</button>
+                </div>
+  
+              </div>)
+              : <button onClick={displayCartBtn}>Add to Cart</button>}
+  
+            <span><button onClick={showDetailsHandler}>Details{spinner}</button></span>
+          </div>
+          {showCart}
         </div>
-
-        <div className={classes.itemBody}>
-          <h3>{props.title}</h3>
-          <p>Price: ${props.price}</p>
-          {show ?
-            (<div className={classes.cartBtn}>
-              <div className={classes.cartBtnOne}>
-                <button onClick={addHandler}>+</button></div>
-              <div className={classes.cartBtnTwo}>
-                <button>{count}</button>
-              </div>
-              <div className={classes.cartBtnThree}>
-                <button onClick={subtractHandler}>-</button>
-              </div>
-
-            </div>)
-            : <button onClick={displayCartBtn}>Add to Cart</button>}
-
-          <span><button onClick={showDetailsHandler}>Details{spinner}</button></span>
-        </div>
-        {showCart}
-      </div>
+  
 
 
     </li>

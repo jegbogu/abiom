@@ -121,7 +121,7 @@ function ProductItemTwo(props) {
 
     <li className={classes.productItem}>
 
-      <div className={classes.item}>
+      <div className={classes.item} onClick={showDetailsHandler}>
         <div className={classes.figure}>
           <img src={props.image} alt={props.title} />
         </div>
