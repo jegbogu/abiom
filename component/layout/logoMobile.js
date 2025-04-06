@@ -6,8 +6,8 @@ const LogoMobile = () => {
       <Image
       src='/brand.png'
       alt="logo"
-      width={50}
-      height = {25}
+      width={65}
+      height = {32.5}
       />
 
     

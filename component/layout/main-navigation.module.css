@@ -269,7 +269,7 @@ transition: all 0.3s ease-in-out;
 
 
  
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 425px) {
     .desktop {
         display: none;
     }
@@ -281,7 +281,7 @@ transition: all 0.3s ease-in-out;
     }
     .headerLogo {
         width: 10px; /* logo a bit more visible */
-        margin-left: -10px;
+        margin-left: -30px;
     }
     .mobileHeader {
         display: flex;
@@ -296,9 +296,9 @@ transition: all 0.3s ease-in-out;
     }
     .headerSearch {
         flex-grow: 1;
-        width: auto;
-        min-width: 160px; /* ensures visibility */
-        margin-left: 30px;
+        
+        width: 100px; /* ensures visibility */
+        margin-left: 50px;
       
     }
     .headerSearch input{
@@ -309,7 +309,7 @@ transition: all 0.3s ease-in-out;
         padding: 3px;
         border-radius: 50px;
         background-color: #e7a626;
-        margin-left: -55px;
+        margin-left: -40px;
         border: none;
         transition: background-color 0.3s ease-in-out;
         cursor: pointer;
