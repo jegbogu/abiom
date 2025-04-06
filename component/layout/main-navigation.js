@@ -12,6 +12,7 @@ import classes from "./main-navigation.module.css";
  
 import CartsContext from '../../store/product-context'
 import TrashIcon from "@/icons/trash";
+import SearchIconMobile from "@/icons/searchMobile";
 
 const MainNavigation = ({ categories, products }) => {
     const [showCategory, setShowCategory] = useState(false);
@@ -269,7 +270,7 @@ const categoryFnc = (product) =>{
                         ref={searchInputRef}
                         onChange={handleSearch}
                     />
-                    <button><SearchIcon /></button>
+                    <button><SearchIconMobile /></button>
 
                     {/* Display search results */}
                     {filteredProducts.length > 0 && (
