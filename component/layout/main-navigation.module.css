@@ -268,7 +268,7 @@ transition: all 0.3s ease-in-out;
 
 
  
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 450px) {
     .desktop {
         display: none;
     }
@@ -297,7 +297,7 @@ transition: all 0.3s ease-in-out;
         flex-grow: 1;
         width: auto;
         min-width: 160px; /* ensures visibility */
-        margin-left: 35px;
+        margin-left: 60px;
       
     }
     .headerSearch input{
