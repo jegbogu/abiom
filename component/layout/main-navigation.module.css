@@ -302,7 +302,18 @@ transition: all 0.3s ease-in-out;
     }
     .headerSearch input{
         width: 100%;
+        padding: 10px;
     }
+    .headerSearch button {
+        padding: 3px;
+        border-radius: 50px;
+        background-color: #e7a626;
+        margin-left: -55px;
+        border: none;
+        transition: background-color 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    
     .headerUsers{
         gap: 0px;
         margin-left: -10px;
