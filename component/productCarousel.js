@@ -146,7 +146,7 @@ function ProductItem({ product }) {
     <div className={classes.productItem}>
        <div className={classes.item}>
         <div className={classes.figure}>
-          <img src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} width={220} height={220} />
         </div>
 
         <div className={classes.itemBody}>

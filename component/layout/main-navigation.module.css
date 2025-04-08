@@ -37,7 +37,7 @@
     .headerCart{
         cursor: pointer;
         padding: 10px;
-        margin-top: 12px;
+        margin-top: 2px;
     }
     .headerFavourite:hover,.headerGift:hover,.headerCart:hover{
         cursor: pointer;
@@ -107,7 +107,7 @@
     }
     
     .headerSearch input {
-        padding: 20px;
+        padding: 15px;
         border-radius: 50px;
         border: solid rgba(255, 255, 255, 0.58) 2px;
         width: 950px;
@@ -119,15 +119,17 @@
         
     }
     
-    .headerSearch button {
-        padding: 7px;
-        border-radius: 50px;
-        background-color: #e7a626;
-        margin-left: -55px;
-        border: none;
-        transition: background-color 0.3s ease-in-out;
-        cursor: pointer;
-    }
+     
+        .headerSearch button {
+            padding: 4px;
+            border-radius: 50px;
+            background-color: #e7a626;
+            margin-left: -50px;
+            border: none;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+    
     
      
     .headerSearch input:hover + button {
@@ -313,7 +315,7 @@
     .headerCart{
         cursor: pointer;
         padding: 10px;
-        margin-top: 12px;
+        margin-top: 2px;
     }
     .headerFavourite:hover,.headerGift:hover,.headerCart:hover{
         cursor: pointer;
@@ -383,7 +385,7 @@
     }
     
     .headerSearch input {
-        padding: 20px;
+        padding: 15px;
         border-radius: 50px;
         border: solid rgba(255, 255, 255, 0.58) 2px;
         width: 700px;
@@ -396,10 +398,10 @@
     }
     
     .headerSearch button {
-        padding: 7px;
+        padding: 4px;
         border-radius: 50px;
         background-color: #e7a626;
-        margin-left: -55px;
+        margin-left: -50px;
         border: none;
         transition: background-color 0.3s ease-in-out;
         cursor: pointer;
