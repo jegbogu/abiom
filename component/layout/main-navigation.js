@@ -224,7 +224,7 @@ const categoryFnc = (product) =>{
                         <div className={classes.headerCart}><a href="/cart"><Cart /></a> </div>
                         {totalCartdiv}
                         {content}
-                        <div className={classes.headerCartHover}>Cart</div>
+                       
                     </div>
                 </div>
             </div>
