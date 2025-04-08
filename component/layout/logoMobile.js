@@ -4,7 +4,7 @@ import Image from "next/image";
 const LogoMobile = () => {
     return ( 
       <Image
-      src='/brand.png'
+      src='/brand.webp'
       alt="logo"
       width={65}
       height = {32.5}
