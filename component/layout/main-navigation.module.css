@@ -543,7 +543,7 @@ transition: all 0.3s ease-in-out;
         display: flex;
         align-items: center;
         
-        width: 119%;
+        width: 121%;
         padding: 20px 0px; 
         background-color: #0e1012;
         gap: 0px; /* Adds spacing between elements */
@@ -579,8 +579,13 @@ transition: all 0.3s ease-in-out;
     }
     .mobileHeader .headerUsers {
         display: flex;
-        
-        gap: -5px;
+       margin-left: 10px;
+        gap: 15px;
+    
+    }
+    .mobileHeader .headerUsers div{
+     
+       padding: 0px;
     
     }
     
@@ -595,7 +600,7 @@ transition: all 0.3s ease-in-out;
         
         backdrop-filter: blur(5px);
         background: linear-gradient(300deg, rgba(0, 0, 0, 0.274) 0%, rgba(14, 14, 14, 0.502) 74%, rgba(212, 167, 190, 0.753) 100%);
-        margin-left: -295px;
+        margin-left: -285px;
         top:90px
     }
     
