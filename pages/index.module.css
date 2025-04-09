@@ -9,47 +9,47 @@
     font-weight: 900;
 }
 .discount{
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 80px;
     background-color: rgb(255, 255, 255);
 }
 .disInfo h3{
-    margin-left: 65px;
+    margin-left: 50px;
     
     margin-bottom: 10px;
-  
-    color: rgb(118, 118, 118);
+   
+    
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
     
 }
 .carousel h3{
-    color: rgb(118, 118, 118);
+     
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
-    margin-left: 65px;
-    margin-top:50px ;
+    margin-left: 50px;
+    
 }
 .categories h3{
-    color: rgb(118, 118, 118);
+   
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
     margin-left: 65px;
-    margin-top:50px ;
+    margin-top:60px ;
 }
 .productListTwo h3{
     
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
     margin-left: 65px;
-    margin-top:120px ;
+    margin-top:60px ;
 }
 .blogSection h3{
      
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
     margin-left: 75px;
-    margin-top:120px ;
+    margin-top:60px ;
 }
 .ProductCarousel{
     margin-top: -80px;

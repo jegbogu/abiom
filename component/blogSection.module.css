@@ -5,21 +5,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: -120px;
 }
 
 /* Carousel Wrapper */
 .carouselWrapper {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
-    padding: 20px 0;
+   
 }
 
 /* Carousel Container */
 .carouselContainer {
     width: 90%;
-    padding: 10px;
+  
     white-space: nowrap;
 }
 
@@ -40,27 +41,28 @@
     text-decoration: none;
     background: #fff;
     border-radius: 10px;
-    padding: 10px;
+     
     text-align: center;
     min-width: 450px;
     
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   margin-left: 20px;
     transition: transform 0.3s ease-in-out;
-    margin: 0 10px;
+   
 }
 
 .postCard:hover {
     transform: scale(1.01);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .postImage {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 8px;
 }
 
 .postName {
-    font-size: 1em;
+    font-size: 1.2em;
      
     margin-top: 10px;
     color: #333;
