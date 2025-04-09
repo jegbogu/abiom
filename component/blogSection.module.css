@@ -71,6 +71,8 @@
     overflow-wrap: break-word;
     white-space: normal; /* Ensure text wraps */
     max-width: 100%; /* Prevents overflow */
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* Navigation Buttons */
