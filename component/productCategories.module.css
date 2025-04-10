@@ -68,7 +68,7 @@
   @media screen and (max-width: 412px) {
     .carouselContainer {
     
-      width: 100%;
+      width: 120%;
       
       align-items: center;
       overflow: hidden;
@@ -83,7 +83,7 @@
     .carousel {
       display: grid;
       grid-template-columns: auto auto;
-      gap: 10px;
+      gap: 20px;
        width: 100%;
       padding: 0 3rem;
     }
@@ -119,6 +119,7 @@
       margin-top: 0.5rem;
       font-weight: 600;
       padding-left: 10px;
+      padding-bottom: 10px;
       font-family: 'Times New Roman', Times, serif;
     }
 }
