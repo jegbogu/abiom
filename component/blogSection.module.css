@@ -106,7 +106,7 @@
 @media screen and (max-width: 412px) {
     .carouselBtns {
         display: flex;
-        margin-left: 100%;
+        margin-left: 120%;
         gap: 10px;
         margin-bottom: 100px;
     }
