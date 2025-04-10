@@ -300,12 +300,13 @@
 }
          
 }
-@media screen and (max-width:450px)  {
+@media screen and (max-width:425px)  {
 
     .carouselBtns{
         margin-left: 65%;
         display: flex;
         gap: 10px;
+       
     }
     .carouselBtns button {
         width: 50px;  /* Set a fixed width */
@@ -320,6 +321,7 @@
         justify-content: center;
         cursor: pointer;
         transition: ease-in-out 3000;
+       
     }
 
 
