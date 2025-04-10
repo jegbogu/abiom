@@ -12,13 +12,17 @@
     margin-top: 20px;
     border-radius: 5px;
     font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+   
 }
 .figure{
     width: 100%;
     margin: 0px auto;
+    
 }
 .figure img{
-    width: 100%;
+    width: 240.5px;
+    height: 240.5px;
+    
     
 }
 .itemBody{
@@ -233,7 +237,7 @@
 }
          
 }
-@media screen and (max-width:375px)  {
+@media screen and (max-width:425px)  {
     .productItem{
        display: block;
          width: 100%;
@@ -257,9 +261,12 @@
    margin-top: -19.5px;
 }
         .figure img{
-            width: 100%;
+            width: 370px;
+            height: 370px;
+            margin-left: -0.5px;
  border-radius: 10px 10px 0px 0px;
         }
+       
         .itemBody{
     margin-top: 20px;
     padding: 20px;

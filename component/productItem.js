@@ -130,7 +130,7 @@ if(props.title.length>2){
 
       <div className={classes.item} >
         <div className={classes.figure} >
-          <img src={props.image} alt={props.title}  width={220} height={220} />
+          <img src={props.image} alt={props.title}   />
         </div>
 
         <div className={classes.itemBody}>
