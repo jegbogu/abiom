@@ -103,3 +103,65 @@
 .carouselBtns button:hover{
     background-color: rgba(128, 128, 128, 0.13);
 }
+@media screen and (max-width: 412px) {
+    .carouselBtns {
+        display: flex;
+        margin-left: 100%;
+        gap: 10px;
+        margin-bottom: 100px;
+    }
+    .carouselWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+       
+        margin-left: 241px;
+        margin-top: -80px;
+       
+    }
+    
+    /* Carousel Container */
+    .carouselContainer {
+        width: 100%;
+      
+        white-space: nowrap;
+    }
+    .postCard {
+        display: block; /* Ensure <a> behaves like a block element */
+        text-decoration: none;
+        background: #fff;
+        border-radius: 10px;
+         
+        text-align: center;
+        min-width: 250px;
+        
+       margin-left: 20px;
+        transition: transform 0.3s ease-in-out;
+       
+    }
+    
+    .postCard:hover {
+        transform: scale(1.01);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .postImage {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .postName {
+        font-size:1em;
+         
+        margin-top: 10px;
+        color: #333;
+        font-family: 'Times New Roman', Times, serif;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; /* Ensure text wraps */
+        max-width: 100%; /* Prevents overflow */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
