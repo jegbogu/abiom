@@ -10,50 +10,76 @@
      width: 95%;
     background-color: black;
     margin-top: 20px;
-    border-radius: 0px;
-    cursor: pointer;
-    transition: ease-in-out 0.3s;
+    border-radius: 5px;
     font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-}
-.item:hover{
-    box-shadow: 1px 2px 8px rgba(91, 90, 90, 0.858);
+   
 }
 .figure{
     width: 100%;
     margin: 0px auto;
-   
+    
 }
+/* .figure img{
+    width: 349.5px;
+    height: 349.5px
+    
+    
+} */
 .figure img{
     
-        width: 285px;
-        height: 285px
-        
-        
-   
+    width: 100%;
+  
     
-    
+
+
+
 }
- 
- 
 .itemBody{
     margin-top: 0px;
     padding: 20px;
 }
-.itemBody h3{
-    margin: -10px 0px 0px 0px;
+.itemBody h5 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: 1px solid gray;
+    z-index: 10;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+  }
+  
+  .itemBody h3 {
+    margin: -10px 0 0 0;
     color: white;
-    font-size:  15px;
-}
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Show h5 when hovering over h3 */
+  .itemBody h3:hover + h5 {
+    display: block;
+  }
+  
+
 .itemBody p{
-    margin: 20px 0px 20px 0px;
-    color: white;
+    margin: 10px 0px 10px 0px;
+    color: rgb(234, 136, 24);
+    ;
+    font-size: 20px;
+     margin:'10px 0px 0px 0px';
+    
 }
+
 .itemBody button{
     background-color: var(--s-col);
     padding: 10px 5px 10px 5px;
     border: none;
     border-radius: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 900;
     cursor: pointer;
     font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
@@ -96,6 +122,7 @@
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
+    
     
 }
 .cartBtnTwo button{
@@ -162,7 +189,7 @@
 }
 .itemBody button{
     background-color: var(--s-col);
-    padding: 10px 5px 10px 5px;
+    padding: 10px 20px 10px 20px;
     border: none;
     border-radius: 5px;
     color: white;
@@ -171,7 +198,7 @@
 }
 .itemBody button:hover{
     background-color: var(--p-col);
-    padding: 10px 5px 10px 5px;
+    padding: 10px 20px 10px 20px;
     border: none;
      
 }
@@ -180,7 +207,7 @@
 }
 .itemBody span button{
     background-color: rgba(255, 68, 0, 0);
-    padding: 10px 5px 10px 5px;
+    padding: 10px 20px 10px 20px;
     border:solid  var(--s-col) 1px;
     border-radius: 5px;
     cursor:pointer;
@@ -188,7 +215,7 @@
 }
 .itemBody span button:hover{
     background-color: rgba(255, 68, 0, 0);
-    padding: 10px 5px 10px 5px;
+    padding: 10px 20px 10px 20px;
     border:solid  var(--p-col) 1px;
     border-radius: 5px;
      
@@ -219,7 +246,7 @@
 }
          
 }
-@media screen and (max-width:425px)  {
+@media screen and (max-width:412px)  {
     .productItem{
        display: block;
          width: 100%;
@@ -230,125 +257,88 @@
          
         }
         .item{
-
-            width: 100%;
-           background-color: black;
-         
-           border-radius: 5px;
-           cursor: pointer;
-           transition: ease-in-out 0.3s;
-           font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-       }
-       .item:hover{
-           box-shadow: 1px 2px 8px rgba(91, 90, 90, 0.858);
-       }
-       .figure{
-           width: 100%;
-           
-          
-       }
-       .figure img{
-          width: 325px;
+ 
+    
+     width: 100%;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+        .figure{
+    width: 100%;
+  
+   margin-top: -19.5px;
+}
+        .figure img{
+            width: 325px;
             height: 325px;
             margin-left: -0.5px;
-           
-           
-       }
-        
-        
-       .itemBody{
-           margin-top: 0px;
-           padding: 20px;
-       }
-       .itemBody h3{
-           margin: -10px 0px 0px 0px;
-           color: white;
-           font-size:  15px;
-       }
-       .itemBody p{
-           margin: 20px 0px 20px 0px;
-           color: white;
-       }
-       .itemBody button{
-           background-color: var(--s-col);
-           padding: 10px 5px 10px 5px;
-           border: none;
-           border-radius: 5px;
-           color: white;
-           font-weight: 900;
-           cursor: pointer;
-           font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-           font-size: 15px;
-       }
-       .itemBody button:hover{
-           background-color: var(--p-col);
-           padding: 10px 5px 10px 5px;
-           border: none;
-            
-       }
-       .itemBody span{
-           margin-left: 20px;
-       }
-       .itemBody span button{
-           background-color: rgba(255, 68, 0, 0);
-           padding: 10px 5px 10px 5px;
-           border:solid  var(--s-col) 1px;
-           border-radius: 5px;
-           cursor:pointer;
-           color: white;
-           font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-           font-size: 15px;
-       }
-       .itemBody span button:hover{
-           background-color: rgba(255, 68, 0, 0);
-           padding: 10px 5px 10px 5px;
-           border:solid  var(--p-col) 1px;
-           border-radius: 5px;
-            
-       }
-       .cartBtn{
-           display: inline;
-       }
-       .cartBtnOne,.cartBtnTwo,.cartBtnThree{
-           display: inline;
-         
-       }
-       .cartBtnOne button{
-           background-color: black;
-           border-color: var(--p-col);
-           border-radius: 0%;
-           
-       }
-       .cartBtnTwo button{
-           background-color: rgb(76, 52, 0);
-           border-color: var(--p-col);
-           border-radius: 0%;
-          
-       }
-       .cartBtnThree button{
-           background-color: black;
-           border-color: var(--p-col);
-           border-radius: 0%;
-       }
-       .trash{
-           margin-top: 5%;
-           cursor: pointer;
-       }
-       .qty{
-           color: aliceblue;
-       }
-       .cart{
-           background-color:var(--p-col);
-           width: 10%;
-           border-top-left-radius: 100px;
-           border-top-right-radius: 20px;
-           border-bottom-right-radius: 20px;
-           border-bottom-left-radius: 40px;
-          margin-top: 10px;
-           font-family: cursive;
-           color: black;
-           
-        
-       }
+ border-radius: 10px 10px 0px 0px;
+        }
+       
+        .itemBody{
+    margin-top: 20px;
+    padding: 20px;
+}
+.itemBody button{
+    background-color: var(--s-col);
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+.itemBody button:hover{
+    background-color: var(--p-col);
+    padding: 10px 20px 10px 20px;
+    border: none;
+     
+}
+.itemBody span{
+    margin-left: 20px;
+}
+.itemBody span button{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 10px 10px 10px 10px;
+    border:solid  var(--s-col) 1px;
+    border-radius: 5px;
+    cursor:pointer;
+    color: white;
+}
+.itemBody span button:hover{
+    background-color: rgba(255, 68, 0, 0);
+    padding: 10px 20px 10px 20px;
+    border:solid  var(--p-col) 1px;
+    border-radius: 5px;
+     
+}
+.cartBtn{
+    display: inline;
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
+    display: inline;
+  
+}
+.cartBtnOne button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+    
+}
+.cartBtnTwo button{
+    background-color: rgb(76, 52, 0);
+    border-color: var(--p-col);
+    border-radius: 0%;
+   
+}
+.cartBtnThree button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+}
          
 }
+
+ 
+  

@@ -6,8 +6,8 @@ const Logo = () => {
       <Image
       src='/brand.webp'
       alt="logo"
-      width={140}
-      height = {70}
+      width={120}
+      height = {50}
       />
 
     

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import classes from './productItem.module.css';
+import classes from './productItemCategory.module.css';
 import { useState } from 'react';
 import Spinner from '../icons/spinner';
 import { useContext } from 'react';
@@ -134,7 +134,7 @@ function ProductItemCategories(props) {
   
         <div className={classes.item} >
           <div className={classes.figure} >
-            <img src={props.image} alt={props.title}  width={220} height={220} />
+            <img src={props.image} alt={props.title}    />
           </div>
   
           <div className={classes.itemBody}>
