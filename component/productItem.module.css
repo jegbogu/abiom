@@ -240,7 +240,7 @@
 @media screen and (max-width:412px)  {
     .productItem{
        display: block;
-         width: 90%;
+         width: 88%;
          margin-top: 20px;
          background-color: black;
          border-radius: 10px;
@@ -250,7 +250,7 @@
         .item{
  
     
-     width: 90%;
+     width: 88%;
     background-color: black;
     margin-top: 20px;
     border-radius: 10px;
@@ -261,8 +261,8 @@
    margin-top: -19.5px;
 }
         .figure img{
-            width: 370px;
-            height: 370px;
+            width: 325px;
+            height: 325px;
             margin-left: -0.5px;
  border-radius: 10px 10px 0px 0px;
         }
