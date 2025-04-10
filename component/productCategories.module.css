@@ -63,8 +63,9 @@
     
     font-family: 'Times New Roman', Times, serif;
     font-family: 1.3em;
-    text-align: center;
+    text-align: start;
     padding-bottom: 10px;
+    padding-left: 30px;
 
   }
   @media screen and (max-width: 412px) {
