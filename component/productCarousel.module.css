@@ -300,7 +300,7 @@
 }
          
 }
-@media screen and (max-width:425px)  {
+@media screen and (max-width:412px)  {
 
     .carouselBtns{
         margin-left: 65%;
@@ -349,7 +349,9 @@
    margin-top: -19.5px;
 }
         .figure img{
-            width: 100%;
+            width: 325px;
+            height: 325px;
+            margin-left: -0.5px;
  border-radius: 10px 10px 0px 0px;
         }
         .itemBody{

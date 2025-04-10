@@ -243,7 +243,9 @@
           
        }
        .figure img{
-           width: 100%;
+        width: 390px;
+        height: 390px;
+        margin-left: -0.5px;
            
            
        }
