@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-import ProductList from '../component/productList'
+import ProductListShop from '@/component/productListShop';
 import Head from 'next/head';
 import { Fragment } from 'react';
  import Layout from '@/component/layout/layout'; // Use Layout instead of directly using MainNavigation
@@ -16,7 +16,7 @@ const Shop = (props) => {
       </Head>
      
       <h1 className={classes.prod}>Our Products</h1>
-      <ProductList products={props.products}/>
+      <ProductListShop products={props.products}/>
      
     </Fragment>
       
