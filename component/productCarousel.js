@@ -41,10 +41,11 @@ const productTomap = productOne.concat(stockFish,productTwo)
   );
 }
 
-function ProductItem({ product }) {
-  const [spinner, setSpinner] = useState(false)
+function ProductItem(props) {
+ 
+    const [spinner, setSpinner] = useState(false)
   const [show, setShow] = useState(false)
-
+ 
 
 
   const [count, setCount] = useState(0)
@@ -53,25 +54,25 @@ function ProductItem({ product }) {
 
   function showDetailsHandler() {
     setSpinner(<Spinner />)
-    router.push('/shop/' + product.id);
+    router.push('/shop/' + props.product.id);
 
   }
 
 
   function displayCartBtn() {
 
-    const prodValue = cartCtx.productIsInCart(product.id)
+    const prodValue = cartCtx.productIsInCart(props.product.id)
     if (prodValue) {
       router.push('/cart')
     } else {
       setShow(!show)
       cartCtx.addCarts({
-        id: product.id,
-        title: product.title,
-        description: product.description,
-        image: product.image,
-        price: product.price,
-        qty: product.qty,
+        id: props.product.id,
+        title: props.product.title,
+        description: props.product.description,
+        image: props.product.image,
+        price: props.product.price,
+        qty: props.product.qty,
       })
       setCount(1)
       //  console.log(cartCtx.carts)
@@ -87,21 +88,21 @@ function ProductItem({ product }) {
 
 
   function addHandler() {
-    const prodValue = cartCtx.productIsInCart(product.id)
+    const prodValue = cartCtx.productIsInCart(props.id)
     if (prodValue) {
-      const prodObj = cartCtx.carts.find(product => product.id === product.id)
+      const prodObj = cartCtx.carts.find(product => product.id === props.product.id)
       prodObj.qty = prodObj.qty + 1
       setCount(count + 1)
       cartCtx.totalQty()
 
     } else {
       cartCtx.addCarts({
-        id: product.id,
-        title: product.title,
-        description: product.description,
-        image: product.image,
-        price: product.price,
-        qty: product.qty,
+        id: props.product.id,
+        title: props.product.title,
+        description: props.product.description,
+        image: props.product.image,
+        price: props.product.price,
+        qty: props.product.qty,
       })
 
       setCount(count + 1)
@@ -116,11 +117,11 @@ function ProductItem({ product }) {
       setCount(0)
       return;
     }
-    const prodValue = cartCtx.productIsInCart(product.id)
-    const prodObj = cartCtx.carts.find(product => product.id === product.id)
+    const prodValue = cartCtx.productIsInCart(props.product.id)
+    const prodObj = cartCtx.carts.find(product => product.id === props.product.id)
     const checkQty = prodObj.qty
     if (prodValue && checkQty === 1) {
-      cartCtx.removeCart(product.id)
+      cartCtx.removeCart(props.product.id)
       prodObj.qty = prodObj.qty - 1
       setCount(0)
       cartCtx.totalQty()
@@ -134,9 +135,9 @@ function ProductItem({ product }) {
   }
 
   let showCart;
-  const prodValue = cartCtx.productIsInCart(product.id)
+  const prodValue = cartCtx.productIsInCart(props.id)
   if (prodValue) {
-    const prodObj = cartCtx.carts.find(product => product.id === product.id)
+    const prodObj = cartCtx.carts.find(product => product.id === props.product.id)
     const checkQty = prodObj.qty
     showCart = <div className={classes.cart}> <CartIcon />{checkQty}</div>
 
@@ -146,12 +147,12 @@ function ProductItem({ product }) {
     <div className={classes.productItem}>
        <div className={classes.item}>
         <div className={classes.figure}>
-          <img src={product.image} alt={product.title} width={220} height={220} />
+          <img src={props.product.image} alt={props.product.title} width={220} height={220} />
         </div>
 
         <div className={classes.itemBody}>
-          <h3>{product.title}</h3>
-          <p style={{color:'orange',fontSize:'19.01px', margin:'10px 0px 10px 0px'}}>Price: ${product.price}</p>
+          <h3>{props.product.title}</h3>
+          <p style={{color:'orange',fontSize:'19.01px', margin:'10px 0px 10px 0px'}}>Price: ${props.product.price}</p>
           {show ?
             (<div className={classes.cartBtn}>
               <div className={classes.cartBtnOne}>

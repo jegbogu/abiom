@@ -22,6 +22,7 @@ function ProductDetails(props) {
           description={props.productData.description}
           qty={props.productData.qty}
           price={props.productData.price}
+          outOfStock={props.productData.outOfStock}
           id={props.productData.id}
         />
         <h1 className={classes.otherProd}>Products You May be Interested in</h1>
@@ -74,6 +75,7 @@ export async function getStaticProps(context) {
           category: 1,
           image: 1,
           nutrition: 1,
+          outOfStock: 1,
           description: 1,
           qty: 1
         }
@@ -105,6 +107,7 @@ export async function getStaticProps(context) {
           image: selectedProduct.image,
           nutrition: selectedProduct.nutrition,
           description: selectedProduct.description,
+          outOfStock: selectedProduct.outOfStock,
           qty: Number(selectedProduct.qty),
         },
         products: relatedProducts.map((product) => ({
@@ -115,6 +118,7 @@ export async function getStaticProps(context) {
           image: product.image,
           nutrition: product.nutrition,
           description: product.description,
+          outOfStock: product.outOfStock,
           qty: Number(product.qty),
         })),
         categories,

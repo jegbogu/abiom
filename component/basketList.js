@@ -12,6 +12,7 @@ function BasketList(props) {
                     price={product.price}
                     image={product.image}
                     qty={product.qty}
+                    outOfStock={product.outOfStock}
                     description={product.description}
 
                 />

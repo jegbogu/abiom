@@ -12,6 +12,8 @@ import CartIcon from '@/icons/cartIcon';
 
 
 function BasketItem(props) {
+
+  // console.log("BasketItem", props)
   const [spinner, setSpinner] = useState(false)
   const [show, setShow] = useState(false)
 
@@ -42,6 +44,7 @@ function BasketItem(props) {
         image: props.image,
         price: props.price,
         qty: props.qty,
+        outOfStock: props.outOfStock
       })
       setCount(1)
       //  console.log(cartCtx.carts)
@@ -72,6 +75,7 @@ function BasketItem(props) {
         image: props.image,
         price: props.price,
         qty: props.qty,
+        outOfStock: props.outOfStock
       })
 
       setCount(count + 1)
@@ -114,7 +118,13 @@ function BasketItem(props) {
 
   let TruePrice = Number(props.price)   + Number(0.1*props.price) +0.5
 
-
+//////Out of stock ///////////////////////
+let outOfStock;
+if (props.outOfStock === false) {
+outOfStock = " "  
+}else{
+  outOfStock =  <p className={classes.outOfStock}>Out of Stock</p>
+}
 
 
 
@@ -122,11 +132,14 @@ function BasketItem(props) {
   return (
 
     <li className={classes.productItem}>
+     
 
       <div className={classes.item}>
+     
         <div className={classes.figure}>
+       
           <img src={props.image} alt={props.title}   />
-         
+          {outOfStock}
         </div>
         <div className={classes.discount}>
           <h2 style={{color:'orange',marginLeft:'30px', fontSize:'13px'}}>-10%</h2>
@@ -153,6 +166,7 @@ function BasketItem(props) {
           <span><button onClick={showDetailsHandler}>Show Details{spinner}</button></span>
         </div>
         {showCart}
+       
       </div>
 
 

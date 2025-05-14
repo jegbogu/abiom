@@ -74,7 +74,7 @@ export async function getServerSideProps() {
 
   // Fetch all products
   const products = await productsCollection
-    .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 } })
+    .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 , outOfStock: 1} })
     .toArray();
 
   // Fetch distinct categories
@@ -93,6 +93,9 @@ export async function getServerSideProps() {
         nutrition: product.nutrition,
         description: product.description,
         qty: Number(product.qty),
+        outOfStock: product.outOfStock
+        
+        
       })),
       basketProducts: products
         .filter((product) => product.category === "basket") // Filter in-memory
@@ -105,6 +108,7 @@ export async function getServerSideProps() {
           nutrition: product.nutrition,
           description: product.description,
           qty: Number(product.qty),
+          outOfStock: product.outOfStock,
         })),
       categories,  
     },

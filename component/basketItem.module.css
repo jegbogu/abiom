@@ -14,24 +14,36 @@
     cursor: pointer;
     transition: ease-in-out 0.3s;
     font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    overflow: hidden;
 }
 .item:hover{
     box-shadow: 1px 2px 8px rgba(91, 90, 90, 0.858);
 }
-.figure{
+.figure {
+    position: relative; /* Important to contain absolutely positioned children */
     width: 100%;
-    margin: 0px auto;
-   
-}
-.figure img{
-    
+    margin: 0 auto;
+  }
+  
+  .figure img {
     width: 100%;
-        
-        
-   
+    display: block;
     
-    
-}
+  }
+  
+  .outOfStock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 99, 71, 0.8); /* tomato with transparency */
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 12px;
+    font-weight: bold;
+    z-index: 2;
+  }
+  
  
  
 .itemBody{

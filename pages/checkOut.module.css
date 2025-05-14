@@ -1,129 +1,61 @@
- 
-.section{
-    margin: 50px auto;
-    width: 50%;
-    padding: 100px  200px 100px 200px;
-    border: solid var(--p-col) 1px;
-    border-radius: 10px;
-}
-.section button{
-    background-color: var(--p-col);
-    padding: 20px 40px 20px 40px;
-    font-weight: bolder;
-    font-size: 1.8em;
+.checkout {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    font-family: sans-serif;
+  }
+  
+  .section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .amount {
+    color: #2e7d32;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+  
+  .figure {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .cardFields {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .billingForm {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .billingForm input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .payButton {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: #0070ba;
+    color: white;
     border: none;
-    border-radius: 10px;
-    margin-top: 50px;
-    color: black;
- 
-}
-.section button:hover{
-    background-color: rgb(255, 255, 255);
-    border: solid 1px var(--p-col);
-    color: black;
-    
-}
-.section span{
-    font-family: 'Times New Roman', Times, serif;
-    color: var(--p-col);
-    font-size: 1.4em;
-}
- .figure{
-    margin:20px auto ;
- }
- @media screen and (max-width:1028px) {
-    .section{
-        margin: 50px auto;
-        width: 70%;
-        padding: 100px  200px 100px 200px;
-        border: solid var(--p-col) 1px;
-        border-radius: 10px;
-    }
-    .section button{
-        background-color: var(--p-col);
-        padding: 20px 40px 20px 40px;
-        font-weight: bolder;
-        font-size: 1.8em;
-        border: none;
-        border-radius: 10px;
-        margin-top: 50px;
-     
-    }
-    .section button:hover{
-        background-color: rgb(255, 255, 255);
-        border: solid 1px var(--p-col);
-        
-    }
-    .section span{
-        font-family: 'Times New Roman', Times, serif;
-        color: var(--p-col);
-        font-size: 1.4em;
-    }
-     .figure{
-        margin:20px auto ;
-     }
- }
- @media screen and (max-width:780px) {
-    .section{
-        margin: 100px auto;
-        width: 90%;
-        padding: 100px  200px 100px 200px;
-        border: solid var(--p-col) 1px;
-        border-radius: 10px;
-    }
-    .section button{
-        background-color: var(--p-col);
-        padding: 20px 40px 20px 40px;
-        font-weight: bolder;
-        font-size: 1.8em;
-        border: none;
-        border-radius: 10px;
-        margin-top: 50px;
-     
-    }
-    .section button:hover{
-        background-color: rgb(255, 255, 255);
-        border: solid 1px var(--p-col);
-        
-    }
-    .section span{
-        font-family: 'Times New Roman', Times, serif;
-        color: var(--p-col);
-        font-size: 1.4em;
-    }
-     .figure{
-        margin:20px auto ;
-     }
- }
- @media screen and (max-width:450px) {
-    .section{
-        margin: 100px auto;
-        width: 90%;
-        padding: 50px  50px 50px 50px;
-        border: solid var(--p-col) 1px;
-        border-radius: 10px;
-    }
-    .section button{
-        background-color: var(--p-col);
-        padding: 20px 40px 20px 40px;
-        font-weight: bolder;
-        font-size: 1.8em;
-        border: none;
-        border-radius: 10px;
-        margin-top: 50px;
-     
-    }
-    .section button:hover{
-        background-color: rgb(255, 255, 255);
-        border: solid 1px var(--p-col);
-        
-    }
-    .section span{
-        font-family: 'Times New Roman', Times, serif;
-        color: var(--p-col);
-        font-size: 1.4em;
-    }
-     .figure{
-        margin:20px auto ;
-     }
- }
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .payButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
