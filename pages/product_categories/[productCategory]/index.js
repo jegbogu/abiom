@@ -71,45 +71,54 @@ export async function getStaticProps(context) {
     const db = client.db();
     const productsCollection = db.collection("products");
 
-    const productsCategory = await productsCollection.find({ category: productCategory }).toArray();
+    // Fetch products for the specific category
+    const productsCategory = await productsCollection
+      .find({ category: productCategory })
+      .project({
+        _id: 1,
+        title: 1,
+        price: 1,
+        category: 1,
+        image: 1,
+        nutrition: 1,
+        description: 1,
+        qty: 1,
+        outOfStock: 1
+      })
+      .toArray();
+
+    // Fetch all categories
     const categories = await productsCollection.distinct("category");
 
-    const products = await productsCollection
-      .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 } })
+    // Optionally fetch all products for layout or other use if needed
+    const allProductsRaw = await productsCollection
+      .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1, outOfStock: 1 } })
       .toArray();
 
     client.close();
 
+    // Sanitize and serialize
+    const sanitizeProduct = (product) => ({
+        id: product._id.toString(),
+        title: product.title,
+        price: product.price,
+        category: product.category,
+        image: product.image,
+        nutrition: product.nutrition,
+        description: product.description,
+        qty: Number(product.qty),
+        outOfStock: product.outOfStock ?? null,
+    });
+
     return {
         props: {
             categoryTitle: productCategory,
-            products: productsCategory.map(product => ({
-                title: product.title,
-                price: product.price,
-                image: product.image,
-                category: product.category,
-                nutrition: product.nutrition,
-                description: product.description,
-                outOfStock: product.outOfStock,
-                qty: Number(product.qty),
-                id: product._id.toString(),
-            })),
-            allProducts: products.map(product => ({
-                id: product._id.toString(),
-                title: product.title,
-                price: product.price,
-                category: product.category,
-                image: product.image,
-                nutrition: product.nutrition,
-                description: product.description,
-                qty: Number(product.qty),
-                outOfStock: product.outOfStock,
-            })),
+            products: productsCategory.map(sanitizeProduct),
+            allProducts: allProductsRaw.map(sanitizeProduct),
             categories,
         },
         revalidate: 1,
     };
-    
 }
 
 export default ProductCategories;
