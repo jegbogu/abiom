@@ -36,7 +36,7 @@ function CheckOut(props) {
   }, [cart]);
 
   const initialOptions = {
-"client-id": process.env.PAYPAL_CLIENT_ID,
+"client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
   currency: "USD",
   components: "buttons,card-fields"
 };
