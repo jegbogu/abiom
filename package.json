@@ -25,7 +25,8 @@
     "nodemailer": "^6.10.1",
     "react": "18.2.0",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1"

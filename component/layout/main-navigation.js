@@ -211,7 +211,7 @@ const categoryFnc = (product) =>{
 
                 <div className={classes.headerUsers}>
                     <div className={classes.headerItem}>
-                        <div className={classes.headerFavourite}><Favourite /></div>
+                        <div className={classes.headerFavourite}><a href={"/favourites"}> <Favourite /> </a> </div>
                         <div className={classes.headerFavouriteHover}>Favourite</div>
                     </div>
 

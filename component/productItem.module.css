@@ -5,6 +5,10 @@
     display: none;
 }
 
+
+
+
+
 .item{
 
      width: 95%;
@@ -12,7 +16,11 @@
     margin-top: 20px;
     border-radius: 5px;
     font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    transition: ease-in-out 300ms;
    
+}
+.item:hover{
+box-shadow: gray 1px 2px 3px;
 }
 .figure{
     width: 100%;
@@ -25,6 +33,23 @@
     
     
 }
+
+
+.favIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.figure {
+  position: relative;
+}
+
+
 .itemBody{
     margin-top: 0px;
     padding: 20px;

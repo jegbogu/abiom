@@ -1,30 +1,30 @@
-import CartList from '../component/cartList';
+ import FavouriteList from '@/component/favouriteList';
 import { useContext,useState,useEffect } from 'react';
-import CartsContext from '../store/product-context'
+ 
+import FavouriteContext from '@/store/favourite-context';
 import classes from './cart.module.css'
 import Link from 'next/link';
-import CheckOutOrShop from '@/component/checkoutOrShop';
+import FavouritesOrAdd from '@/component/favouritesOrAdd';
 import Layout from '@/component/layout/layout'; 
 import { MongoClient } from 'mongodb';
   
-function ShopingCart(props){
-    const cartCtx = useContext(CartsContext)
-  
-  
+function Favourites(props){
+    const favCtx = useContext(FavouriteContext)
+     
     return(
         <Layout categories={props.categories} products={props.products}> 
 <section className={classes.section}>
-    <h1>Items You Shopped</h1>
+    <h1>Items You in favourite</h1>
     
-    <CartList products={cartCtx.carts}/>
-    <CheckOutOrShop/>
+    <FavouriteList products={favCtx.favourite}/>
+    <FavouritesOrAdd/>
      
 </section>
 </Layout>
     )
 }
 
-export default ShopingCart
+export default Favourites
 
 export async function getServerSideProps() {
   const client = await MongoClient.connect(process.env.DB);
