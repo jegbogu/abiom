@@ -107,7 +107,7 @@ export async function getStaticProps(context) {
           image: selectedProduct.image,
           nutrition: selectedProduct.nutrition,
           description: selectedProduct.description,
-          outOfStock: selectedProduct.outOfStock,
+          outOfStock: selectedProduct.outOfStock ?? null,
           qty: Number(selectedProduct.qty),
         },
         products: relatedProducts.map((product) => ({
@@ -118,7 +118,7 @@ export async function getStaticProps(context) {
           image: product.image,
           nutrition: product.nutrition,
           description: product.description,
-          outOfStock: product.outOfStock,
+          outOfStock: product.outOfStock ?? null,
           qty: Number(product.qty),
         })),
         categories,
