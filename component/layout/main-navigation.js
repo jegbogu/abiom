@@ -233,7 +233,8 @@ const categoryFnc = (product) =>{
                 <div><p><a href={`/product_categories/basket`}>Gifts</a> </p></div>
                 <div><p><a a href={`/product_categories/food and soup`}>Sellers Deal</a> </p></div>
                 <div><p><a a href={`/product_categories/home appliences`}>Home Favourites </a></p></div>
-                <div><p>Fashion</p></div>
+                <div><p><a a href={`/shop`}>All Products </a></p></div>
+                
             </div>
 
             {/* Category Dropdown */}

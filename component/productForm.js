@@ -11,6 +11,7 @@ function ProductForm(props) {
   const qtyInputRef = useRef();
   const nutritionInputRef = useRef()
   const descriptionInputRef = useRef();
+  const stockinputRef = useRef();
   const router = useRouter();
   const [spinner, setSpinner] = useState(false)
   function showDetailsHandler() {
@@ -30,6 +31,7 @@ function ProductForm(props) {
     const enteredNutrition = nutritionInputRef.current.value
     const enteredDescription = descriptionInputRef.current.value;
     const enteredQty = qtyInputRef.current.value;
+    const enteredStockInput = stockinputRef.current.value;
 
     const productData = {
       title: enteredTitle,
@@ -39,6 +41,7 @@ function ProductForm(props) {
       qty: enteredQty,
       nutrition: enteredNutrition,
       description: enteredDescription,
+      stockinput: enteredStockInput,
     };
 
     props.onAddProduct(productData)
@@ -67,6 +70,13 @@ function ProductForm(props) {
         <div className={classes.control}>
           <label htmlFor='qty'>Product Quantity</label>
           <input type='number' required id='qty' ref={qtyInputRef} />
+        </div>
+        <div className={classes.control}>
+          <label htmlFor='stockinput'>Stock status</label>
+          <select id='stockinput' ref={stockinputRef}>
+            <option value='true'>true</option>
+            <option value='false'>false</option>
+          </select>
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Product Description</label>

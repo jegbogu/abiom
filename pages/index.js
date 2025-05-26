@@ -67,14 +67,26 @@ const Home = (props) => {
   );
 };
 
-export async function getServerSideProps() {
+ export async function getServerSideProps() {
   const client = await MongoClient.connect(process.env.DB);
   const db = client.db();
   const productsCollection = db.collection("products");
 
   // Fetch all products
   const products = await productsCollection
-    .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 , outOfStock: 1} })
+    .find({}, {
+      projection: {
+        _id: 1,
+        title: 1,
+        price: 1,
+        category: 1,
+        image: 1,
+        nutrition: 1,
+        description: 1,
+        qty: 1,
+        outOfStock: 1
+      }
+    })
     .toArray();
 
   // Fetch distinct categories
@@ -93,12 +105,10 @@ export async function getServerSideProps() {
         nutrition: product.nutrition,
         description: product.description,
         qty: Number(product.qty),
-        outOfStock: product.outOfStock
-        
-        
+        outOfStock: product.outOfStock ?? null, // Use null if undefined
       })),
       basketProducts: products
-        .filter((product) => product.category === "basket") // Filter in-memory
+        .filter((product) => product.category === "basket")
         .map((product) => ({
           id: product._id.toString(),
           title: product.title,
@@ -108,11 +118,12 @@ export async function getServerSideProps() {
           nutrition: product.nutrition,
           description: product.description,
           qty: Number(product.qty),
-          outOfStock: product.outOfStock,
+          outOfStock: product.outOfStock ?? null, // Use null if undefined
         })),
-      categories,  
+      categories,
     },
   };
 }
+
 
 export default Home;

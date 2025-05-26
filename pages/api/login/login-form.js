@@ -8,6 +8,7 @@ async function handler(req, res) {
 
   try {
     const { username, password } = req.body;
+    // console.log({ username, password } )
 
     // Connect to the database
     const client = await MongoClient.connect(process.env.DB, {
@@ -16,7 +17,7 @@ async function handler(req, res) {
     });
 
     const db = client.db();
-    const user = await db.collection('adminusers').findOne({ username });
+    const user = await db.collection('adminusers').findOne({ email:username });
 
     if (!user) {
       return res.status(403).json({ message: 'User not found' });
@@ -28,7 +29,8 @@ async function handler(req, res) {
       return res.status(403).json({ message: 'Invalid password' });
     }
 
-    return res.status(200).json({ message: 'Login successful', user });
+    // Optionally, you can remove the password field from the user object before sending it back
+     res.status(200).json({ user });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Internal Server Error' });

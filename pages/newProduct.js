@@ -1,10 +1,11 @@
 
 import { Fragment } from "react";
-import ProductForm from "../../component/productForm";
+import ProductForm  from "../component/productForm"
 import Head from "next/head";
 import DashboardNavbar from "@/dashboard/dashboardNavbar";
-import classes from './index.module.css'
+import classes from './newProduct.module.css';
 import { useSession } from "next-auth/react";
+import { data } from "./api/regions";
 
  
  
@@ -13,7 +14,7 @@ import { useSession } from "next-auth/react";
  
 function NewProduct() { 
 const{data:session, status}  =  useSession()
-  
+   
   async function submitHandler(productData){
 
     const response = await fetch('api/new-product',{
@@ -27,12 +28,12 @@ const{data:session, status}  =  useSession()
   
      }
      
-     if(status === 'loading'){
-      return <p>Loading</p> 
-    }
-    if(status === 'unauthenticated'){
-      return <div className={classes.access}><p>Access Denied</p></div>
-    }
+    //  if(status === 'loading'){
+    //   return <p>Loading</p> 
+    // }
+    // if(status === 'unauthenticated'){
+    //   return <div className={classes.access}><p>Access Denied</p></div>
+    // }
     
   return ( 
     <Fragment>
