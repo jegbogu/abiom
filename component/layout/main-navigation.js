@@ -201,7 +201,7 @@ const categoryFnc = (product) =>{
                             <ul>
                                 {filteredProducts.map((product, index) => (
                                     <li key={index} onClick={()=> (categories.includes(product)?categoryFnc(product):prodFnc(product))}>
-                                        <a >{product.title || product}</a>
+                                        <a href="#">{product.title || product}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -290,7 +290,7 @@ const categoryFnc = (product) =>{
                             <ul>
                                 {filteredProducts.map((product, index) => (
                                     <li key={index} onClick={()=> (categories.includes(product)?categoryFnc(product):prodFnc(product))}>
-                                        <a >{product.title || product}</a>
+                                        <a href="#">{product.title || product}</a>
                                     </li>
                                 ))}
                             </ul>
