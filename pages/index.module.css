@@ -1,102 +1,90 @@
-.section{
-    background-color:#FAF8F4;
+.section {
+  background-color: #faf8f4;
 }
-.prod{
-    text-align: center;
-    color: var(--s-col);
-    margin-top: 100px;
-    margin-bottom: 20px;
-    font-weight: 900;
+.prod {
+  text-align: center;
+  color: var(--s-col);
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-weight: 900;
 }
-.discount{
-    padding-top: 50px;
-    padding-bottom: 80px;
-    background-color: rgb(255, 255, 255);
+.discount {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  background-color: rgb(255, 255, 255);
 }
-.disInfo h3{
-    margin-left: 50px;
-    color: black;
-    margin-bottom: 10px;
-   
-    
-    font-size: 2em;
-    font-family: "Open Sans", sans-serif;
-    
+.disInfo h3 {
+  padding-inline: 1rem;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 2em;
 }
-.carousel h3{
-     
-    font-size: 2em;
-    font-family: "Open Sans", sans-serif;
-    margin-left: 50px;
-    
+.carousel h3 {
+  font-size: 2em;
+  width: fit-content;
+  /* margin-left: 50px; */
 }
-.categories h3{
-   
-    font-size: 2em;
-    font-family: "Open Sans", sans-serif;
-    margin-left: 65px;
-    margin-top:60px ;
+.categories h3 {
+  font-size: 2em;
+  /* margin-left: 65px; */
+  padding-inline: 1rem;
+  margin-top: 60px;
 }
-.productListTwo h3{
-    
-    font-size: 2em;
-    font-family: "Open Sans", sans-serif;
-    margin-left: 65px;
-    margin-top:60px ;
-}
-.blogSection h3{
-     
-    font-size: 2em;
-    font-family: "Open Sans", sans-serif;
-    margin-left: 75px;
-    margin-top:60px ;
-}
-.ProductCarousel{
-    margin-top: -80px;
-}
-.Productcategories{
-    margin-top: 20px;
-}
- 
+.productListTwo h3 {
+  font-size: 2em;
+  padding-inline: 1rem;
 
- 
-@media screen and (max-width:780px){
-    .leaf{
-        margin-left: 30%;
-    }
-    .article{
-        width: 80%;
-    }
+  /* margin-left: 65px; */
+  margin-top: 60px;
+}
+.blogSection h3 {
+  font-size: 2em;
+  padding-inline: 1rem;
+
+  /* margin-left: 75px; */
+  margin-top: 60px;
+}
+.ProductCarousel {
+  /* margin-top: -80px; */
+  @apply gap-4;
+}
+.Productcategories {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .leaf {
+    /* margin-left: 30%; */
+  }
+  .article {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 425px) {
-    .carousel h3{
-       
-        font-size: 2em;
-        font-family: "Open Sans", sans-serif;
-        margin-left: 15px;
-        margin-top:10px ;
-    }
-    .categories h3,.blogSection h3,.productListTwo h3{
-     
-        font-size: 2em;
-        font-family: "Open Sans", sans-serif;
-        margin-left: 15px;
-        margin-top:50px ;
-    }
-    .discount{
-        padding-top: 50px;
-        padding-bottom: 80px;
-        background-color: rgb(255, 255, 255);
-    }
-    .disInfo h3{
-        margin-left: 15px;
-        color: black;
-        margin-bottom: 10px;
-      
-       
-        font-size: 2em;
-        font-family: "Open Sans", sans-serif;
-        
-    }
+  .carousel h3 {
+    font-size: 2em;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .categories h3,
+  .blogSection h3,
+  .productListTwo h3 {
+    font-size: 2em;
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+  .discount {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-color: rgb(255, 255, 255);
+  }
+  .disInfo h3 {
+    margin-left: 15px;
+    color: black;
+    margin-bottom: 10px;
+
+    font-size: 2em;
+  }
 }

@@ -1,5 +1,5 @@
 .list{
-    list-style: none;
+    /* list-style: none;
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
@@ -7,7 +7,8 @@
     grid-template-columns: auto auto auto auto;
     width: 95%;
     margin-left: 50px;
-    margin-right: 50px;
+    margin-right: 50px; */
+    @apply list-none p-4 grid grid-cols-4 gap-4 w-full ;
 
 }
 @media screen and (max-width:1028px) {
