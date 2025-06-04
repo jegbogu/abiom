@@ -264,13 +264,13 @@ function ProductItem(props) {
             {show ? (
               <div className={classes.cartBtn}>
                 <div className={classes.cartBtnOne}>
-                  <button onClick={addHandler}>+</button>
+                  <Button onClick={addHandler}>+</Button>
                 </div>
                 <div className={classes.cartBtnTwo}>
-                  <button>{count}</button>
+                  <Button>{count}</Button>
                 </div>
                 <div className={classes.cartBtnThree}>
-                  <button onClick={subtractHandler}>-</button>
+                  <Button onClick={subtractHandler}>-</Button>
                 </div>
               </div>
             ) : (

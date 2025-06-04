@@ -1,68 +1,56 @@
 .section {
- @apply grid grid-cols-5 gap-8 w-full;
+  @apply grid grid-cols-5 gap-8 w-full;
 }
 .section .figure {
-    @apply col-span-3 border self-center justify-self-center;
+  @apply col-span-3 border self-center justify-self-center;
 }
 .figure img {
-    object-fit: cover;
-    max-height: 600px;
-    align-self: center;
-    place-self: center;
+  object-fit: cover;
+  max-height: 600px;
+  align-self: center;
+  place-self: center;
   @apply aspect-[3/5];
 }
 .section .description {
-    @apply col-span-2 w-full;
-}
-.section .details button {
-  background-color: var(--s-col);
-  padding: 15px 45px 15px 45px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: 900;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.section .details button:hover {
-  background-color: rgba(255, 0, 0, 0);
-  transition: 300ms;
-  border: solid var(--s-col) 1px;
-  color: var(--p-col);
-}
-.section .details {
-  padding: 20px;
-  border: solid black 1px;
-  border-radius: 5px;
-  box-shadow: gray 1px 2px 3px;
-}
-.section .details p {
-  line-height: 30px;
-}
-.productDetail h1 {
-  margin-top: 50px;
-  text-align: center;
-  color: var(--s-col);
-  text-decoration: underline;
-}
-.details h1 {
-  margin-top: 40px;
-  text-align: center;
-  color: var(--s-col);
-  text-decoration: underline;
-}
-.section .details .article {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  @apply col-span-2 w-full;
 }
 
-.section .details span {
-  margin-top: 20px;
+.details {
+  @apply flex flex-col justify-between items-start gap-4;
 }
-.cartBtn > div {
+
+.details .title {
+  @apply text-base font-normal no-underline text-white;
+}
+/* .cartBtn > div {
   display: inline;
   margin-left: 10px;
+} */
+.article span {
+  @apply flex justify-between items-center gap-4 hover:bg-black/30 cursor-pointer rounded-full p-4;
 }
+
+.article span h1 {
+  @apply text-base font-semibold mt-0 no-underline;
+}
+
+.article span svg {
+  @apply cursor-pointer duration-300;
+}
+
+.price {
+  @apply text-2xl text-[--s-col];
+}
+.highlights {
+  @apply space-y-3 px-4 py-2;
+}
+.highlights ul {
+  @apply flex flex-col gap-2;
+}
+.highlights li {
+  @apply text-base;
+}
+
 @media screen and (max-width: 780px) {
   .section {
     flex-direction: column;

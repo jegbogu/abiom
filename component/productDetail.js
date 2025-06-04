@@ -3,6 +3,8 @@ import classes from "./productDetail.module.css";
 import { useContext } from "react";
 import CartContext from "../store/product-context";
 import { useRouter } from "next/router";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import Button from "./utils/button";
 
 function ProductDetail(props) {
   const router = useRouter();
@@ -70,6 +72,21 @@ function ProductDetail(props) {
       cartCtx.totalQty();
     }
   }
+  function toSentenceCaseMulti(text) {
+    return text
+      .toLowerCase()
+      .replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase());
+  }
+
+  function toList(text) {
+    return text
+      .split("\n")
+      .filter((item) => item.trim() !== "")
+      .map((item) => item.replace(/^•\s*/, "").trim());
+  }
+
+  const highlights = toList(props.description);
+  const nutrition = toList(props.nutrition);
 
   return (
     <div className={classes.productDetail}>
@@ -78,17 +95,46 @@ function ProductDetail(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.description}>
+          <span className={classes.price}>$ {props.price}</span>
           <div className={classes.details}>
-            <h1>{props.title}</h1>
-            <h1>Nutrition</h1>
-            <p>{props.nutrition}</p>
-
             <div className={classes.article}>
-              <h1>Description</h1>
-              <p>{props.description}</p>
+              <h1 className={classes.title}>{props.title}</h1>
+              {props.nutrition !== "--" && (
+                <>
+                  <span>
+                    <h1>Nutrition</h1>
+                    <ChevronUp size={20} />
+                  </span>
+                  <div className={classes.highlights}>
+                    <h3 className="font-semibold">Contents</h3>
+                    <ul>
+                      {nutrition.map((item, index) => (
+                        <li key={index} className="font-normal">
+                          {toSentenceCaseMulti(item)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              )}
+
+              <span>
+                <h1>Item details</h1>
+                <ChevronUp size={20} />
+              </span>
+              <div className={classes.highlights}>
+                <h3 className="font-semibold">Highlights</h3>
+                <ul>
+                  {highlights.map((item, index) => (
+                    <li key={index} className="font-normal">
+                      {toSentenceCaseMulti(item)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <hr />
-            <span>Price:${props.price}</span>
+
             <hr />
           </div>
 
@@ -96,13 +142,19 @@ function ProductDetail(props) {
             {show ? (
               <div className={classes.cartBtn}>
                 <div className={classes.cartBtnOne}>
-                  <button onClick={addHandler}>+</button>
+                  <Button size="md" variant="default" onClick={addHandler}>
+                    +
+                  </Button>
                 </div>
                 <div className={classes.cartBtnTwo}>
-                  <button>{count}</button>
+                  <Button size="md" variant="default">
+                    {count}
+                  </Button>
                 </div>
                 <div className={classes.cartBtnThree}>
-                  <button onClick={subtractHandler}>-</button>
+                  <Button size="md" variant="default" onClick={subtractHandler}>
+                    -
+                  </Button>
                 </div>
               </div>
             ) : (

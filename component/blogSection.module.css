@@ -31,6 +31,11 @@
   padding-inline: 1rem;
 }
 
+.carousel a {
+  max-width: 430px;
+  width: 100%;
+}
+
 .carousel::-webkit-scrollbar {
   display: none;
 }
@@ -72,7 +77,7 @@
   padding-right: 30px;
 }
 
-.header{
+.header {
   @apply flex justify-between items-center gap-4 w-full py-4;
 }
 

@@ -114,7 +114,7 @@
   border: solid var(--p-col) 1px;
   border-radius: 5px;
 } */
-.cartBtn {
+/* .cartBtn {
   display: inline;
 }
 .cartBtnOne,
@@ -136,7 +136,7 @@
   background-color: black;
   border-color: var(--p-col);
   border-radius: 0%;
-}
+} */
 .trash {
   margin-top: 5%;
   cursor: pointer;

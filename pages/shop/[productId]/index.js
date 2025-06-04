@@ -7,6 +7,7 @@ import classes from "./index.module.css";
 import Layout from "@/component/layout/layout";
 
 function ProductDetails(props) {
+  console.log("Product Details Props:", props);
   return (
     <Layout categories={props.categories} products={props.products}>
       <Fragment>

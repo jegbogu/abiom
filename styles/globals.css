@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap'");
 
 @tailwind base;
 @tailwind components;
@@ -86,7 +86,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Geist", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
 }
 
 html,
@@ -105,7 +106,7 @@ section.homeSection {
 }
 
 .productTitle{
-  @apply text-base font-medium;
+  @apply text-base font-medium text-left;
 }
 .prices {
   @apply flex gap-2 items-center;

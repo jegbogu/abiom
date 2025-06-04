@@ -54,6 +54,12 @@ const Home = (props) => {
 
       <section className="homeSection">
         <div className={classes.categories}>
+          <h3>New Arrivals</h3>
+        </div>
+        <ProductList products={props.products} />
+      </section>
+      <section className="homeSection">
+        <div className={classes.categories}>
           <h3>Top Sellers</h3>
         </div>
         <ProductList products={props.products} />
