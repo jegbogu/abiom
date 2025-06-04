@@ -15,18 +15,22 @@ function ProductDetails(props) {
           <meta name="description" content={props.productData.description} />
           <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
         </Head>
-        <ProductDetail
-          title={props.productData.title}
-          image={props.productData.image}
-          nutrition={props.productData.nutrition}
-          description={props.productData.description}
-          qty={props.productData.qty}
-          price={props.productData.price}
-          outOfStock={props.productData.outOfStock}
-          id={props.productData.id}
-        />
-        <h1 className={classes.otherProd}>Products You May be Interested in</h1>
-        <ProductListAllProd products={props.products} />
+        <section className="homeSection">
+          <ProductDetail
+            title={props.productData.title}
+            image={props.productData.image}
+            nutrition={props.productData.nutrition}
+            description={props.productData.description}
+            qty={props.productData.qty}
+            price={props.productData.price}
+            outOfStock={props.productData.outOfStock}
+            id={props.productData.id}
+          />
+          <h1 className={classes.otherProd}>
+            Products You May be Interested in
+          </h1>
+          <ProductListAllProd products={props.products} />
+        </section>
       </Fragment>
     </Layout>
   );
@@ -67,22 +71,27 @@ export async function getStaticProps(context) {
     const productsCollection = db.collection("products");
 
     const allProducts = await productsCollection
-      .find({}, {
-        projection: {
-          _id: 1,
-          title: 1,
-          price: 1,
-          category: 1,
-          image: 1,
-          nutrition: 1,
-          outOfStock: 1,
-          description: 1,
-          qty: 1
+      .find(
+        {},
+        {
+          projection: {
+            _id: 1,
+            title: 1,
+            price: 1,
+            category: 1,
+            image: 1,
+            nutrition: 1,
+            outOfStock: 1,
+            description: 1,
+            qty: 1,
+          },
         }
-      })
+      )
       .toArray();
 
-    const selectedProduct = await productsCollection.findOne({ _id: new ObjectId(productId) });
+    const selectedProduct = await productsCollection.findOne({
+      _id: new ObjectId(productId),
+    });
 
     if (!selectedProduct) {
       return { notFound: true };
@@ -90,7 +99,9 @@ export async function getStaticProps(context) {
 
     // Get related products (same category)
     const relatedProducts = allProducts.filter(
-      (el) => el.category === selectedProduct.category && el._id.toString() !== productId
+      (el) =>
+        el.category === selectedProduct.category &&
+        el._id.toString() !== productId
     );
 
     const categories = await productsCollection.distinct("category");
