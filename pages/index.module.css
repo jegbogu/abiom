@@ -20,10 +20,11 @@
   font-weight: 700;
   font-size: 2em;
 }
+.carousel{
+  @apply w-full
+}
 .carousel h3 {
   font-size: 2em;
-  width: fit-content;
-  /* margin-left: 50px; */
 }
 .categories h3 {
   font-size: 2em;
@@ -41,9 +42,6 @@
 .blogSection h3 {
   font-size: 2em;
   padding-inline: 1rem;
-
-  /* margin-left: 75px; */
-  margin-top: 60px;
 }
 .ProductCarousel {
   /* margin-top: -80px; */
@@ -65,15 +63,12 @@
 @media screen and (max-width: 425px) {
   .carousel h3 {
     font-size: 2em;
-    margin-left: 15px;
     margin-top: 10px;
   }
   .categories h3,
   .blogSection h3,
   .productListTwo h3 {
     font-size: 2em;
-    margin-left: 15px;
-    margin-top: 50px;
   }
   .discount {
     padding-top: 50px;
@@ -81,7 +76,6 @@
     background-color: rgb(255, 255, 255);
   }
   .disInfo h3 {
-    margin-left: 15px;
     color: black;
     margin-bottom: 10px;
 

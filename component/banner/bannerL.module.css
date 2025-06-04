@@ -1,6 +1,7 @@
 .banner {
   width: 100%;
   background-color: #0e1012;
+  padding-block: 3rem 0;
 }
 
 .bannerSection {

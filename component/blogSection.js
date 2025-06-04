@@ -38,7 +38,7 @@ export default function BlogSection({title}) {
 
   return (
     <div className={classes.section}>
-      <div className="flex items-center justify-between w-full">
+      <div className={classes.header}>
         {title}
         {/* Navigation Buttons */}
         <div className={classes.carouselBtns}>

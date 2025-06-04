@@ -25,7 +25,7 @@ export default function ProductCarousel({ title, products }) {
 
   return (
     <div className="p-4">
-      <div className="flex items-center justify-between">
+      <div className={classes.header}>
         {title}
         <div className={classes.carouselBtns}>
           <Button size="icon" onClick={() => scroll("left")}>
