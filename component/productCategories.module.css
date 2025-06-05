@@ -21,7 +21,7 @@
 }
 
 .productCard {
-  @apply flex gap-2 items-center rounded-xl max-w-96 w-full p-2 cursor-pointer bg-white;
+  @apply flex gap-2 items-center rounded-xl flex-col w-full bg-white cursor-pointer p-2 ;
 }
 .productCard:hover {
   @apply shadow-lg;
@@ -34,11 +34,17 @@
 .productCard:hover {
   box-shadow: 0px 0px 20px rgba(91, 90, 90, 0.858);
 }
+.figure{
+  max-width: 380px;
+  max-height: 300px;
+  width: 100%;
+}
 
 .productImage {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  aspect-ratio: 1/1;
   @apply rounded-xl;
 }
 
@@ -46,9 +52,8 @@
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1rem;
-  text-align: start;
+  text-align: left;
   padding-bottom: 10px;
-  padding-left: 30px;
 }
 @media screen and (max-width: 412px) {
   .carouselContainer {

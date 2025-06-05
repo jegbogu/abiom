@@ -11,6 +11,7 @@ import BasketList from "@/component/basketList";
 import Layout from "@/component/layout/layout"; // Use Layout instead of directly using MainNavigation
 import ProductCarousel from "@/component/productCarousel";
 import ProductCategories from "@/component/productCategories";
+import NewArrivalsList from "@/component/newArrivalList";
 
 const Home = (props) => {
   return (
@@ -56,7 +57,7 @@ const Home = (props) => {
         <div className={classes.categories}>
           <h3>New Arrivals</h3>
         </div>
-        <ProductList products={props.products} />
+        <NewArrivalsList products={props.products} />
       </section>
       <section className="homeSection">
         <div className={classes.categories}>

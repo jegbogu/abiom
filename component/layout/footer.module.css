@@ -30,6 +30,9 @@
     color: var(--s-col);
   }
   .icons{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
     margin-bottom: 20px;
   }
   .icons span svg {

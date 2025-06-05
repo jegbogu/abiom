@@ -131,7 +131,7 @@ export async function getServerSideProps() {
         nutrition: product.nutrition,
         description: product.description,
         qty: Number(product.qty),
-        outOfStock: product.outOfStock
+        outOfStock: product.outOfStock ?? null,
       })),
       basketProducts: products
         .filter((product) => product.category === "basket")
@@ -144,7 +144,7 @@ export async function getServerSideProps() {
           nutrition: product.nutrition,
           description: product.description,
           qty: Number(product.qty),
-          outOfStock: product.outOfStock,
+          outOfStock: product.outOfStock ?? null,
         })),
       categories,
     },

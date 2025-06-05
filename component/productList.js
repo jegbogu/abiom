@@ -8,7 +8,7 @@ function ProductList(props) {
   const productTo = productThree.concat(productOne, productTwo);
 
   const productToMap = productTo.slice(5, 10);
-
+  console.log(props.products);
   return (
     <ul className={classes.list}>
       {productToMap.map((product) => (

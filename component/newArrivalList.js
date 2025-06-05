@@ -1,11 +1,16 @@
 import classes from "./productList.module.css";
-import ProductItemCategories from "./productItemCategories";
+import ProductItem from "./productItem";
 
-function ProductCategoryList(props) {
+function NewArrivalsList(props) {
+  const lengthOfArray = props.products.length;
+  const productToMap = props.products.slice(
+    lengthOfArray - 5,
+    lengthOfArray + 1
+  );
   return (
     <ul className={classes.list}>
-      {props.products.map((product) => (
-        <ProductItemCategories
+      {productToMap.map((product) => (
+        <ProductItem
           key={product.id}
           id={product.id}
           title={product.title}
@@ -20,4 +25,4 @@ function ProductCategoryList(props) {
   );
 }
 
-export default ProductCategoryList;
+export default NewArrivalsList;
