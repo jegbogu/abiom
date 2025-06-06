@@ -1,128 +1,102 @@
+.carouselWrapper{
+  @apply p-4;
+}
 .carouselContainer {
-    
-    width: 94%;
-    display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+  width: 100%;
+}
+
+.productCard {
+  transition: ease-in-out 300ms;
+}
+
+.productCard {
+  @apply flex gap-2 items-center rounded-xl flex-col w-full bg-white cursor-pointer p-2 ;
+}
+.productCard:hover {
+  @apply shadow-lg;
+}
+
+.productCard p {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+}
+.productCard:hover {
+  box-shadow: 0px 0px 20px rgba(91, 90, 90, 0.858);
+}
+.figure{
+  max-width: 380px;
+  max-height: 300px;
+  width: 100%;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  @apply rounded-xl;
+}
+
+.productName {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 412px) {
+  .carouselContainer {
+    width: 120%;
+
     align-items: center;
     overflow: hidden;
-    
-   
-    margin-left: 50px;
-    margin-right: 50px;
-   
+    padding: 0 1.5rem;
+    margin-left: -45px;
   }
-  
-   
-  
-  
-  
+
   .carousel {
-    display: flex;
-    gap: 1rem;
-     width: 100%;
-  
-   
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    width: 100%;
+    padding: 0 3rem;
   }
-  
- 
-  
+
   .productCard {
-    width: 400px;
-    
-     cursor: pointer;
+    width: 100%;
+    cursor: pointer;
     background-color: white;
-     
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: ease-in-out 300ms;
-  ;
-  
-  }
-  .productCard p{
-    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-    color: rgb(0, 0, 0);
-    font-size: 15px;
   }
   .productCard:hover {
-    
     box-shadow: 0px 0px 20px rgba(91, 90, 90, 0.858);
-
-     
-    
-  
   }
-  
+
   .productImage {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
   }
-  
+
   .productName {
     margin-top: 0.5rem;
     font-weight: 600;
-    
-    font-family: 'Times New Roman', Times, serif;
-    font-family: 1.3em;
-    text-align: start;
+    padding-left: 10px;
     padding-bottom: 10px;
-    padding-left: 30px;
-
+    font-family: "Times New Roman", Times, serif;
   }
-  @media screen and (max-width: 412px) {
-    .carouselContainer {
-    
-      width: 120%;
-      
-      align-items: center;
-      overflow: hidden;
-      padding: 0 1.5rem;
-      margin-left: -45px;
-    }
-    
-     
-    
-    
-    
-    .carousel {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 20px;
-       width: 100%;
-      padding: 0 3rem;
-    }
-    
-   
-    
-    .productCard {
-      width: 100%;
-       cursor: pointer;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      transition: ease-in-out 300ms;
-    
-    }
-    .productCard:hover {
-      
-      box-shadow: 0px 0px 20px rgba(91, 90, 90, 0.858);
-  
-       
-      
-    
-    }
-    
-    .productImage {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    
-    .productName {
-      margin-top: 0.5rem;
-      font-weight: 600;
-      padding-left: 10px;
-      padding-bottom: 10px;
-      font-family: 'Times New Roman', Times, serif;
-    }
 }

@@ -1,5 +1,5 @@
-.list{
-    list-style: none;
+.list {
+  /* list-style: none;
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
@@ -7,33 +7,29 @@
     grid-template-columns: auto auto auto auto;
     width: 95%;
     margin-left: 50px;
-    margin-right: 50px;
-
+    margin-right: 50px; */
+  @apply list-none p-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full;
 }
-@media screen and (max-width:1028px) {
-    .list{
-        list-style: none;
-        list-style-type: none;
-        margin: 0 auto;
-        padding: 0;
-        display: grid;
-        grid-template-columns: auto auto;
-        width: 90%;
-        gap: 10px;
-      
-    
-    }
+/* @media screen and (max-width: 1028px) {
+  .list {
+    list-style: none;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 90%;
+    gap: 10px;
+  }
 }
-@media screen and (max-width:450px) {
-    .list{
-        list-style: none;
-        list-style-type: none;
-        margin: 0 auto;
-        padding: 0;
-        display: grid;
-        grid-template-columns: auto;
-        width: 90%;
-      
-    
-    }
-}
+@media screen and (max-width: 450px) {
+  .list {
+    list-style: none;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto;
+    width: 90%;
+  }
+} */

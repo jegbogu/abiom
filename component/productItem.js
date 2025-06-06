@@ -6,16 +6,9 @@
 // import CartContext from '../store/product-context'
 // import CartIcon from '@/icons/cartIcon';
 
-
-
-
-
-
 // function ProductItem(props) {
 //   const [spinner, setSpinner] = useState(false)
 //   const [show, setShow] = useState(false)
- 
-
 
 //   const [count, setCount] = useState(0)
 //   const cartCtx = useContext(CartContext)
@@ -26,7 +19,6 @@
 //     router.push('/shop/' + props.id);
 
 //   }
-
 
 //   function displayCartBtn() {
 
@@ -50,12 +42,6 @@
 
 //   }
 
-
-
-
-
-
-
 //   function addHandler() {
 //     const prodValue = cartCtx.productIsInCart(props.id)
 //     if (prodValue) {
@@ -78,7 +64,6 @@
 //       cartCtx.totalQty()
 //     }
 
-
 //   }
 
 //   function subtractHandler() {
@@ -100,7 +85,6 @@
 //       cartCtx.totalQty()
 //     }
 
-
 //   }
 
 //   let showCart;
@@ -112,7 +96,6 @@
 
 //   }
 
-
 // let fullTitle
 // let shownFullTitle
 // if(props.title.length>2){
@@ -122,7 +105,6 @@
 //   fullTitle = props.title
 //   shownFullTitle = ""
 // }
-
 
 //   return (
 
@@ -156,7 +138,6 @@
 //         {showCart}
 //       </div>
 
-
 //     </li>
 
 //   )
@@ -164,15 +145,16 @@
 
 // export default ProductItem
 
- import { useRouter } from 'next/router';
-import classes from './productItem.module.css';
-import { useState, useContext } from 'react';
-import Spinner from '../icons/spinner';
-import CartContext from '../store/product-context';
- import FavouriteContext from '@/store/favourite-context';
- 
-import CartIcon from '@/icons/cartIcon';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'; // ✅ Use react-icons for heart icons
+import { useRouter } from "next/router";
+import classes from "./productItem.module.css";
+import { useState, useContext } from "react";
+import Spinner from "../icons/spinner";
+import CartContext from "../store/product-context";
+import FavouriteContext from "@/store/favourite-context";
+
+import CartIcon from "@/icons/cartIcon";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"; // ✅ Use react-icons for heart icons
+import Button from "./utils/button";
 
 function ProductItem(props) {
   const [spinner, setSpinner] = useState(false);
@@ -187,13 +169,13 @@ function ProductItem(props) {
 
   function showDetailsHandler() {
     setSpinner(<Spinner />);
-    router.push('/shop/' + props.id);
+    router.push("/shop/" + props.id);
   }
 
   function displayCartBtn() {
     const prodValue = cartCtx.productIsInCart(props.id);
     if (prodValue) {
-      router.push('/cart');
+      router.push("/cart");
     } else {
       setShow(!show);
       cartCtx.addCarts({ ...props, qty: props.qty });
@@ -203,7 +185,7 @@ function ProductItem(props) {
   }
 
   function addHandler() {
-    const prodObj = cartCtx.carts.find(p => p.id === props.id);
+    const prodObj = cartCtx.carts.find((p) => p.id === props.id);
     if (prodObj) {
       prodObj.qty += 1;
       setCount(count + 1);
@@ -215,7 +197,7 @@ function ProductItem(props) {
   }
 
   function subtractHandler() {
-    const prodObj = cartCtx.carts.find(p => p.id === props.id);
+    const prodObj = cartCtx.carts.find((p) => p.id === props.id);
     if (!prodObj) return;
 
     if (prodObj.qty === 1) {
@@ -228,7 +210,7 @@ function ProductItem(props) {
     cartCtx.totalQty();
   }
 
-  const isFavourite = favCtx.favourite.some(item => item.id === props.id); // ✅ Check if in favourites
+  const isFavourite = favCtx.favourite.some((item) => item.id === props.id); // ✅ Check if in favourites
   const toggleFavourite = () => {
     if (isFavourite) {
       favCtx.removeFavourite(props.id);
@@ -237,13 +219,20 @@ function ProductItem(props) {
     }
   };
 
-  const prodObj = cartCtx.carts.find(product => product.id === props.id);
+  // states the conditions to display the heart
+  const showHeart = isFavourite || isHovered;
+
+  const prodObj = cartCtx.carts.find((product) => product.id === props.id);
   const showCart = prodObj ? (
-    <div className={classes.cart}><CartIcon />{prodObj.qty}</div>
+    <div className={classes.cart}>
+      <CartIcon />
+      {prodObj.qty}
+    </div>
   ) : null;
 
-  let fullTitle = props.title.length > 20 ? `${props.title.slice(0, 20)}..` : props.title;
-  let shownFullTitle = props.title.length > 20 ? props.title : "";
+  let fullTitle =
+    props.title.length > 25 ? `${props.title.slice(0, 25)}..` : props.title;
+  let shownFullTitle = props.title.length > 25 ? <h5>{props.title}</h5> : "";
 
   return (
     <li className={classes.productItem}>
@@ -256,27 +245,44 @@ function ProductItem(props) {
           <img src={props.image} alt={props.title} />
 
           {/* ✅ Favourite icon (only visible on hover) */}
-          {isHovered && (
+          {showHeart && (
             <button className={classes.favIcon} onClick={toggleFavourite}>
-              {isFavourite ? <AiFillHeart color="red" size={24} /> : <AiOutlineHeart size={24} />}
+              {isFavourite ? (
+                <AiFillHeart color="red" size={20} />
+              ) : (
+                <AiOutlineHeart size={20} color="black" />
+              )}
             </button>
           )}
         </div>
 
         <div className={classes.itemBody}>
           <h3 onClick={showDetailsHandler}>{fullTitle}</h3>
-          <h5>{shownFullTitle}</h5>
-          <p>Price: ${props.price}</p>
+          {shownFullTitle}
+          <p className="actualPrice">$ {props.price}</p>
+          <div className="flex items-center gap-2">
+            {show ? (
+              <div className={classes.cartBtn}>
+                <div className={classes.cartBtnOne}>
+                  <Button onClick={addHandler}>+</Button>
+                </div>
+                <div className={classes.cartBtnTwo}>
+                  <Button>{count}</Button>
+                </div>
+                <div className={classes.cartBtnThree}>
+                  <Button onClick={subtractHandler}>-</Button>
+                </div>
+              </div>
+            ) : (
+              <Button size="sm" onClick={displayCartBtn}>
+                Add to Cart
+              </Button>
+            )}
 
-          {show ? (
-            <div className={classes.cartBtn}>
-              <div className={classes.cartBtnOne}><button onClick={addHandler}>+</button></div>
-              <div className={classes.cartBtnTwo}><button>{count}</button></div>
-              <div className={classes.cartBtnThree}><button onClick={subtractHandler}>-</button></div>
-            </div>
-          ) : <button onClick={displayCartBtn}>Add to Cart</button>}
-
-          <span><button onClick={showDetailsHandler}>Details{spinner}</button></span>
+            <Button size="sm" variant="outline" onClick={showDetailsHandler}>
+              Details{spinner}
+            </Button>
+          </div>
         </div>
         {showCart}
       </div>

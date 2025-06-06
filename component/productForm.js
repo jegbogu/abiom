@@ -52,47 +52,53 @@ function ProductForm(props) {
     <div className={classes.card}>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='title'>Product Title</label>
-          <input type='text' required id='title' ref={titleInputRef} />
+          <label htmlFor="title">Product Title</label>
+          <input type="text" required id="title" ref={titleInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='image'>Product Image</label>
-          <input type='url' required id='image' ref={imageInputRef} />
+          <label htmlFor="image">Product Image</label>
+          <input type="url" required id="image" ref={imageInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='price'>Product Price</label>
-          <input type='number' required id='price' ref={priceInputRef} />
+          <label htmlFor="price">Product Price</label>
+          <input
+            type="number"
+            step="0.01"
+            required
+            id="price"
+            ref={priceInputRef}
+          />
         </div>
         <div className={classes.control}>
-          <label htmlFor='price'>Product Category</label>
-          <input type='text' required id='category' ref={categoryInputRef} />
+          <label htmlFor="price">Product Category</label>
+          <input type="text" required id="category" ref={categoryInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='qty'>Product Quantity</label>
-          <input type='number' required id='qty' ref={qtyInputRef} />
+          <label htmlFor="qty">Product Quantity</label>
+          <input type="number" required id="qty" ref={qtyInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='stockinput'>Stock status</label>
-          <select id='stockinput' ref={stockinputRef}>
-            <option value='true'>true</option>
-            <option value='false'>false</option>
+          <label htmlFor="stockinput">Stock status</label>
+          <select id="stockinput" ref={stockinputRef}>
+            <option value="true">true</option>
+            <option value="false">false</option>
           </select>
         </div>
         <div className={classes.control}>
-          <label htmlFor='description'>Product Description</label>
+          <label htmlFor="description">Product Description</label>
           <textarea
-            id='description'
+            id="description"
             required
-            rows='5'
+            rows="5"
             ref={descriptionInputRef}
           ></textarea>
         </div>
         <div className={classes.control}>
-          <label htmlFor='nutrition'>Product Nutrition</label>
+          <label htmlFor="nutrition">Product Nutrition</label>
           <textarea
-            id='nutrition'
+            id="nutrition"
             required
-            rows='5'
+            rows="5"
             ref={nutritionInputRef}
           ></textarea>
         </div>

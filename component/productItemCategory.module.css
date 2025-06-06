@@ -43,9 +43,7 @@
     border: 1px solid gray;
     z-index: 10;
     font-size: 12px;
-    border-radius: 5px;
-    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-  }
+    border-radius: 5px; }
   
   .itemBody h3 {
     margin: -10px 0 0 0;
@@ -78,7 +76,6 @@
     color: rgb(255, 255, 255);
     font-weight: 900;
     cursor: pointer;
-    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
     font-size: 15px;
 }
 .itemBody button:hover{
@@ -96,8 +93,6 @@
     border:solid  var(--s-col) 1px;
     border-radius: 5px;
     cursor:pointer;
-    color: white;
-    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
     font-size: 15px;
 }
 .itemBody span button:hover{
@@ -147,7 +142,6 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 40px;
    margin-top: 10px;
-    font-family: cursive;
     color: black;
     
  
