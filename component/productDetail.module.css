@@ -1,20 +1,82 @@
-.section{
- 
-     display: flex;
-    justify-content: space-around; 
-    width: 90%;
-    margin:50px auto;
+.section {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: 50px auto;
 }
- .section .figure{
-    width: 60%;
-  margin-left: 90px;
-  margin-top: 100px;
-    
- }
- .figure img{
-    width: 70%;
- }
-.section .details button{
+
+.figure img {
+  object-fit: cover;
+  max-height: 600px;
+  align-self: center;
+  place-self: center;
+  aspect-ratio: 3/5;
+}
+.section .details button {
+  background-color: var(--s-col);
+  padding: 15px 45px 15px 45px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.section .details button:hover {
+  background-color: rgba(255, 0, 0, 0);
+  transition: 300ms;
+  border: solid var(--s-col) 1px;
+  color: var(--p-col);
+}
+.section .details {
+  padding: 20px;
+  width: 50%;
+  border: solid black 1px;
+  border-radius: 5px;
+  box-shadow: gray 1px 2px 3px;
+}
+.section .details p {
+  line-height: 30px;
+}
+.productDetail h1 {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--s-col);
+  text-decoration: underline;
+}
+.details h1 {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--s-col);
+  text-decoration: underline;
+}
+.section .details .article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section .details span {
+  margin-top: 20px;
+}
+.cartBtn > div {
+  display: inline;
+  margin-left: 10px;
+}
+@media screen and (max-width: 780px) {
+  .section {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 50px auto;
+  }
+  .section .figure {
+    /* width: 60%; */
+    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-left: 27%;
+  }
+  .section .details button {
     background-color: var(--s-col);
     padding: 15px 45px 15px 45px;
     border: none;
@@ -23,270 +85,189 @@
     font-weight: 900;
     cursor: pointer;
     margin-top: 20px;
-}
-.section .details button:hover{
+  }
+  .section .details button:hover {
     background-color: rgba(255, 0, 0, 0);
     transition: 300ms;
     border: solid var(--s-col) 1px;
     color: var(--p-col);
-}
-.section .details{
+  }
+  .section .details {
     padding: 20px;
-    width: 50%;
-    border:  solid black 1px;
+    width: 90%;
+    border: solid black 1px;
     border-radius: 5px;
     box-shadow: gray 1px 2px 3px;
-}
-.section .details p{
-    line-height:  30px;
-}
-.productDetail h1{
-    margin-top: 50px;
-    text-align: center;
-    color:var(--s-col);
-    text-decoration: underline;
-}
-.details h1{
-    margin-top: 40px;
-    text-align: center;
-    color:var(--s-col);
-    text-decoration: underline;
-}
-.section .details .article{
+  }
+  .section .details h1 {
+    margin-top: 20px;
+  }
+  .section .details .article {
     margin-top: 20px;
     margin-bottom: 20px;
-     
-}
- 
-.section .details span{
-    margin-top: 20px;
+  }
 
-}
- .cartBtn>div{
+  .section .details span {
+    margin-top: 20px;
+  }
+  .cartBtn > div {
     display: inline;
     margin-left: 10px;
- }
- @media screen and (max-width:780px) {
-    .section{
-        flex-direction: column;
-        display: flex;
-        justify-content: space-around;
-        width: 90%;
-        margin:50px auto;
-    }
-     .section .figure{
-        /* width: 60%; */
+  }
+}
+@media screen and (max-width: 450px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0px auto;
+  }
+  .section .figure {
+    width: 100%;
+    margin-left: 60px;
+    margin-top: 20px;
     margin-bottom: 50px;
-      margin-top: 100px;
-      margin-left: 27%;
-        
-     }
-    .section .details button{
-        background-color: var(--s-col);
-        padding: 15px 45px 15px 45px;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-weight: 900;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    .section .details button:hover{
-        background-color: rgba(255, 0, 0, 0);
-        transition: 300ms;
-        border: solid var(--s-col) 1px;
-        color: var(--p-col);
-    }
-    .section .details{
-        padding: 20px;
-        width: 90%;
-        border:  solid black 1px;
-        border-radius: 5px;
-        box-shadow: gray 1px 2px 3px;
-    }
-    .section .details h1{
-        margin-top: 20px;
-    }
-    .section .details .article{
-        margin-top: 20px;
-        margin-bottom: 20px;
-         
-    }
-     
-    .section .details span{
-        margin-top: 20px;
-    
-    }
-     .cartBtn>div{
-        display: inline;
-        margin-left: 10px;
-     }
- }
- @media screen and (max-width:450px) {
-    .section{
- 
-        display: flex;
-       flex-direction: column;
-        width: 90%;
-        margin:0px auto;
-    }
-     .section .figure{
-        width: 100%;
-     margin-left: 60px;
-      margin-top: 20px;
-      margin-bottom: 50px;
-        
-     }
-    .section .details button{
-        background-color: var(--s-col);
-        padding: 15px 45px 15px 45px;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-weight: 900;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    .section .details button:hover{
-        background-color: rgba(255, 0, 0, 0);
-        transition: 300ms;
-        border: solid var(--s-col) 1px;
-        color: var(--p-col);
-    }
-    .section .details{
-        padding: 20px;
-        width: 100%;
-        border:  solid black 1px;
-        border-radius: 5px;
-        box-shadow: gray 1px 2px 3px;
-    }
-    .section .details h1{
-        margin-top: 0px;
-    }
-    .section .details .article{
-        margin-top: 20px;
-        margin-bottom: 20px;
-         
-    }
-     
-    .section .details span{
-        margin-top: 20px;
-    
-    }
-     .cartBtn>div{
-        display: inline;
-        margin-left: 10px;
-     }
- }
- @media screen and (max-width:375px) {
-    .section{
- 
-        display: flex;
-       flex-direction: column;
-        width: 90%;
-        margin:100px auto;
-    }
-     .section .figure{
-        width: 100%;
-     margin-left: 40px;
-      margin-top: 50px;
-      margin-bottom: 50px;
-        
-     }
-    .section .details button{
-        background-color: var(--s-col);
-        padding: 15px 45px 15px 45px;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-weight: 900;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    .section .details button:hover{
-        background-color: rgba(255, 0, 0, 0);
-        transition: 300ms;
-        border: solid var(--s-col) 1px;
-        color: var(--p-col);
-    }
-    .section .details{
-        padding: 20px;
-        width: 100%;
-        border:  solid black 1px;
-        border-radius: 5px;
-        box-shadow: gray 1px 2px 3px;
-    }
-    .section .details h1{
-        margin-top: 20px;
-    }
-    .section .details .article{
-        margin-top: 20px;
-        margin-bottom: 20px;
-         
-    }
-     
-    .section .details span{
-        margin-top: 20px;
-    
-    }
-     .cartBtn>div{
-        display: inline;
-        margin-left: 10px;
-     }
- }
- @media screen and (max-width:320px) {
-    .section{
- 
-        display: flex;
-       flex-direction: column;
-        width: 90%;
-        margin:100px auto;
-    }
-     .section .figure{
-        width: 100%;
-     margin-left: 18px;
-      margin-top: 50px;
-      margin-bottom: 50px;
-        
-     }
-    .section .details button{
-        background-color: var(--s-col);
-        padding: 15px 45px 15px 45px;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-weight: 900;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    .section .details button:hover{
-        background-color: rgba(255, 0, 0, 0);
-        transition: 300ms;
-        border: solid var(--s-col) 1px;
-        color: var(--p-col);
-    }
-    .section .details{
-        padding: 20px;
-        width: 100%;
-        border:  solid black 1px;
-        border-radius: 5px;
-        box-shadow: gray 1px 2px 3px;
-    }
-    .section .details h1{
-        margin-top: 20px;
-    }
-    .section .details .article{
-        margin-top: 20px;
-        margin-bottom: 20px;
-         
-    }
-     
-    .section .details span{
-        margin-top: 20px;
-    
-    }
-     .cartBtn>div{
-        display: inline;
-        margin-left: 10px;
-     }
- }
+  }
+  .section .details button {
+    background-color: var(--s-col);
+    padding: 15px 45px 15px 45px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .section .details button:hover {
+    background-color: rgba(255, 0, 0, 0);
+    transition: 300ms;
+    border: solid var(--s-col) 1px;
+    color: var(--p-col);
+  }
+  .section .details {
+    padding: 20px;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 5px;
+    box-shadow: gray 1px 2px 3px;
+  }
+  .section .details h1 {
+    margin-top: 0px;
+  }
+  .section .details .article {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section .details span {
+    margin-top: 20px;
+  }
+  .cartBtn > div {
+    display: inline;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 100px auto;
+  }
+  .section .figure {
+    width: 100%;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .section .details button {
+    background-color: var(--s-col);
+    padding: 15px 45px 15px 45px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .section .details button:hover {
+    background-color: rgba(255, 0, 0, 0);
+    transition: 300ms;
+    border: solid var(--s-col) 1px;
+    color: var(--p-col);
+  }
+  .section .details {
+    padding: 20px;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 5px;
+    box-shadow: gray 1px 2px 3px;
+  }
+  .section .details h1 {
+    margin-top: 20px;
+  }
+  .section .details .article {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section .details span {
+    margin-top: 20px;
+  }
+  .cartBtn > div {
+    display: inline;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 100px auto;
+  }
+  .section .figure {
+    width: 100%;
+    margin-left: 18px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .section .details button {
+    background-color: var(--s-col);
+    padding: 15px 45px 15px 45px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .section .details button:hover {
+    background-color: rgba(255, 0, 0, 0);
+    transition: 300ms;
+    border: solid var(--s-col) 1px;
+    color: var(--p-col);
+  }
+  .section .details {
+    padding: 20px;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 5px;
+    box-shadow: gray 1px 2px 3px;
+  }
+  .section .details h1 {
+    margin-top: 20px;
+  }
+  .section .details .article {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section .details span {
+    margin-top: 20px;
+  }
+  .cartBtn > div {
+    display: inline;
+    margin-left: 10px;
+  }
+}

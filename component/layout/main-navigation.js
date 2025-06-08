@@ -174,174 +174,289 @@ const categoryFnc = (product) =>{
     router.push("/product_categories/" + product);
 }
     return (
-        <div>
-            <div className={classes.desktop}>
-            <div className={classes.header}>
-                <div className={classes.headerLogo}>
-                    <a href="/"><Logo /></a>
-                </div>
-
-                <div className={classes.headerHamCategories} onClick={toggleCategoryDropdown}>
-                    <div className={classes.headerHamburger}><Hamburger /></div>
-                    <div className={classes.headerCategories}><p>Categories</p></div>
-                </div>
-
-                <div className={classes.headerSearch}>
-                    <input
-                        type="text"
-                        placeholder="Search for anything"
-                        ref={searchInputRef}
-                        onChange={handleSearch}
-                    />
-                    <button><SearchIcon /></button>
-
-                    {/* Display search results */}
-                    {filteredProducts.length > 0 && (
-                        <div className={classes.searchResults} ref={searchDropdownDesktopRef}>
-                            <ul>
-                                {filteredProducts.map((product, index) => (
-                                    <li key={index} onClick={()=> (categories.includes(product)?categoryFnc(product):prodFnc(product))}>
-                                        <a >{product.title || product}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                </div>
-
-                <div className={classes.headerUsers}>
-                    <div className={classes.headerItem}>
-                        <div className={classes.headerFavourite}><a href={"/favourites"}> <Favourite /> </a> </div>
-                        <div className={classes.headerFavouriteHover}>Favourite</div>
-                    </div>
-
-                    <div className={classes.headerItem}>
-                        <div className={classes.headerGift}><a href={`/product_categories/basket`}><Gift /></a> </div>
-                        <div className={classes.headerGiftHover}> Gift</div>
-                    </div>
-
-                    <div className={classes.headerItem}>
-                        <div className={classes.headerCart}><a href="/cart"><Cart /></a> </div>
-                        {totalCartdiv}
-                        {content}
-                       
-                    </div>
-                </div>
+      <div>
+        <div className={classes.desktop}>
+          <div className={classes.header}>
+            <div className={classes.headerLogo}>
+              <a href="/">
+                <Logo />
+              </a>
             </div>
 
-            <div className={classes.items}>
-                <div><p><a href={`/product_categories/basket`}>Gifts</a> </p></div>
-                <div><p><a a href={`/product_categories/food and soup`}>Sellers Deal</a> </p></div>
-                <div><p><a a href={`/product_categories/home appliences`}>Home Favourites </a></p></div>
-                <div><p><a a href={`/shop`}>All Products </a></p></div>
-                
+            <div
+              className={classes.headerHamCategories}
+              onClick={toggleCategoryDropdown}
+            >
+              <div className={classes.headerHamburger}>
+                <Hamburger />
+              </div>
+              <div className={classes.headerCategories}>
+                <p>Categories</p>
+              </div>
             </div>
 
-            {/* Category Dropdown */}
-            {showCategory && (
-                <div className={classes.categoryDropdown} ref={categoryDropdownDesktopRef}>
-                    <ul>
-                        {categories && categories.length > 0 ? (
-                            categories.map((category, index) => {
-                                let transCategory;
-                                if (category.includes("and")) {
-                                    const [fname, sname] = category.split("and").map(str => str.trim());
-                                    transCategory = `${fname[0].toUpperCase()}${fname.slice(1)} and ${sname[0].toUpperCase()}${sname.slice(1)}`;
-                                } else if (category.includes(" ")) {
-                                    const [fname, sname] = category.split(" ").map(str => str.trim());
-                                    transCategory = `${fname[0].toUpperCase()}${fname.slice(1)} ${sname[0].toUpperCase()}${sname.slice(1)}`;
-                                } else {
-                                    transCategory = `${category[0].toUpperCase()}${category.slice(1)}`;
-                                }
-                                return <li key={index} onMouseDown={() => handleGetCategory(category)}>{transCategory}</li>;
-                            })
-                        ) : (
-                            <li>No Categories Available</li>
-                        )}
-                    </ul>
+            <div className={classes.headerSearch}>
+              <input
+                type="text"
+                placeholder="Search for anything"
+                ref={searchInputRef}
+                onChange={handleSearch}
+              />
+              <button>
+                <SearchIcon />
+              </button>
+
+              {/* Display search results */}
+              {filteredProducts.length > 0 && (
+                <div
+                  className={classes.searchResults}
+                  ref={searchDropdownDesktopRef}
+                >
+                  <ul>
+                    {filteredProducts.map((product, index) => (
+                      <li
+                        key={index}
+                        onClick={() =>
+                          categories.includes(product)
+                            ? categoryFnc(product)
+                            : prodFnc(product)
+                        }
+                      >
+                        <a href="#">{product.title || product}</a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-            )}
+              )}
+            </div>
+
+            <div className={classes.headerUsers}>
+              <div className={classes.headerItem}>
+                <div className={classes.headerFavourite}>
+                  <a href={"/favourites"}>
+                    {" "}
+                    <Favourite />{" "}
+                  </a>{" "}
+                </div>
+                <div className={classes.headerFavouriteHover}>Favourite</div>
+              </div>
+
+              <div className={classes.headerItem}>
+                <div className={classes.headerGift}>
+                  <a href={`/product_categories/basket`}>
+                    <Gift />
+                  </a>{" "}
+                </div>
+                <div className={classes.headerGiftHover}> Gift</div>
+              </div>
+
+              <div className={classes.headerItem}>
+                <div className={classes.headerCart}>
+                  <a href="/cart">
+                    <Cart />
+                  </a>{" "}
+                </div>
+                {totalCartdiv}
+                {content}
+              </div>
+            </div>
+          </div>
+
+          <div className={classes.items}>
+            <div>
+              <p>
+                <a href={`/product_categories/basket`}>Gifts</a>{" "}
+              </p>
+            </div>
+            <div>
+              <p>
+                <a href={`/product_categories/food and soup`}>Sellers Deal</a>{" "}
+              </p>
+            </div>
+            <div>
+              <p>
+                <a href={`/product_categories/home appliences`}>
+                  Home Favourites{" "}
+                </a>
+              </p>
+            </div>
+            <div>
+              <p>
+                <a a href={`/shop`}>
+                  All Products{" "}
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Category Dropdown */}
+          {showCategory && (
+            <div
+              className={classes.categoryDropdown}
+              ref={categoryDropdownDesktopRef}
+            >
+              <ul>
+                {categories && categories.length > 0 ? (
+                  categories.map((category, index) => {
+                    let transCategory;
+                    if (category.includes("and")) {
+                      const [fname, sname] = category
+                        .split("and")
+                        .map((str) => str.trim());
+                      transCategory = `${fname[0].toUpperCase()}${fname.slice(
+                        1
+                      )} and ${sname[0].toUpperCase()}${sname.slice(1)}`;
+                    } else if (category.includes(" ")) {
+                      const [fname, sname] = category
+                        .split(" ")
+                        .map((str) => str.trim());
+                      transCategory = `${fname[0].toUpperCase()}${fname.slice(
+                        1
+                      )} ${sname[0].toUpperCase()}${sname.slice(1)}`;
+                    } else {
+                      transCategory = `${category[0].toUpperCase()}${category.slice(
+                        1
+                      )}`;
+                    }
+                    return (
+                      <li
+                        key={index}
+                        onMouseDown={() => handleGetCategory(category)}
+                      >
+                        {transCategory}
+                      </li>
+                    );
+                  })
+                ) : (
+                  <li>No Categories Available</li>
+                )}
+              </ul>
+            </div>
+          )}
         </div>
 
-
-
-{/* THIS IS FOR MOBILE VIEW */}
+        {/* THIS IS FOR MOBILE VIEW */}
         <div className={classes.mobile}>
-            <div className={classes.mobileHeader}>
-        <div className={classes.headerHamCategories} onClick={toggleCategoryDropdown}>
-                    <div className={classes.headerHamburger}><Hamburger /></div>
-                    
-                </div>
-                <div className={classes.headerLogo}>
-                    <a href="/"><LogoMobile /></a>
-                </div>
-                <div className={classes.headerSearch}>
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        ref={searchInputRef}
-                        onChange={handleSearch}
-                    />
-                    <button><SearchIconMobile /></button>
+          <div className={classes.mobileHeader}>
+            <div
+              className={classes.headerHamCategories}
+              onClick={toggleCategoryDropdown}
+            >
+              <div className={classes.headerHamburger}>
+                <Hamburger />
+              </div>
+            </div>
+            <div className={classes.headerLogo}>
+              <a href="/">
+                <LogoMobile />
+              </a>
+            </div>
+            <div className={classes.headerSearch}>
+              <input
+                type="text"
+                placeholder="Search"
+                ref={searchInputRef}
+                onChange={handleSearch}
+              />
+              <button>
+                <SearchIconMobile />
+              </button>
 
-                    {/* Display search results */}
-                    {filteredProducts.length > 0 && (
-                        <div className={classes.searchResults} ref={searchDropdownMobileRef}>
-                            <ul>
-                                {filteredProducts.map((product, index) => (
-                                    <li key={index} onClick={()=> (categories.includes(product)?categoryFnc(product):prodFnc(product))}>
-                                        <a >{product.title || product}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+              {/* Display search results */}
+              {filteredProducts.length > 0 && (
+                <div
+                  className={classes.searchResults}
+                  ref={searchDropdownMobileRef}
+                >
+                  <ul>
+                    {filteredProducts.map((product, index) => (
+                      <li
+                        key={index}
+                        onClick={() =>
+                          categories.includes(product)
+                            ? categoryFnc(product)
+                            : prodFnc(product)
+                        }
+                      >
+                        <a href="#">{product.title || product}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div className={classes.headerUsers}>
+              <div className={classes.headerItem}>
+                <div className={classes.headerFavourite}>
+                  <Favourite />
+                </div>
+              </div>
+
+              <div className={classes.headerItem}>
+                <div className={classes.headerGift}>
+                  <a href={`/product_categories/basket`}>
+                    <Gift />
+                  </a>{" "}
+                </div>
+              </div>
+
+              <div className={classes.headerItem}>
+                <div className={classes.headerCart}>
+                  <a href="/cart">
+                    <Cart />
+                  </a>{" "}
+                </div>
+                {totalCartdiv}
+                {content}
+              </div>
+              {/* Category Dropdown */}
+              {showCategory && (
+                <div
+                  className={classes.categoryDropdown}
+                  ref={categoryDropdownMobileRef}
+                >
+                  <ul>
+                    {categories && categories.length > 0 ? (
+                      categories.map((category, index) => {
+                        let transCategory;
+                        if (category.includes("and")) {
+                          const [fname, sname] = category
+                            .split("and")
+                            .map((str) => str.trim());
+                          transCategory = `${fname[0].toUpperCase()}${fname.slice(
+                            1
+                          )} and ${sname[0].toUpperCase()}${sname.slice(1)}`;
+                        } else if (category.includes(" ")) {
+                          const [fname, sname] = category
+                            .split(" ")
+                            .map((str) => str.trim());
+                          transCategory = `${fname[0].toUpperCase()}${fname.slice(
+                            1
+                          )} ${sname[0].toUpperCase()}${sname.slice(1)}`;
+                        } else {
+                          transCategory = `${category[0].toUpperCase()}${category.slice(
+                            1
+                          )}`;
+                        }
+                        return (
+                          <li
+                            key={index}
+                            onClick={() => handleGetCategory(category)}
+                          >
+                            {transCategory}
+                          </li>
+                        );
+                      })
+                    ) : (
+                      <li>No Categories Available</li>
                     )}
+                  </ul>
                 </div>
-                <div className={classes.headerUsers}>
-                    <div className={classes.headerItem}>
-                        <div className={classes.headerFavourite}><Favourite /></div>
-                       
-                    </div>
-
-                    <div className={classes.headerItem}>
-                        <div className={classes.headerGift}><a href={`/product_categories/basket`}><Gift /></a> </div>
-                       
-                    </div>
-
-                    <div className={classes.headerItem}>
-                        <div className={classes.headerCart}><a href="/cart"><Cart /></a> </div>
-                        {totalCartdiv}
-                        {content}
-                        
-                    </div>
-                     {/* Category Dropdown */}
-            {showCategory && (
-                <div className={classes.categoryDropdown} ref={categoryDropdownMobileRef}>
-                    <ul>
-                        {categories && categories.length > 0 ? (
-                            categories.map((category, index) => {
-                                let transCategory;
-                                if (category.includes("and")) {
-                                    const [fname, sname] = category.split("and").map(str => str.trim());
-                                    transCategory = `${fname[0].toUpperCase()}${fname.slice(1)} and ${sname[0].toUpperCase()}${sname.slice(1)}`;
-                                } else if (category.includes(" ")) {
-                                    const [fname, sname] = category.split(" ").map(str => str.trim());
-                                    transCategory = `${fname[0].toUpperCase()}${fname.slice(1)} ${sname[0].toUpperCase()}${sname.slice(1)}`;
-                                } else {
-                                    transCategory = `${category[0].toUpperCase()}${category.slice(1)}`;
-                                }
-                                return <li key={index} onClick={() => handleGetCategory(category)}>{transCategory}</li>;
-                            })
-                        ) : (
-                            <li>No Categories Available</li>
-                        )}
-                    </ul>
-                </div>
-            )}
-                </div>
+              )}
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
     );
 };
 

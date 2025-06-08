@@ -23,6 +23,10 @@
   
     white-space: nowrap;
 }
+.carousel a {
+ max-width: 430px;
+  width: 100%;
+}
 
 .carousel {
     display: flex;
@@ -30,7 +34,14 @@
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
+.carousel .figure{
+    width: 100%;
+}
 
+.figure img{
+    width: 100%;
+    aspect-ratio: 3/4;
+}
 .carousel::-webkit-scrollbar {
     display: none;
 }

@@ -227,8 +227,8 @@ function ProductItem(props) {
     }
     cartCtx.totalQty();
   }
-
   const isFavourite = favCtx.favourite.some(item => item.id === props.id); // ✅ Check if in favourites
+  const showHeart = isFavourite || isHovered;
   const toggleFavourite = () => {
     if (isFavourite) {
       favCtx.removeFavourite(props.id);
@@ -242,8 +242,9 @@ function ProductItem(props) {
     <div className={classes.cart}><CartIcon />{prodObj.qty}</div>
   ) : null;
 
-  let fullTitle = props.title.length > 20 ? `${props.title.slice(0, 20)}..` : props.title;
-  let shownFullTitle = props.title.length > 20 ? props.title : "";
+ let fullTitle =
+    props.title.length > 20? `${props.title.slice(0, 20)}..` : props.title;
+  let shownFullTitle = props.title.length > 20 ? <h5>{props.title}</h5> : "";
 
   return (
     <li className={classes.productItem}>
@@ -256,16 +257,16 @@ function ProductItem(props) {
           <img src={props.image} alt={props.title} />
 
           {/* ✅ Favourite icon (only visible on hover) */}
-          {isHovered && (
+          {showHeart && (
             <button className={classes.favIcon} onClick={toggleFavourite}>
-              {isFavourite ? <AiFillHeart color="red" size={24} /> : <AiOutlineHeart size={24} />}
+              {isFavourite ? <AiFillHeart color="red" size={24} /> : <AiOutlineHeart color='black' size={24} />}
             </button>
           )}
         </div>
 
         <div className={classes.itemBody}>
           <h3 onClick={showDetailsHandler}>{fullTitle}</h3>
-          <h5>{shownFullTitle}</h5>
+          {shownFullTitle}
           <p>Price: ${props.price}</p>
 
           {show ? (
