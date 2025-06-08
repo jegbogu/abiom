@@ -24,20 +24,20 @@ const products = [
   {
     id: 4,
     name: "Drinks",
-    image: "close-up-wine-bottle-glass_23-2148673781.avif",
+    image: "/close-up-wine-bottle-glass_23-2148673781.avif",
     link: `/product_categories/drinks`,
   },
   {
     id: 5,
     name: "Cooking Oil",
-    image: "close-up-wine-bottle-glass_23-2148673781.avif",
-    link: `/product_categories/drinks`,
+    image: "/avocado pear oil.webp",
+    link: `/product_categories/cooking oil`,
   },
   {
     id: 6,
     name: "Grains and Pasta",
-    image: "close-up-wine-bottle-glass_23-2148673781.avif",
-    link: `/product_categories/drinks`,
+    image: "/garri.avif",
+    link: `/product_categories/grains and pasta`,
   },
 ];
 
