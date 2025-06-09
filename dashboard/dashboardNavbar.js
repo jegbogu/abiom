@@ -17,7 +17,7 @@ function DashboardNavbar() {
 
     const logoutHandler = async () => {
         await signOut({ redirect: false });
-        router.push('/admin-login');
+        router.push('/login');
     };
 
     return (

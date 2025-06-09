@@ -2,7 +2,7 @@ import classes from './contact.module.css'
 import Link from 'next/link'
 import { MongoClient } from 'mongodb';
 import Layout from '@/component/layout/layout'; 
-function Contact() {
+function Contact(props) {
     return (
         <Layout categories={props.categories} products={props.products}> 
         <div className={classes.section}>
