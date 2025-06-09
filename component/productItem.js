@@ -154,7 +154,6 @@ import FavouriteContext from "@/store/favourite-context";
 
 import CartIcon from "@/icons/cartIcon";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"; // ✅ Use react-icons for heart icons
-import Button from "./utils/button";
 
 function ProductItem(props) {
   const [spinner, setSpinner] = useState(false);
@@ -218,10 +217,7 @@ function ProductItem(props) {
       favCtx.addFavourite({ ...props });
     }
   };
-
-  // states the conditions to display the heart
-  const showHeart = isFavourite || isHovered;
-
+  const showHeart = isHovered || isFavourite;
   const prodObj = cartCtx.carts.find((product) => product.id === props.id);
   const showCart = prodObj ? (
     <div className={classes.cart}>
@@ -231,8 +227,8 @@ function ProductItem(props) {
   ) : null;
 
   let fullTitle =
-    props.title.length > 25 ? `${props.title.slice(0, 25)}..` : props.title;
-  let shownFullTitle = props.title.length > 25 ? <h5>{props.title}</h5> : "";
+    props.title.length > 20 ? `${props.title.slice(0, 20)}..` : props.title;
+  let shownFullTitle = props.title.length > 20 ? <h5>{props.title}</h5> : "";
 
   return (
     <li className={classes.productItem}>
@@ -248,9 +244,9 @@ function ProductItem(props) {
           {showHeart && (
             <button className={classes.favIcon} onClick={toggleFavourite}>
               {isFavourite ? (
-                <AiFillHeart color="red" size={20} />
+                <AiFillHeart color="red" size={24} />
               ) : (
-                <AiOutlineHeart size={20} color="black" />
+                <AiOutlineHeart size={24} color="black" />
               )}
             </button>
           )}
@@ -259,30 +255,27 @@ function ProductItem(props) {
         <div className={classes.itemBody}>
           <h3 onClick={showDetailsHandler}>{fullTitle}</h3>
           {shownFullTitle}
-          <p className="actualPrice">$ {props.price}</p>
-          <div className="flex items-center gap-2">
-            {show ? (
-              <div className={classes.cartBtn}>
-                <div className={classes.cartBtnOne}>
-                  <Button onClick={addHandler}>+</Button>
-                </div>
-                <div className={classes.cartBtnTwo}>
-                  <Button>{count}</Button>
-                </div>
-                <div className={classes.cartBtnThree}>
-                  <Button onClick={subtractHandler}>-</Button>
-                </div>
-              </div>
-            ) : (
-              <Button size="sm" onClick={displayCartBtn}>
-                Add to Cart
-              </Button>
-            )}
+          <p>Price: ${props.price}</p>
 
-            <Button size="sm" variant="outline" onClick={showDetailsHandler}>
-              Details{spinner}
-            </Button>
-          </div>
+          {show ? (
+            <div className={classes.cartBtn}>
+              <div className={classes.cartBtnOne}>
+                <button onClick={addHandler}>+</button>
+              </div>
+              <div className={classes.cartBtnTwo}>
+                <button>{count}</button>
+              </div>
+              <div className={classes.cartBtnThree}>
+                <button onClick={subtractHandler}>-</button>
+              </div>
+            </div>
+          ) : (
+            <button onClick={displayCartBtn}>Add to Cart</button>
+          )}
+
+          <span>
+            <button onClick={showDetailsHandler}>Details{spinner}</button>
+          </span>
         </div>
         {showCart}
       </div>

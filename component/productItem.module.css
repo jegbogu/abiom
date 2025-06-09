@@ -1,100 +1,118 @@
-.block {
-  display: block;
+.block{
+    display: block;
 }
-.none {
-  display: none;
-}
-.productItem {
-  /* max-width: 288px; */
-  width: 100%;
-  border-radius: 12px;
-  @apply bg-neutral-900;
+.none{
+    display: none;
 }
 
-.item {
-  position: relative;
-  border-radius: 12px;
-  transition: ease-in-out 300ms;
+
+
+
+
+.item{
+
+     width: 100%;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    transition: ease-in-out 300ms;
+   
 }
-.item:hover {
-  box-shadow: gray 1px 2px 3px;
+.item:hover{
+box-shadow: gray 1px 2px 3px;
 }
-.figure {
-  width: 100%;
-  height: 100%;
+.figure{
+    width: 100%;
+    margin: 0px auto;
+    
 }
-.figure img {
-  width: 100%;
-  @apply rounded-xl aspect-square bg-cover;
+.figure img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    
+    
 }
+
 
 .favIcon {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   border: none;
-  display: grid;
-  place-items: center;
   cursor: pointer;
   z-index: 2;
-  background-color: white;
-  border-radius: 100%;
-  height: 32px;
-  width: 32px;
+  background: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
 }
-
+.favIcon svg{
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
 .figure {
   position: relative;
 }
 
-.itemBody {
-  @apply p-4 relative;
+
+.itemBody{
+    margin-top: 0px;
+    padding: 20px;
 }
 .itemBody h5 {
-  display: none;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
-  padding: 10px;
-  border: 1px solid gray;
-  z-index: 10;
-  left: 20%;
-  font-size: 16px;
-  border-radius: 12px;
-  white-space: nowrap;
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: 1px solid gray;
+    z-index: 10;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+  }
+  
+  .itemBody h3 {
+    margin: -10px 0 0 0;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Show h5 when hovering over h3 */
+  .itemBody h3:hover + h5 {
+    display: block;
+  }
+  
+
+.itemBody p{
+    margin: 10px 0px 10px 0px;
+    color: rgb(234, 136, 24);
+    ;
+    font-size: 20px;
+     margin:'10px 0px 0px 0px';
+    
 }
 
-.itemBody h3 {
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-}
-
-/* Show h5 when hovering over h3 */
-.itemBody h3:hover + h5 {
-  display: block;
-}
-
-.itemBody p {
-  margin: 10px 0px 10px 0px;
-  color: rgb(234, 136, 24);
-  font-size: 20px;
-  margin: "10px 0px 0px 0px";
-}
-/* 
 .itemBody button {
   background-color: var(--s-col);
-  padding: 10px 5px 10px 5px;
+  padding: 7px;
   border: none;
-  border-radius: 5px;
+  border-radius: 1rem;
   color: rgb(255, 255, 255);
   font-weight: 900;
-  cursor: pointer;font-size: 15px;
+  cursor: pointer;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
+  font-size: 15px;
 }
 .itemBody button:hover {
   background-color: var(--p-col);
-  padding: 10px 5px 10px 5px;
   border: none;
 }
 .itemBody span {
@@ -102,86 +120,96 @@
 }
 .itemBody span button {
   background-color: rgba(255, 68, 0, 0);
-  padding: 10px 5px 10px 5px;
+  padding: 7px;
   border: solid var(--s-col) 1px;
-  border-radius: 5px;
+  border-radius: 1rem;
   cursor: pointer;
-  color: white; font-size: 15px;
+  color: white;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
+  font-size: 15px;
 }
 .itemBody span button:hover {
   background-color: rgba(255, 68, 0, 0);
-  padding: 10px 5px 10px 5px;
   border: solid var(--p-col) 1px;
-  border-radius: 5px;
-} */
-/* .cartBtn {
-  display: inline;
 }
-.cartBtnOne,
-.cartBtnTwo,
-.cartBtnThree {
-  display: inline;
+.cartBtn{
+    display: inline;
 }
-.cartBtnOne button {
-  background-color: black;
-  border-color: var(--p-col);
-  border-radius: 0%;
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
+    display: inline;
+  
 }
-.cartBtnTwo button {
-  background-color: rgb(76, 52, 0);
-  border-color: var(--p-col);
-  border-radius: 0%;
-}
-.cartBtnThree button {
-  background-color: black;
-  border-color: var(--p-col);
-  border-radius: 0%;
-} */
-.trash {
-  margin-top: 5%;
-  cursor: pointer;
-}
-.qty {
-  color: aliceblue;
-}
-.cart {
-  background-color: var(--p-col);
-  width: 10%;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 40px;
-  margin-top: 10px;
-  color: black;
-}
-@media screen and (max-width: 780px) {
-  .productItem {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
+.cartBtnOne button{
     background-color: black;
-    border-radius: 10px;
-  }
-  .item {
-    width: 100%;
+    border-color: var(--p-col);
+    border-radius: 0%;
+    
+    
+}
+.cartBtnTwo button{
+    background-color: rgb(76, 52, 0);
+    border-color: var(--p-col);
+    border-radius: 0%;
+   
+}
+.cartBtnThree button{
+    background-color: black;
+    border-color: var(--p-col);
+    border-radius: 0%;
+}
+.trash{
+    margin-top: 5%;
+    cursor: pointer;
+}
+.qty{
+    color: aliceblue;
+}
+.cart{
+    background-color:var(--p-col);
+    width: 10%;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 40px;
+   margin-top: 10px;
+    font-family: cursive;
+    color: black;
+    
+ 
+}
+@media screen and (max-width:780px)  {
+    .productItem{
+       display: block;
+         width: 100%;
+         margin-top: 20px;
+         background-color: black;
+         border-radius: 10px;
+       
+         
+        }
+        .item{
+ 
+    
+     width: 100%;
     background-color: black;
     margin-top: 20px;
     border-radius: 10px;
-  }
-  .figure {
+}
+        .figure{
     width: 100%;
-
-    margin-top: -19.5px;
-  }
-  .figure img {
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
-  }
-  .itemBody {
+  
+   margin-top: -19.5px;
+}
+        .figure img{
+            width: 100%;
+ border-radius: 10px 10px 0px 0px;
+        }
+        .itemBody{
     margin-top: 20px;
     padding: 20px;
-  }
-  .itemBody button {
+}
+.itemBody button{
     background-color: var(--s-col);
     padding: 10px 20px 10px 20px;
     border: none;
@@ -189,84 +217,92 @@
     color: white;
     font-weight: 900;
     cursor: pointer;
-  }
-  .itemBody button:hover {
+}
+.itemBody button:hover{
     background-color: var(--p-col);
     padding: 10px 20px 10px 20px;
     border: none;
-  }
-  .itemBody span {
+     
+}
+.itemBody span{
     margin-left: 20px;
-  }
-  .itemBody span button {
+}
+.itemBody span button{
     background-color: rgba(255, 68, 0, 0);
     padding: 10px 20px 10px 20px;
-    border: solid var(--s-col) 1px;
+    border:solid  var(--s-col) 1px;
     border-radius: 5px;
-    cursor: pointer;
+    cursor:pointer;
     color: white;
-  }
-  .itemBody span button:hover {
+}
+.itemBody span button:hover{
     background-color: rgba(255, 68, 0, 0);
     padding: 10px 20px 10px 20px;
-    border: solid var(--p-col) 1px;
+    border:solid  var(--p-col) 1px;
     border-radius: 5px;
-  }
-  .cartBtn {
+     
+}
+.cartBtn{
     display: inline;
-  }
-  .cartBtnOne,
-  .cartBtnTwo,
-  .cartBtnThree {
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
     display: inline;
-  }
-  .cartBtnOne button {
+  
+}
+.cartBtnOne button{
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
-  }
-  .cartBtnTwo button {
+    
+}
+.cartBtnTwo button{
     background-color: rgb(76, 52, 0);
     border-color: var(--p-col);
     border-radius: 0%;
-  }
-  .cartBtnThree button {
+   
+}
+.cartBtnThree button{
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
-  }
 }
-/* @media screen and (max-width: 412px) {
-  .productItem {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
+         
+}
+@media screen and (max-width:412px)  {
+    .productItem{
+       display: block;
+         width: 100%;
+         margin-top: 20px;
+         background-color: black;
+         border-radius: 10px;
+       
+         
+        }
+        .item{
+ 
+    
+     width: 100%;
     background-color: black;
-    border-radius: 10px;
-  }
-  .item {
-    width: 100%;
-    background-color: black;
     margin-top: 20px;
     border-radius: 10px;
-  }
-  .figure {
+}
+        .figure{
     width: 100%;
-
-    margin-top: -19.5px;
-  }
-  .figure img {
-    width: 325px;
-    height: 325px;
-    margin-left: -0.5px;
-    border-radius: 10px 10px 0px 0px;
-  }
-
-  .itemBody {
+  
+   margin-top: -19.5px;
+}
+        .figure img{
+            width: 325px;
+            height: 325px;
+            margin-left: -0.5px;
+ border-radius: 10px 10px 0px 0px;
+        }
+       
+        .itemBody{
     margin-top: 20px;
     padding: 20px;
-  }
-  .itemBody button {
+}
+.itemBody button{
     background-color: var(--s-col);
     padding: 10px 10px 10px 10px;
     border: none;
@@ -274,50 +310,54 @@
     color: white;
     font-weight: 900;
     cursor: pointer;
-  }
-  .itemBody button:hover {
+}
+.itemBody button:hover{
     background-color: var(--p-col);
     padding: 10px 20px 10px 20px;
     border: none;
-  }
-  .itemBody span {
+     
+}
+.itemBody span{
     margin-left: 20px;
-  }
-  .itemBody span button {
+}
+.itemBody span button{
     background-color: rgba(255, 68, 0, 0);
     padding: 10px 10px 10px 10px;
-    border: solid var(--s-col) 1px;
+    border:solid  var(--s-col) 1px;
     border-radius: 5px;
-    cursor: pointer;
+    cursor:pointer;
     color: white;
-  }
-  .itemBody span button:hover {
+}
+.itemBody span button:hover{
     background-color: rgba(255, 68, 0, 0);
     padding: 10px 20px 10px 20px;
-    border: solid var(--p-col) 1px;
+    border:solid  var(--p-col) 1px;
     border-radius: 5px;
-  }
-  .cartBtn {
+     
+}
+.cartBtn{
     display: inline;
-  }
-  .cartBtnOne,
-  .cartBtnTwo,
-  .cartBtnThree {
+}
+.cartBtnOne,.cartBtnTwo,.cartBtnThree{
     display: inline;
-  }
-  .cartBtnOne button {
+  
+}
+.cartBtnOne button{
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
-  }
-  .cartBtnTwo button {
+    
+}
+.cartBtnTwo button{
     background-color: rgb(76, 52, 0);
     border-color: var(--p-col);
     border-radius: 0%;
-  }
-  .cartBtnThree button {
+   
+}
+.cartBtnThree button{
     background-color: black;
     border-color: var(--p-col);
     border-radius: 0%;
-  }
-} */
+}
+         
+}

@@ -1,95 +1,93 @@
 .section {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding-inline: 1.5rem;
 }
 
 /* Carousel Wrapper */
 .carouselWrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+   
 }
 
 /* Carousel Container */
 .carouselContainer {
-  width: 100%;
-
-  white-space: nowrap;
+    width: 100%;
+  
+    white-space: nowrap;
 }
 
 .carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  padding-inline: 1rem;
-}
-
-.carousel a {
-  max-width: 430px;
-  width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .carousel::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Post Card */
 .postCard {
-  position: relative;
-  display: block; /* Ensure <a> behaves like a block element */
-  text-decoration: none;
-  background: #fff;
-  border-radius: 10px;
-  text-align: center;
-  min-width: 450px;
-  transition: transform 0.3s ease-in-out;
-  @apply aspect-square object-cover;
+    display: block; /* Ensure <a> behaves like a block element */
+    text-decoration: none;
+    background: #fff;
+    border-radius: 10px;
+     
+    text-align: center;
+    max-width: 400px;
+    
+    transition: transform 0.3s ease-in-out;
+   
 }
 
 .postCard:hover {
-  transform: scale(1.01);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .postImage {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    aspect-ratio: 2/3;
 }
 
 .postName {
-  font-size: 1.2em;
-
-  margin-top: 10px;
-  color: #333;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal; /* Ensure text wraps */
-  max-width: 100%; /* Prevents overflow */
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.header {
-  @apply flex justify-between items-center gap-4 w-full py-4;
+    font-size: 1.2em;
+     
+    padding: 10px;
+    color: #333;
+    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Ensure text wraps */
+    max-width: 100%; /* Prevents overflow */
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* Navigation Buttons */
 .carouselBtns {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    margin-left: 80%;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-/* .carouselBtns button {
-    width: 50px; 
-    height: 50px; 
+.carouselBtns button {
+    width: 50px;  /* Set a fixed width */
+    height: 50px; /* Set height equal to width */
     font-size: 1.3em;
     border-radius: 50%;
     border: none;
@@ -106,54 +104,66 @@
 }
 .carouselBtns button:hover{
     background-color: rgba(128, 128, 128, 0.13);
-} */
-.figure {
-  @apply w-full;
 }
-.postImage {
-  @apply w-full rounded-lg aspect-square object-cover object-center;
+@media screen and (max-width: 412px) {
+    .carouselBtns {
+        display: flex;
+        margin-left: 120%;
+        gap: 10px;
+        margin-bottom: 100px;
+    }
+    .carouselWrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+       
+        margin-left: 241px;
+        margin-top: -80px;
+       
+    }
+    
+    /* Carousel Container */
+    .carouselContainer {
+        width: 100%;
+      
+        white-space: nowrap;
+    }
+    .postCard {
+        display: block; /* Ensure <a> behaves like a block element */
+        text-decoration: none;
+        background: #fff;
+        border-radius: 10px;
+         
+        text-align: center;
+        min-width: 250px;
+        
+       margin-left: 20px;
+        transition: transform 0.3s ease-in-out;
+       
+    }
+    
+    .postCard:hover {
+        transform: scale(1.01);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .postImage {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .postName {
+        font-size:1em;
+         
+        margin-top: 10px;
+        color: #333;
+        font-family: 'Times New Roman', Times, serif;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; /* Ensure text wraps */
+        max-width: 100%; /* Prevents overflow */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
-.postName {
-  @apply text-left font-medium p-4;
-}
-
-/* @media screen and (max-width: 412px) {
-  .carouselBtns {
-    display: flex;
-    margin-left: 120%;
-    gap: 10px;
-    margin-bottom: 100px;
-  }
-  .carouselWrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    overflow: hidden;
-
-    margin-left: 241px;
-    margin-top: -80px;
-  }
-
-  .carouselContainer {
-    width: 100%;
-
-    white-space: nowrap;
-  }
-  .postCard {
-    display: block; 
-    text-decoration: none;
-    background: #fff;
-    border-radius: 10px;
-
-    text-align: center;
-    min-width: 250px;
-
-    margin-left: 20px;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .postCard:hover {
-    transform: scale(1.01);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-} */

@@ -1,59 +1,52 @@
-.carouselWrapper{
-  @apply p-4;
-}
 .carouselContainer {
   width: 100%;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow-x: auto;
+  padding-inline: 3rem;
+}
+.carouselContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .carousel {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* flex-wrap: wrap; */
+  display: flex;
   gap: 1rem;
   width: 100%;
 }
 
 .productCard {
+  width: 250px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 8px;
   transition: ease-in-out 300ms;
 }
-
-.productCard {
-  @apply flex gap-2 items-center rounded-xl flex-col w-full bg-white cursor-pointer p-2 ;
-}
-.productCard:hover {
-  @apply shadow-lg;
-}
-
 .productCard p {
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
   color: rgb(0, 0, 0);
   font-size: 15px;
 }
 .productCard:hover {
   box-shadow: 0px 0px 20px rgba(91, 90, 90, 0.858);
 }
-.figure{
-  max-width: 380px;
-  max-height: 300px;
-  width: 100%;
-}
 
 .productImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   aspect-ratio: 1/1;
-  @apply rounded-xl;
+  object-fit: cover;
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .productName {
-  margin-top: 0.5rem;
   font-weight: 600;
-  font-size: 1rem;
-  text-align: left;
-  padding-bottom: 10px;
+
+  font-family: "Times New Roman", Times, serif;
+  font-family: 1.3em;
+  text-align: start;
+  padding: 10px;
 }
 @media screen and (max-width: 412px) {
   .carouselContainer {

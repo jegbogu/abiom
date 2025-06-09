@@ -1,35 +1,40 @@
-.list {
-  list-style: none;
-  list-style-type: none;
-  /* margin: 0 auto;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  gap: 1rem;
-  width: 100%;
-  overflow-x: auto; */
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4;
-}
-/* @media screen and (max-width: 1028px) {
-  .list {
+.list{
     list-style: none;
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto auto ;
     width: 100%;
-    gap: 10px;
-  }
+    gap: 1rem;
+    padding-inline: 3rem;
+
 }
-@media screen and (max-width: 450px) {
-  .list {
-    list-style: none;
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    display: grid;
-    grid-template-columns: auto;
-    width: 100%;
-  }
-} */
+@media screen and (max-width:1028px) {
+    .list{
+        list-style: none;
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 90%;
+        gap: 10px;
+      
+    
+    }
+}
+@media screen and (max-width:450px) {
+    .list{
+        list-style: none;
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: auto;
+        width: 90%;
+       
+      
+    
+    }
+}

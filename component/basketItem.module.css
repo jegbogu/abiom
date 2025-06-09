@@ -4,16 +4,18 @@
 .none {
   display: none;
 }
-
+.productItem {
+}
 .item {
-  /* width: 95%;
+  width: 100%;
   background-color: black;
   margin-top: 20px;
   border-radius: 0px;
   cursor: pointer;
   transition: ease-in-out 0.3s;
-  overflow: hidden; */
-  @apply w-full rounded-xl cursor-pointer transition-all bg-neutral-800;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
+  overflow: hidden;
 }
 .item:hover {
   box-shadow: 1px 2px 8px rgba(91, 90, 90, 0.858);
@@ -21,13 +23,16 @@
 .figure {
   position: relative; /* Important to contain absolutely positioned children */
   width: 100%;
+  height: 325px; /* Fixed height for the image container */
+  margin: 0 auto;
 }
 
 .figure img {
   width: 100%;
-  @apply rounded-xl aspect-square object-cover object-center;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: block;
 }
-
 
 .outOfStock {
   position: absolute;
@@ -41,45 +46,56 @@
   font-weight: bold;
   z-index: 2;
 }
-
-.itemBody {
-  padding: 16px;
-  @apply block space-y-2;
+.discount {
+  padding-top: 10px;
 }
-
-/* .itemBody button {
-  background-color: var(--s-col);
-  padding: 10px 5px 10px 5px;
-  border: none;
-  border-radius: 5px;
+.itemBody {
+  margin-top: 0px;
+  padding: 20px;
+}
+.itemBody h3 {
+  margin: -10px 0px 0px 0px;
   color: white;
+  font-size: 15px;
+}
+.itemBody p {
+  margin: 20px 0px 20px 0px;
+  color: white;
+}
+.itemBody button {
+  background-color: var(--s-col);
+  padding: 7px;
+  border: none;
+  border-radius: 1rem;
+  color: rgb(255, 255, 255);
   font-weight: 900;
   cursor: pointer;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
   font-size: 15px;
 }
 .itemBody button:hover {
   background-color: var(--p-col);
-  padding: 10px 5px 10px 5px;
   border: none;
-} */
-/* .itemBody span {
+}
+.itemBody span {
   margin-left: 20px;
 }
 .itemBody span button {
   background-color: rgba(255, 68, 0, 0);
-  padding: 10px 5px 10px 5px;
+  padding: 7px;
   border: solid var(--s-col) 1px;
-  border-radius: 5px;
+  border-radius: 1rem;
   cursor: pointer;
   color: white;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
   font-size: 15px;
-} */
-/* .itemBody span button:hover {
+}
+.itemBody span button:hover {
   background-color: rgba(255, 68, 0, 0);
-  padding: 10px 5px 10px 5px;
   border: solid var(--p-col) 1px;
-  border-radius: 5px;
-} 
+}
 .cartBtn {
   display: inline;
 }
@@ -87,7 +103,7 @@
 .cartBtnTwo,
 .cartBtnThree {
   display: inline;
-} 
+}
 .cartBtnOne button {
   background-color: black;
   border-color: var(--p-col);
@@ -102,7 +118,7 @@
   background-color: black;
   border-color: var(--p-col);
   border-radius: 0%;
-} */
+}
 .trash {
   margin-top: 5%;
   cursor: pointer;
@@ -110,7 +126,7 @@
 .qty {
   color: aliceblue;
 }
-/* .cart {
+.cart {
   background-color: var(--p-col);
   width: 10%;
   border-top-left-radius: 100px;
@@ -120,7 +136,7 @@
   margin-top: 10px;
   font-family: cursive;
   color: black;
-} */
+}
 @media screen and (max-width: 780px) {
   .productItem {
     display: block;
@@ -152,7 +168,7 @@
     background-color: var(--s-col);
     padding: 10px 5px 10px 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     color: white;
     font-weight: 900;
     cursor: pointer;
@@ -169,7 +185,7 @@
     background-color: rgba(255, 68, 0, 0);
     padding: 10px 5px 10px 5px;
     border: solid var(--s-col) 1px;
-    border-radius: 5px;
+    border-radius: 1rem;
     cursor: pointer;
     color: white;
   }
