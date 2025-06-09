@@ -23,14 +23,30 @@ const Home = (props) => {
       <BannerL />
       {/* <Review /> */}
 
-      <div className={classes.discount}>
-        <div className={classes.disInfo}>
-          <h3>Our Basket Products</h3>
-          {/* <p>This Discount starts from the 13th of May 2023 and ends on the 21st of May 2023</p> */}
-        </div>
+      <section className={`${classes.discount}`}>
+        <section className="homeSection">
+          <div className={classes.disInfo}>
+            <h3>Our Basket Products</h3>
+            {/* <p>This Discount starts from the 13th of May 2023 and ends on the 21st of May 2023</p> */}
+          </div>
 
-        <BasketList basketProducts={props.basketProducts} />
-      </div>
+          <BasketList basketProducts={props.basketProducts} />
+        </section>
+      </section>
+      <section className="homeSection">
+        <ProductCarousel
+          products={props.products}
+          title={
+            <div className={classes.carousel}>
+              <h3>Today&apos;s big deals</h3>
+            </div>
+          }
+        />
+      </section>
+      <section className="homeSection">
+        <div className={classes.categories}>
+          <h3>Shop Our Most Popular Categories</h3>
+        </div>
 
       <div className={classes.carousel}>
         <h3>Today's big deals</h3>

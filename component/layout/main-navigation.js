@@ -1,39 +1,39 @@
 import { useRouter } from "next/router";
-import { useState, useEffect, useRef,useContext } from "react";
-import Cart from "./cart";
+import { useState, useEffect, useRef, useContext } from "react";
+// import Cart from "./cart";
 import Logo from "./logo";
 import LogoMobile from "./logoMobile";
- 
-import Hamburger from "./hamburger";
+
+// import Hamburger from "./hamburger";
 import Favourite from "./favourite";
 import Gift from "./gift";
-import SearchIcon from "@/icons/search";
+// import SearchIcon from "@/icons/search";
 import classes from "./main-navigation.module.css";
- 
-import CartsContext from '../../store/product-context'
+
+import CartsContext from "../../store/product-context";
 import TrashIcon from "@/icons/trash";
-import SearchIconMobile from "@/icons/searchMobile";
+// import SearchIconMobile from "@/icons/searchMobile";
+import { ShoppingCart as Cart, Menu as Hamburger } from "lucide-react";
+import { AiOutlineSearch as Search } from "react-icons/ai";
 
 const MainNavigation = ({ categories, products }) => {
-    const [showCategory, setShowCategory] = useState(false);
-    const [getCategory, setGetCategory] = useState("");
-    const [searchTerm, setSearchTerm] = useState("");
-    const [filteredProducts, setFilteredProducts] = useState([]);
-    const categoryDropdownDesktopRef = useRef(null);
-    const categoryDropdownMobileRef = useRef(null)
-    const searchDropdownDesktopRef = useRef(null);
-    const searchDropdownMobileRef = useRef(null);
-    const searchInputRef = useRef(null);
-    const router = useRouter();
-    const [userCarts, setUserCarts] = useState([]);
-    const [isHydrated, setIsHydrated] = useState(false);  
+  const [showCategory, setShowCategory] = useState(false);
+  const [getCategory, setGetCategory] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const categoryDropdownDesktopRef = useRef(null);
+  const categoryDropdownMobileRef = useRef(null);
+  const searchDropdownDesktopRef = useRef(null);
+  const searchDropdownMobileRef = useRef(null);
+  const searchInputRef = useRef(null);
+  const router = useRouter();
+  const [userCarts, setUserCarts] = useState([]);
+  const [isHydrated, setIsHydrated] = useState(false);
 
-    const cartCtx = useContext(CartsContext)
+  const cartCtx = useContext(CartsContext);
 
-
-
- // Load from localStorage
- useEffect(() => {
+  // Load from localStorage
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const savedCarts = localStorage.getItem("cart");
       if (savedCarts) {
@@ -47,130 +47,120 @@ const MainNavigation = ({ categories, products }) => {
   useEffect(() => {
     if (isHydrated) {
       localStorage.setItem("cart", JSON.stringify(userCarts));
-     
     }
   }, [userCarts, isHydrated]);
 
+  let cart = cartCtx.carts;
 
-    let cart = cartCtx.carts
+  let cartTotalQty;
+  const prodQty = cartCtx.carts.some((el) => el.qty > 1);
+  if (prodQty) {
+    const cartQty = cart
+      .map((el) => {
+        return el.qty;
+      })
+      .reduce((acc, cv) => {
+        return acc + cv;
+      });
+    cartTotalQty = cartQty;
+  } else if (prodQty === false) {
+    cartTotalQty = cart.length;
+  }
 
-     
+  let totalCartdiv;
+  let content;
 
-    let cartTotalQty;
-    const prodQty = cartCtx.carts.some(el => el.qty > 1)
-    if (prodQty) {
-        const cartQty = cart.map((el) => {
-            return el.qty
-        }).reduce((acc, cv) => {
-            return acc + cv
-        })
-        cartTotalQty = cartQty
-    } else if (prodQty === false) {
-        cartTotalQty = cart.length
+  if (cartCtx.carts.length > 0) {
+    content = (
+      <div onClick={deleteCartHandler} className={classes.deleteCart}>
+        <TrashIcon />
+      </div>
+    );
+    totalCartdiv = <div className={classes.totalCarts}>{cartTotalQty}</div>;
+  }
+
+  function deleteCartHandler() {
+    while (cart.length != 0) {
+      cart.pop();
+      if (cart.length == 0) {
+        router.reload("/cart");
+        break;
+      }
     }
+    localStorage.removeItem("cart"); // Clear cart from localStorage
+  }
 
-    let totalCartdiv
-    let content;
-  
-    if (cartCtx.carts.length > 0) {
+  // Toggle category dropdown
+  const toggleCategoryDropdown = () => {
+    setShowCategory((prev) => !prev);
+  };
 
-        content = <div onClick={deleteCartHandler} className={classes.deleteCart}>
-            <TrashIcon />
-           
-            </div>
-            totalCartdiv = <div className={classes.totalCarts}>{cartTotalQty}</div>
-    }
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const isClickOutsideCategoryDropdown =
+        (!categoryDropdownDesktopRef.current ||
+          !categoryDropdownDesktopRef.current.contains(event.target)) &&
+        (!categoryDropdownMobileRef.current ||
+          !categoryDropdownMobileRef.current.contains(event.target));
 
-    
-
-   
-
-    function deleteCartHandler() {
-        while (cart.length != 0) {
-            cart.pop()
-            if (cart.length == 0) {
-                router.reload('/cart')
-                break;
-            }
-        }
-        localStorage.removeItem("cart"); // Clear cart from localStorage
-         
-    };
-
-
-
-
-
-
-
-    // Toggle category dropdown
-    const toggleCategoryDropdown = () => {
-        setShowCategory((prev) => !prev);
-    };
-
-    // Close dropdowns when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            const isClickOutsideCategoryDropdown =
-                (!categoryDropdownDesktopRef.current || !categoryDropdownDesktopRef.current.contains(event.target)) &&
-                (!categoryDropdownMobileRef.current || !categoryDropdownMobileRef.current.contains(event.target));
-    
-            if (isClickOutsideCategoryDropdown) {
-                setShowCategory(false);
-            }
-    
-            const isClickOutsideSearchDropdown =
-                (!searchDropdownDesktopRef.current || !searchDropdownDesktopRef.current.contains(event.target)) &&
-                (!searchDropdownMobileRef.current || !searchDropdownMobileRef.current.contains(event.target));
-    
-            if (isClickOutsideSearchDropdown) {
-                setFilteredProducts([]);
-            }
-        };
-    
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-    
-
-    const handleGetCategory = (category) => {
-       
-        setGetCategory(category);
+      if (isClickOutsideCategoryDropdown) {
         setShowCategory(false);
-       
-        router.push("/product_categories/" + encodeURIComponent(category));
+      }
+
+      const isClickOutsideSearchDropdown =
+        (!searchDropdownDesktopRef.current ||
+          !searchDropdownDesktopRef.current.contains(event.target)) &&
+        (!searchDropdownMobileRef.current ||
+          !searchDropdownMobileRef.current.contains(event.target));
+
+      if (isClickOutsideSearchDropdown) {
+        setFilteredProducts([]);
+      }
     };
-    
-    // Search function
-    const handleSearch = (e) => {
-        const term = e.target.value.toLowerCase();
-        setSearchTerm(term);
 
-        if (!term.trim()) {
-            setFilteredProducts([]);
-            return;
-        }
-
-        const uniqueCategories = [...new Set(products.map((el) => el.category))];
-
-        const filteredProducts = products.filter(
-            (el) => el.title.toLowerCase().includes(term) || el.category.toLowerCase().includes(term)
-        );
-
-        const filteredCategories = uniqueCategories.filter((category) =>
-            category.toLowerCase().includes(term)
-        );
-
-        setFilteredProducts([...filteredProducts, ...filteredCategories]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
- 
-const prodFnc = (product) =>{
-     
-    router.push(`/shop/${product.id}`)
-}
-const categoryFnc = (product) =>{
+  }, []);
+
+  const handleGetCategory = (category) => {
+    setGetCategory(category);
+    setShowCategory(false);
+
+    router.push("/product_categories/" + encodeURIComponent(category));
+  };
+
+  // Search function
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    if (!term.trim()) {
+      setFilteredProducts([]);
+      return;
+    }
+
+    const uniqueCategories = [...new Set(products.map((el) => el.category))];
+
+    const filteredProducts = products.filter(
+      (el) =>
+        el.title.toLowerCase().includes(term) ||
+        el.category.toLowerCase().includes(term)
+    );
+
+    const filteredCategories = uniqueCategories.filter((category) =>
+      category.toLowerCase().includes(term)
+    );
+
+    setFilteredProducts([...filteredProducts, ...filteredCategories]);
+  };
+
+  const prodFnc = (product) => {
+    router.push(`/shop/${product.id}`);
+  };
+  const categoryFnc = (product) => {
     router.push("/product_categories/" + product);
 }
     return (
@@ -261,7 +251,6 @@ const categoryFnc = (product) =>{
               </div>
             </div>
           </div>
-
           <div className={classes.items}>
             <div>
               <p>

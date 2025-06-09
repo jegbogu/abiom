@@ -51,9 +51,7 @@
     border: 1px solid gray;
     z-index: 10;
     font-size: 12px;
-    border-radius: 5px;
-    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-  }
+    border-radius: 5px; }
   
   .itemBody h3 {
     margin: -10px 0 0 0;
@@ -152,7 +150,6 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 40px;
    margin-top: 10px;
-    font-family: cursive;
     color: black;
     
  

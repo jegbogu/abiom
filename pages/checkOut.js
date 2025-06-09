@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Layout from '@/component/layout/layout';
-import { MongoClient } from 'mongodb';
+import React, { useContext, useEffect, useRef, useState } from "react";
+import Layout from "@/component/layout/layout";
+import { MongoClient } from "mongodb";
 import {
   PayPalScriptProvider,
   PayPalButtons,
@@ -11,20 +11,20 @@ import {
   PayPalCVVField,
   usePayPalCardFields,
 } from "@paypal/react-paypal-js";
-import CartsContext from '../store/product-context';
-import classes from './checkOut.module.css';
-import CheckOutOrShop from '@/component/checkoutOrShop';
+import CartsContext from "../store/product-context";
+import classes from "./checkOut.module.css";
+import CheckOutOrShop from "@/component/checkoutOrShop";
 
 function CheckOut(props) {
   const cartCtx = useContext(CartsContext);
   const [price, setPrice] = useState(0);
   const [billingAddress, setBillingAddress] = useState({
-    addressLine1: '',
-    addressLine2: '',
-    adminArea1: '',
-    adminArea2: '',
-    countryCode: '',
-    postalCode: '',
+    addressLine1: "",
+    addressLine2: "",
+    adminArea1: "",
+    adminArea2: "",
+    countryCode: "",
+    postalCode: "",
   });
 
   const cart = cartCtx.carts;
@@ -36,10 +36,10 @@ function CheckOut(props) {
   }, [cart]);
 
   const initialOptions = {
-"client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
-  currency: "USD",
-  components: "buttons,card-fields"
-};
+    "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+    currency: "USD",
+    components: "buttons,card-fields",
+  };
 
   const createOrder = async () => {
     const response = await fetch("/api/orders", {
@@ -50,71 +50,103 @@ function CheckOut(props) {
     const data = await response.json();
     return data.id;
   };
-
   const onApprove = async (data) => {
-  const response = await fetch(`/api/orders/${data.orderID}/capture`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      billingAddress,
-      cart, // ✅ send purchased items
-    }),
-  });
+    const response = await fetch(`/api/orders/${data.orderID}/capture`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        billingAddress,
+        cart, // ✅ send purchased items
+      }),
+    });
 
-  const orderData = await response.json();
-  // console.log("Order captured:", orderData);
-};
-
+    const orderData = await response.json();
+    // console.log("Order captured:", orderData);
+  };
 
   const handleBillingAddressChange = (field, value) => {
     setBillingAddress((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
-    <Layout categories={props.categories} products={props.products}> 
-    <div className={classes.checkout}>
-      {products ? (
-        <div className={classes.section}>
-          <h3>
-            Your Total Amount is <span className={classes.amount}>${price.toFixed(2)}</span>
-          </h3>
+    <Layout categories={props.categories} products={props.products}>
+      <div className={classes.checkout}>
+        {products ? (
+          <div className={classes.section}>
+            <h3 className="text-black text-base">
+              Your Total Amount is{" "}
+              <span className={classes.amount}>${price.toFixed(2)}</span>
+            </h3>
 
-          <PayPalScriptProvider options={initialOptions}>
-            <PayPalButtons
-              createOrder={createOrder}
-              onApprove={onApprove}
-              style={{ layout: 'vertical', label: 'paypal', color: 'gold' }}
-            />
+            <PayPalScriptProvider options={initialOptions}>
+              <PayPalButtons
+                createOrder={createOrder}
+                onApprove={onApprove}
+                style={{ layout: "vertical", label: "paypal", color: "gold" }}
+              />
 
-            <PayPalCardFieldsProvider createOrder={createOrder} onApprove={onApprove}>
-              <div className={classes.cardFields}>
-                <PayPalNameField />
-                <PayPalNumberField />
-                <PayPalExpiryField />
-                <PayPalCVVField />
-              </div>
+              <PayPalCardFieldsProvider
+                createOrder={createOrder}
+                onApprove={onApprove}
+              >
+                <div className={classes.cardFields}>
+                  <PayPalNameField />
+                  <PayPalNumberField />
+                  <PayPalExpiryField />
+                  <PayPalCVVField />
+                </div>
 
-              <div className={classes.billingForm}>
-                <input placeholder="Address line 1" onChange={(e) => handleBillingAddressChange("addressLine1", e.target.value)} />
-                <input placeholder="Address line 2" onChange={(e) => handleBillingAddressChange("addressLine2", e.target.value)} />
-                <input placeholder="Admin Area 1" onChange={(e) => handleBillingAddressChange("adminArea1", e.target.value)} />
-                <input placeholder="Admin Area 2" onChange={(e) => handleBillingAddressChange("adminArea2", e.target.value)} />
-                <input placeholder="Country Code" onChange={(e) => handleBillingAddressChange("countryCode", e.target.value)} />
-                <input placeholder="Postal Code" onChange={(e) => handleBillingAddressChange("postalCode", e.target.value)} />
-              </div>
+                <div className={classes.billingForm}>
+                  <input
+                    placeholder="Address line 1"
+                    onChange={(e) =>
+                      handleBillingAddressChange("addressLine1", e.target.value)
+                    }
+                  />
+                  <input
+                    placeholder="Address line 2"
+                    onChange={(e) =>
+                      handleBillingAddressChange("addressLine2", e.target.value)
+                    }
+                  />
+                  <input
+                    placeholder="Admin Area 1"
+                    onChange={(e) =>
+                      handleBillingAddressChange("adminArea1", e.target.value)
+                    }
+                  />
+                  <input
+                    placeholder="Admin Area 2"
+                    onChange={(e) =>
+                      handleBillingAddressChange("adminArea2", e.target.value)
+                    }
+                  />
+                  <input
+                    placeholder="Country Code"
+                    onChange={(e) =>
+                      handleBillingAddressChange("countryCode", e.target.value)
+                    }
+                  />
+                  <input
+                    placeholder="Postal Code"
+                    onChange={(e) =>
+                      handleBillingAddressChange("postalCode", e.target.value)
+                    }
+                  />
+                </div>
 
-              <SubmitPayment billingAddress={billingAddress} />
-            </PayPalCardFieldsProvider>
-          </PayPalScriptProvider>
+                <SubmitPayment billingAddress={billingAddress} />
+              </PayPalCardFieldsProvider>
+            </PayPalScriptProvider>
 
-          <div className={classes.figure}>
-            <img src='payment.png' alt='payment portal' width={180} />
+            <div className={classes.figure}>
+              <img src="payment.png" alt="payment portal" width={180} />
+            </div>
           </div>
-        </div>
-      ) : (
-        <CheckOutOrShop />
-      )}
-    </div>
+        ) : (
+          <CheckOutOrShop />
+        )}
+      </div>
     </Layout>
   );
 }
@@ -146,11 +178,11 @@ const SubmitPayment = ({ billingAddress }) => {
             admin_area_2: billingAddress.adminArea2,
             postal_code: billingAddress.postalCode,
             country_code: billingAddress.countryCode,
-          }
+          },
         },
         options: {
-          debug: true
-        }
+          debug: true,
+        },
       });
 
       console.log("✅ cardFieldsForm.submit result:", result);
@@ -163,7 +195,11 @@ const SubmitPayment = ({ billingAddress }) => {
   };
 
   return (
-    <button onClick={handleClick} disabled={isPaying} className={classes.payButton}>
+    <button
+      onClick={handleClick}
+      disabled={isPaying}
+      className={classes.payButton}
+    >
       {isPaying ? "Processing..." : "Pay"}
     </button>
   );
@@ -200,7 +236,22 @@ export async function getServerSideProps() {
 
   // Fetch all products
   const products = await productsCollection
-    .find({}, { projection: { _id: 1, title: 1, price: 1, category: 1, image: 1, nutrition: 1, description: 1, qty: 1 ,outOfStock:1} })
+    .find(
+      {},
+      {
+        projection: {
+          _id: 1,
+          title: 1,
+          price: 1,
+          category: 1,
+          image: 1,
+          nutrition: 1,
+          description: 1,
+          qty: 1,
+          outOfStock: 1,
+        },
+      }
+    )
     .toArray();
 
   // Fetch distinct categories
@@ -218,7 +269,7 @@ export async function getServerSideProps() {
         image: product.image,
         nutrition: product.nutrition,
         description: product.description,
-        outOfStock: product.outOfStock,
+        outOfStock: product.outOfStock ?? null,
         qty: Number(product.qty),
       })),
       basketProducts: products
@@ -231,10 +282,10 @@ export async function getServerSideProps() {
           image: product.image,
           nutrition: product.nutrition,
           description: product.description,
-          outOfStock: product.outOfStock,
+          outOfStock: product.outOfStock ?? null,
           qty: Number(product.qty),
         })),
-      categories,  
+      categories,
     },
   };
 }

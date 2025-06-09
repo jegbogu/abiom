@@ -64,7 +64,9 @@ export default function ProductCategories() {
                   height={242.7}
                 />
               </div>
-              <p className={classes.productName}>{product.name}</p>
+              <p className={classes.productName}>
+                <Link href={product.link}>{product.name}</Link>
+              </p>
             </div>
           ))}
         </div>
