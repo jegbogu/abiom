@@ -2,9 +2,7 @@
     background: #0e1012;
     color: #eee;
     padding: 2rem;
-    margin-top: 100px;
-    font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
-    font-size: 1.1em;
+    margin-top: 100px; font-size: 1.1em;
   }
   
   .footer {
@@ -32,6 +30,9 @@
     color: var(--s-col);
   }
   .icons{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
     margin-bottom: 20px;
   }
   .icons span svg {

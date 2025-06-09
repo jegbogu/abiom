@@ -72,11 +72,11 @@ const Footer = () => {
         <p className={classes.copy}>© {new Date().getFullYear()} Abiom International Supplies. All rights reserved.</p>
         <div className={classes.design}>
           <span>Designed by </span>
-          <div>
+          <span>
           <Link href="https://www.mediaplur.com/" target="_blank" rel="noopener noreferrer">
             <img src="logo.webp"  width={90} alt="Your Logo" className={classes.logo} />   
           </Link>
-          </div>
+          </span>
           
         </div>
       </div>

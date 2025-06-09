@@ -1,55 +1,53 @@
-.section{
-    width: 20%;
-    border: solid rgb(255, 255, 255) 2px;
-    box-shadow: rgb(255, 255, 255) 2px 2px 5px;
-    padding: 20px;
-    margin-top: 50px;
-    margin-left: 50px;
-    border-radius: 10px;
+.section {
+  width: 20%;
+  border: solid rgb(255, 255, 255) 2px;
+  box-shadow: rgb(255, 255, 255) 2px 2px 5px;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 10px;
 }
-.section .sectionroutes{
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: var(--p-col);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 900;
-    font-size: large;
+.section .sectionroutes {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: var(--p-col);
+  font-weight: 900;
+  font-size: large;
 }
-.section .sectionroutes:hover{
-    border: solid 1px white;
-    border-radius: 10px;
-    padding: 10px;
-    width: 70%;
-    transition: 300ms;
+.section .sectionroutes:hover {
+  border: solid 1px white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+  transition: 300ms;
 }
-.section .sectionpara{
-    margin-top: 10px;
-    margin-bottom: 50px;
-    color: var(--s-col);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 900;
-    font-size: 1.4em;
-    border-bottom: 1px solid white;
-    padding-bottom: 30px;
+.section .sectionpara {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  color: var(--s-col);
+  font-weight: 900;
+  font-size: 1.4em;
+  border-bottom: 1px solid white;
+  padding-bottom: 30px;
 }
-.section .sectionroute{
-    padding-top: 100px;
+.section .sectionroute {
+  padding-top: 100px;
 }
-.btn{
-    margin-top: 350px;
+.btn {
+  margin-top: 350px;
 }
-.btn button{
-    padding: 10px 60px 10px 60px;
-    background-color: rgba(240, 248, 255, 0);
-    border: solid var(--s-col) 1px;
-    color: white;
-    font-size: larger;
-    font-weight: 900;
-    border-radius:10px ;
+.btn button {
+  padding: 10px 60px 10px 60px;
+  background-color: rgba(240, 248, 255, 0);
+  border: solid var(--s-col) 1px;
+  color: white;
+  font-size: larger;
+  font-weight: 900;
+  border-radius: 10px;
 }
-.btn button:hover{
-    background-color: var(--p-col);
-    color: black;
-    border: none;
-    transition: 300ms;
+.btn button:hover {
+  background-color: var(--p-col);
+  color: black;
+  border: none;
+  transition: 300ms;
 }

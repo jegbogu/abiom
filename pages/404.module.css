@@ -9,12 +9,10 @@
 }
 .error p{
     margin-bottom: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+   }
 .error button{
     background-color: darkslateblue;
     color: aliceblue;
     padding: 20px 100px 20px 100px;
-    font-family: 'Times New Roman', Times, serif;
-    border: none;
+     border: none;
 }
