@@ -6,12 +6,13 @@
     justify-content: center;
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 20px 3rem;
 }
 
 /* Carousel Container */
 .carouselContainer {
     display: flex;
+    gap: 1rem;
     overflow-x: auto;
     scroll-behavior: smooth;
     justify-content: center;
@@ -29,7 +30,7 @@
 .productCard {
     background: #fff;
     border-radius: 10px;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
     min-width: 200px;
     max-width: 200px;
@@ -94,9 +95,8 @@
 
 .item{
 
-     width: 95%;
+     width: 100%;
     background-color: black;
-    margin-top: 20px;
     border-radius: 5px;
    
 }
@@ -104,7 +104,6 @@
  width: 100%;
  max-width: 340px;
  height: 100%;
- margin: 0px auto;
 }
 .figure img {
   width: 100%;

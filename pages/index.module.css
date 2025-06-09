@@ -28,31 +28,32 @@
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
     margin-left: 50px;
+    margin-top: 1.5rem;
     
 }
 .categories h3{
    
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
-    margin-left: 65px;
+    margin-left: 3rem;
     margin-top:60px ;
 }
 .productListTwo h3{
     
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
-    margin-left: 65px;
+    margin-left: 3rem;
     margin-top:60px ;
 }
 .blogSection h3{
      
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
-    margin-left: 75px;
+    margin-left: 3rem;
     margin-top:60px ;
 }
 .ProductCarousel{
-    margin-top: -80px;
+    margin-top: -40px;
 }
 .Productcategories{
     margin-top: 20px;

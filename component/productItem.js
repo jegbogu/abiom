@@ -243,7 +243,7 @@ function ProductItem(props) {
   ) : null;
 
   let fullTitle = props.title.length > 20 ? `${props.title.slice(0, 20)}..` : props.title;
-  let shownFullTitle = props.title.length > 20 ? props.title : "";
+  let shownFullTitle = props.title.length > 20 ? <h5>{props.title}</h5> : "";
 
   return (
     <li className={classes.productItem}>
@@ -265,7 +265,7 @@ function ProductItem(props) {
 
         <div className={classes.itemBody}>
           <h3 onClick={showDetailsHandler}>{fullTitle}</h3>
-          <h5>{shownFullTitle}</h5>
+          {shownFullTitle}
           <p>Price: ${props.price}</p>
 
           {show ? (
