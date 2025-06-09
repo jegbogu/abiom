@@ -1,8 +1,13 @@
 .list{
     list-style: none;
     list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     width: 100%;
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4;
+    gap: 1rem;
+    padding-inline: 3rem;
 
 }
 @media screen and (max-width:1028px) {

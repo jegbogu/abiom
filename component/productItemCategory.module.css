@@ -4,10 +4,13 @@
 .none{
     display: none;
 }
-
+.productItem{
+    min-width: 260px;
+    max-width: 400px;
+}
 .item{
 
-     width: 95%;
+     width: 100%;
     background-color: black;
     margin-top: 20px;
     border-radius: 5px;
@@ -26,7 +29,7 @@
     
 } */
 .figure img{
-    
+    aspect-ratio: 1/1;
     width: 100%;
 
 }

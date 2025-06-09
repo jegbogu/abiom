@@ -8,7 +8,13 @@
     width: 100%;
     gap: 1rem;
     padding-inline: 3rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 
+}
+.list::-webkit-scrollbar {
+    display: none;
 }
 @media screen and (max-width:1028px) {
     .list{

@@ -5,6 +5,8 @@
   display: none;
 }
 .productItem {
+  min-width: 260px;
+  max-width: 350px;
 }
 .item {
   width: 100%;
@@ -72,14 +74,14 @@
   cursor: pointer;
   font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
     Noto Serif Light, Droid Serif, Georgia, "serif";
-  font-size: 15px;
+  font-size: 14px;
 }
 .itemBody button:hover {
   background-color: var(--p-col);
   border: none;
 }
 .itemBody span {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 .itemBody span button {
   background-color: rgba(255, 68, 0, 0);
@@ -90,7 +92,7 @@
   color: white;
   font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
     Noto Serif Light, Droid Serif, Georgia, "serif";
-  font-size: 15px;
+  font-size: 14px;
 }
 .itemBody span button:hover {
   background-color: rgba(255, 68, 0, 0);
