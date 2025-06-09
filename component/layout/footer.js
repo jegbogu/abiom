@@ -70,7 +70,7 @@ const Footer = () => {
       {/* Legal & Credits */}
       <div className={classes.legal}>
         <p className={classes.copy}>© {new Date().getFullYear()} Abiom International Supplies. All rights reserved.</p>
-        <p className={classes.design}>
+        <div className={classes.design}>
           <span>Designed by </span>
           <div>
           <Link href="https://www.mediaplur.com/" target="_blank" rel="noopener noreferrer">
@@ -78,7 +78,7 @@ const Footer = () => {
           </Link>
           </div>
           
-        </p>
+        </div>
       </div>
     </footer>
   );
