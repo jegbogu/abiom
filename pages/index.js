@@ -11,10 +11,11 @@ import BasketList from '@/component/basketList';
 import Layout from '@/component/layout/layout'; // Use Layout instead of directly using MainNavigation
 import ProductCarousel from '@/component/productCarousel';
 import ProductCategories from '@/component/productCategories';
+import NewArrivalsList from '@/component/newArrivalList';
 
 const Home = (props) => {
   return (
-    <Layout categories={props.categories} products={props.products}> 
+    <Layout categories={props.categories} products={props.products}>
       <Head>
         <title>..Household name in online supplies and services.</title>
       </Head>
@@ -31,38 +32,41 @@ const Home = (props) => {
         <BasketList basketProducts={props.basketProducts} />
       </div>
 
-    <div className={classes.carousel}>
-    <h3>Today's big deals</h3>
-    </div>
-      
-      <div  className={classes.ProductCarousel}>
-      <ProductCarousel products={props.products} />
+      <div className={classes.carousel}>
+        <h3>Today's big deals</h3>
       </div>
 
-    <div className={classes.categories}>
-    <h3>Shop Our Most Popular Categories</h3>
-    </div>
-      
-      <div  className={classes.Productcategories}>
-       <ProductCategories/>
+      <div className={classes.ProductCarousel}>
+        <ProductCarousel products={props.products} />
       </div>
-      
-  
-    
+
       <div className={classes.categories}>
-    <h3>Top Sellers</h3>
-    </div>
+        <h3>Shop Our Most Popular Categories</h3>
+      </div>
+
+      <div className={classes.Productcategories}>
+        <ProductCategories />
+      </div>
+
+      <section>
+        <div className={classes.categories}>
+          <h3>New Arrivals</h3>
+        </div>
+        <NewArrivalsList products={props.products} />
+      </section>
+
+      <div className={classes.categories}>
+        <h3>Top Sellers</h3>
+      </div>
       <ProductList products={props.products} />
       <div className={classes.productListTwo}>
-    <h3>Shop extraordinary items</h3>
-    </div>
+        <h3>Shop extraordinary items</h3>
+      </div>
       <ProductListTwo products={props.products} />
       <div className={classes.blogSection}>
-    <h3>Abiom Blog</h3>
-    </div>
-       <BlogSection />
-      
-     
+        <h3>Abiom Blog</h3>
+      </div>
+      <BlogSection />
     </Layout>
   );
 };

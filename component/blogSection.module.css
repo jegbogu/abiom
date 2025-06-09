@@ -5,21 +5,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: -120px;
+    overflow-x: hidden;
+    padding-inline: 1.5rem;
 }
 
 /* Carousel Wrapper */
 .carouselWrapper {
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     overflow: hidden;
    
 }
 
 /* Carousel Container */
 .carouselContainer {
-    width: 90%;
+    width: 100%;
   
     white-space: nowrap;
 }
@@ -27,6 +28,7 @@
 .carousel {
     display: flex;
     overflow-x: auto;
+    gap: 1rem;
     scroll-behavior: smooth;
     scrollbar-width: none;
 }
@@ -43,9 +45,8 @@
     border-radius: 10px;
      
     text-align: center;
-    min-width: 450px;
+    max-width: 400px;
     
-   margin-left: 20px;
     transition: transform 0.3s ease-in-out;
    
 }
@@ -56,15 +57,16 @@
 }
 
 .postImage {
-    width: 80%;
+    width: 100%;
     height: auto;
     border-radius: 8px;
+    aspect-ratio: 2/3;
 }
 
 .postName {
     font-size: 1.2em;
      
-    margin-top: 10px;
+    padding: 10px;
     color: #333;
     font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria, Noto Serif Light, Droid Serif, Georgia, "serif";
     word-wrap: break-word;
