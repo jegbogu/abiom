@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import classes from "./basketItem.module.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Spinner from "../icons/spinner";
+import { useContext } from "react";
 import CartContext from "../store/product-context";
 import CartIcon from "@/icons/cartIcon";
-import Button from "./utils/button";
 
 function BasketItem(props) {
   // console.log("BasketItem", props)
@@ -115,35 +115,51 @@ function BasketItem(props) {
           <img src={props.image} alt={props.title} />
           {outOfStock}
         </div>
+        <div className={classes.discount}>
+          <h2 style={{ color: "orange", marginLeft: "30px", fontSize: "13px" }}>
+            -10%
+          </h2>
+        </div>
         <div className={classes.itemBody}>
-          <h3 className="productTitle" onClick={showDetailsHandler}>{props.title}</h3>
-          <div className="prices">
-            <p className="actualPrice">$ {TruePrice}</p>
-            <p className="oldPrice">$ {props.price}</p>
-            <p className="discount">-10%</p>
-          </div>
-          <div className="flex gap-2">
-            {show && count !== 0 ? (
-              <div className={classes.cartBtn}>
-                <div className={classes.cartBtnOne}>
-                  <Button onClick={addHandler}>+</Button>
-                </div>
-                <div className={classes.cartBtnTwo}>
-                  <Button>{count}</Button>
-                </div>
-                <div className={classes.cartBtnThree}>
-                  <Button onClick={subtractHandler}>-</Button>
-                </div>
+          <h3 onClick={showDetailsHandler}>{props.title}</h3>
+          <p
+            style={{
+              color: "orange",
+              fontSize: "19.01px",
+              margin: "10px 0px 0px 0px",
+            }}
+          >
+            Price: ${props.price}
+          </p>
+          <p
+            style={{
+              textDecoration: "line-through",
+              fontSize: "12.99px",
+              margin: "10px 0px 10px 0px",
+            }}
+          >
+            Price: ${TruePrice}
+          </p>
+
+          {show ? (
+            <div className={classes.cartBtn}>
+              <div className={classes.cartBtnOne}>
+                <button onClick={addHandler}>+</button>
               </div>
-            ) : (
-              <Button variant="default" onClick={displayCartBtn}>
-                Add to Cart
-              </Button>
-            )}
-            <Button variant="outline" onClick={showDetailsHandler}>
-              Show Details{spinner}
-            </Button>
-          </div>
+              <div className={classes.cartBtnTwo}>
+                <button>{count}</button>
+              </div>
+              <div className={classes.cartBtnThree}>
+                <button onClick={subtractHandler}>-</button>
+              </div>
+            </div>
+          ) : (
+            <button onClick={displayCartBtn}>Add to Cart</button>
+          )}
+
+          <span>
+            <button onClick={showDetailsHandler}>Show Details{spinner}</button>
+          </span>
         </div>
         {showCart}
       </div>

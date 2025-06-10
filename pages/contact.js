@@ -54,7 +54,7 @@ export async function getServerSideProps() {
         image: product.image,
         nutrition: product.nutrition,
         description: product.description,
-        outOfStock: product.outOfStock,
+        outOfStock: product.outOfStock ?? null,
         qty: Number(product.qty),
       })),
       basketProducts: products
@@ -67,7 +67,7 @@ export async function getServerSideProps() {
           image: product.image,
           nutrition: product.nutrition,
           description: product.description,
-          outOfStock: product.outOfStock,
+          outOfStock: product.outOfStock ?? null,
           qty: Number(product.qty),
         })),
       categories,  

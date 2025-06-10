@@ -4,9 +4,10 @@
 .none {
   display: none;
 }
-.productItem {
-  min-width: 260px;
-  max-width: 350px;
+.productItem{
+    min-width: 260px !important;
+    max-width: 350px !important;
+    text-align: left;
 }
 .item {
   width: 100%;
