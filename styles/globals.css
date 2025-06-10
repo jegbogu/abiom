@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap'");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --p-col: #d6a8b8;
   --s-col: #e7a626;
@@ -101,27 +95,6 @@ a {
   text-decoration: none;
 }
 
-section.homeSection {
-  @apply max-w-[1500px] w-full mx-auto px-4 mt-20;
-}
-
-.productTitle{
-  @apply text-base font-medium text-left;
-}
-.prices {
-  @apply flex gap-2 items-center;
-}
-
-.actualPrice {
-  @apply text-lg;
-}
-
-.oldPrice {
-  @apply line-through text-sm text-gray-400;
-}
-.discount {
-  @apply bg-orange-500 !text-yellow-200 m-0 ml-3 rounded-xl px-2 py-0.5 text-sm;
-}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
