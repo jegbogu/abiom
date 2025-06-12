@@ -2,7 +2,7 @@ import classes from './contact.module.css'
 import Link from 'next/link'
 import { MongoClient } from 'mongodb';
 import Layout from '@/component/layout/layout'; 
-function Contact() {
+function Contact(props) {
     return (
         <Layout categories={props.categories} products={props.products}> 
         <div className={classes.section}>
@@ -54,7 +54,7 @@ export async function getServerSideProps() {
         image: product.image,
         nutrition: product.nutrition,
         description: product.description,
-        outOfStock: product.outOfStock,
+        outOfStock: product.outOfStock ?? null,
         qty: Number(product.qty),
       })),
       basketProducts: products
@@ -67,7 +67,7 @@ export async function getServerSideProps() {
           image: product.image,
           nutrition: product.nutrition,
           description: product.description,
-          outOfStock: product.outOfStock,
+          outOfStock: product.outOfStock ?? null,
           qty: Number(product.qty),
         })),
       categories,  

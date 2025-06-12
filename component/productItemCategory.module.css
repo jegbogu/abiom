@@ -4,10 +4,13 @@
 .none{
     display: none;
 }
-
+.productItem{
+    min-width: 260px;
+    max-width: 400px;
+}
 .item{
 
-     width: 95%;
+     width: 100%;
     background-color: black;
     margin-top: 20px;
     border-radius: 5px;
@@ -26,7 +29,7 @@
     
 } */
 .figure img{
-    
+    aspect-ratio: 1/1;
     width: 100%;
 
 }
@@ -68,39 +71,39 @@
     
 }
 
-.itemBody button{
-    background-color: var(--s-col);
-    padding: 10px 5px 10px 5px;
-    border: none;
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    font-weight: 900;
-    cursor: pointer;
-    font-size: 15px;
+.itemBody button {
+  background-color: var(--s-col);
+  padding: 7px;
+  border: none;
+  border-radius: 1rem;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  cursor: pointer;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
+  font-size: 14px;
 }
-.itemBody button:hover{
-    background-color: var(--p-col);
-    padding: 10px 5px 10px 5px;
-    border: none;
-     
+.itemBody button:hover {
+  background-color: var(--p-col);
+  border: none;
 }
-.itemBody span{
-    margin-left: 20px;
+.itemBody span {
+  margin-left: 15px;
 }
-.itemBody span button{
-    background-color: rgba(255, 68, 0, 0);
-    padding: 10px 5px 10px 5px;
-    border:solid  var(--s-col) 1px;
-    border-radius: 5px;
-    cursor:pointer;
-    font-size: 15px;
+.itemBody span button {
+  background-color: rgba(255, 68, 0, 0);
+  padding: 7px;
+  border: solid var(--s-col) 1px;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: white;
+  font-family: Guardian-EgypTT, Charter, Charter Bitstream, Cambria,
+    Noto Serif Light, Droid Serif, Georgia, "serif";
+  font-size: 14px;
 }
-.itemBody span button:hover{
-    background-color: rgba(255, 68, 0, 0);
-    padding: 10px 5px 10px 5px;
-    border:solid  var(--p-col) 1px;
-    border-radius: 5px;
-     
+.itemBody span button:hover {
+  background-color: rgba(255, 68, 0, 0);
+  border: solid var(--p-col) 1px;
 }
 .cartBtn{
     display: inline;

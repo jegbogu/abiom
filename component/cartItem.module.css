@@ -5,60 +5,22 @@
   display: none;
 }
 
-.item {
-  /* width: 95%;
-  background-color: black;
-  margin-top: 20px;
-  border-radius: 0px;
-  cursor: pointer;
-  transition: ease-in-out 0.3s;
-  overflow: hidden; */
-  @apply w-full rounded-xl cursor-pointer transition-all bg-neutral-800;
-}
-/* .item:hover {
-  box-shadow: 1px 2px 8px rgba(91, 90, 90, 0.858);
-}
-.figure {
-  position: relative; 
-}*/
-
-.figure img {
-  width: 100%;
-  @apply rounded-xl aspect-square object-cover object-center;
-} 
-
-.outOfStock {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(255, 99, 71, 0.8); /* tomato with transparency */
-  color: white;
-  padding: 5px 10px;
-  font-size: 0.75rem;
-  border-radius: 12px;
-  font-weight: bold;
-  z-index: 2;
+.productItem{
+    min-width: 260px;
+    max-width: 400px;
 }
 
-/* .itemBody {
-  padding: 16px;
-  @apply block space-y-2;
+.item{
+ 
+    
+     width: 100%;
+    background-color: black;
+     
+    border-radius: 5px;
 }
-
-.item {
-  background-color: black;
-}
-
-.btns{
-    @apply flex flex-col gap-4;
-}
-
-.cartBtn{
-    @apply flex gap-2 items-center self-center;
-} */
-/* .figure {
-  width: 100%;
-  margin: 0px auto;
+.figure{
+    width: 100%;
+    margin: 0px auto;
 }
 .figure img {
   width: 100%;
@@ -132,7 +94,7 @@
   margin-left: 10px;
   margin-top: 20px;
   cursor: pointer;
-} */
+} 
 .trash {
   margin-top: 5%;
   cursor: pointer;

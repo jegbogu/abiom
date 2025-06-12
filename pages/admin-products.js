@@ -1,18 +1,18 @@
 import DashboardNavbar from "@/dashboard/dashboardNavbar";
 import { MongoClient } from "mongodb";
-import classes from './admin-products.module.css';
+import classes from "./admin-products.module.css";
 import { useRouter } from "next/router";
-import { useState } from 'react';
+import { useState } from "react";
 
 function AdminProducts(props) {
   const allProduct = props.products;
   const router = useRouter();
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`/api/${id}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
 
       const data = await response.json();
@@ -36,9 +36,10 @@ function AdminProducts(props) {
 
         <div className={classes.sectionTable}>
           <form>
-            <label htmlFor='search'>Search Product</label><br />
+            <label htmlFor="search">Search Product</label>
+            <br />
             <input
-              type='text'
+              type="text"
               placeholder="Search Product"
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -59,14 +60,20 @@ function AdminProducts(props) {
             <tbody>
               {allProduct
                 .filter((product) => {
-                  if (search.trim() === '') return true;
-                  return product.title?.toLowerCase().includes(search.toLowerCase());
+                  if (search.trim() === "") return true;
+                  return product.title
+                    ?.toLowerCase()
+                    .includes(search.toLowerCase());
                 })
                 .map((product, i) => (
                   <tr key={product.id}>
                     <td>{i + 1}</td>
                     <td>
-                      <img src={product.image} alt={product.title} style={{ width: "50px", height: "50px" }} />
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        style={{ width: "50px", height: "50px" }}
+                      />
                     </td>
                     <td>{product.title}</td>
                     <td>{product.category}</td>
@@ -100,19 +107,22 @@ export async function getServerSideProps() {
 
   // Fetch all products
   const products = await productsCollection
-    .find({}, {
-      projection: {
-        _id: 1,
-        title: 1,
-        price: 1,
-        category: 1,
-        image: 1,
-        nutrition: 1,
-        description: 1,
-        qty: 1,
-        outOfStock: 1
+    .find(
+      {},
+      {
+        projection: {
+          _id: 1,
+          title: 1,
+          price: 1,
+          category: 1,
+          image: 1,
+          nutrition: 1,
+          description: 1,
+          qty: 1,
+          outOfStock: 1,
+        },
       }
-    })
+    )
     .toArray();
 
   // Fetch distinct categories
