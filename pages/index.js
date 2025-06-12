@@ -50,7 +50,7 @@ const Home = (props) => {
 
       <section>
         <div className={classes.categories}>
-          <h3>Arrivals</h3>
+          <h3>New Arrivals</h3>
         </div>
         <NewArrivalsList products={props.products} />
       </section>
